@@ -485,6 +485,10 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 36e5f2baa094c2e49bdc2ca1a9bcd206, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  playerTransform: {fileID: 1528764649}
+  maxWalkSpeed: 5
+  walkSpeed: 1
+  move: {x: 0, y: 0, z: 0}
   walkInput: {x: 0, y: 0}
   placeInput: 0
   interactInput: 0

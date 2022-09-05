@@ -5,13 +5,25 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     NewControls newControls;
-    
+    public Transform playerTransform;
+
+    [Header("statistics")]
     #region
+    [SerializeField]
+    private float maxWalkSpeed;
+    [SerializeField]
+    private float walkSpeed;
+    [SerializeField]
+    private Vector3 move;
+    [SerializeField]
+    #endregion
     [Header("Inputs")]
+    #region
     public Vector2 walkInput;
     public bool placeInput;
     public bool interactInput;
     #endregion
+    
 
     private void Awake()
     {
@@ -34,8 +46,26 @@ public class PlayerInputs : MonoBehaviour
         }
         newControls.Enable();
     }
+    
+
+
     private void Update()
     {
-        
+        Movement();
+    }
+    private void Movement()
+    {
+        move.x = walkInput.x;
+        move.z = walkInput.y;
+
+        playerTransform.Translate(move * walkSpeed * Time.deltaTime, Space.Self);
+        if (walkSpeed < maxWalkSpeed)
+        {
+            walkSpeed += Time.deltaTime;
+        }
+        else
+        {
+            walkSpeed = maxWalkSpeed;
+        }
     }
 }

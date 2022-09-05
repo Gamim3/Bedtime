@@ -9,6 +9,4 @@ public class Building : MonoBehaviour
     [SerializeField]
     private float bob;
     #endregion
-
-
 }

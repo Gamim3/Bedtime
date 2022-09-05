@@ -49,7 +49,7 @@ public class PlayerInputs : MonoBehaviour
     
 
 
-    private void Update()
+    private void FixedUpdate()
     {
         Movement();
     }

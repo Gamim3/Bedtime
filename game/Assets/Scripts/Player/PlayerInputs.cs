@@ -5,11 +5,18 @@ using UnityEngine;
 public class PlayerInputs : MonoBehaviour
 {
     NewControls newControls;
-
+    
+    #region
+    [Header("Inputs")]
     public Vector2 walkInput;
     public bool placeInput;
     public bool interactInput;
+    #endregion
 
+    private void Awake()
+    {
+
+    }
     private void OnEnable()
     {
         if (newControls == null)
@@ -26,5 +33,9 @@ public class PlayerInputs : MonoBehaviour
             newControls.Building.Interacting.canceled += ef => interactInput = false;
         }
         newControls.Enable();
+    }
+    private void Update()
+    {
+        
     }
 }

@@ -685,6 +685,9 @@ MonoBehaviour:
   target: {fileID: 1090256086}
   structure: {fileID: 1148424882}
   gridSize: 1
+  cam: {fileID: 1070195296}
+  direction: {x: 0, y: 0, z: 0}
+  distance: 0
 --- !u!4 &1555415258
 Transform:
   m_ObjectHideFlags: 0

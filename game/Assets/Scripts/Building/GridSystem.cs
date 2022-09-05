@@ -9,6 +9,25 @@ public class GridSystem : MonoBehaviour
     Vector3 truePos;
     public float gridSize;
 
+    public RaycastHit hit;
+    public GameObject cam;
+    public Vector3 direction;
+    public float distance;
+
+    private void Start()
+    {
+        distance = 5f;
+    }
+    private void Update()
+    {
+        direction = cam.transform.forward;
+
+        if (Physics.Raycast(cam.transform.position, direction, out hit, distance))
+        {
+            print(hit.transform.position);
+            target.transform.position = hit.transform.position;
+        }
+    }
     private void LateUpdate()
     {
         truePos.x = Mathf.Floor(target.transform.position.x / gridSize) * gridSize;

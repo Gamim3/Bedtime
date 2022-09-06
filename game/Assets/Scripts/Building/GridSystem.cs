@@ -19,7 +19,7 @@ public class GridSystem : MonoBehaviour
     private void Start()
     {
         distance = 3.5f;
-        height.y += 1;
+        height.y = 1;
     }
     private void Update()
     {
@@ -29,6 +29,7 @@ public class GridSystem : MonoBehaviour
         {
             print(hit.transform.position);
             point = hit.point;
+
             target.transform.position = point;
             target.transform.position += height;
         }

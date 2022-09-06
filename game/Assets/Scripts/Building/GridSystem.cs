@@ -13,10 +13,13 @@ public class GridSystem : MonoBehaviour
     public GameObject cam;
     public Vector3 direction;
     public float distance;
+    public Vector3 point;
+    public Vector3 height;
 
     private void Start()
     {
-        distance = 5f;
+        distance = 3.5f;
+        height.y += 1;
     }
     private void Update()
     {
@@ -25,7 +28,9 @@ public class GridSystem : MonoBehaviour
         if (Physics.Raycast(cam.transform.position, direction, out hit, distance))
         {
             print(hit.transform.position);
-            target.transform.position = hit.transform.position;
+            point = hit.point;
+            target.transform.position = point;
+            target.transform.position += height;
         }
     }
     private void LateUpdate()

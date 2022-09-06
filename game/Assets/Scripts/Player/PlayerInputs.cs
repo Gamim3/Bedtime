@@ -61,7 +61,7 @@ public class PlayerInputs : MonoBehaviour
         playerTransform.Translate(move * walkSpeed * Time.deltaTime, Space.Self);
         if (walkSpeed < maxWalkSpeed)
         {
-            walkSpeed += Time.deltaTime;
+            walkSpeed += Time.deltaTime * 0.5f;
         }
         else
         {

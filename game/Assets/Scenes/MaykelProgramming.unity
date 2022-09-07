@@ -851,9 +851,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abb44faee6f534dbc8b441d1c7cb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  player: {fileID: 0}
   target: {fileID: 1090256086}
   structure: {fileID: 1148424882}
+  truePos: {x: 0, y: 0, z: 0}
   gridSize: 1.5
+  model: {fileID: 1148424882}
   cam: {fileID: 1070195296}
   direction: {x: 0, y: 0, z: 0}
   distance: 0

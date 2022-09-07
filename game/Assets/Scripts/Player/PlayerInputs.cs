@@ -79,11 +79,6 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Placement()
     {
-        print("place");
-        Transform placePoint;
 
-        //placePoint = grid.GetComponent<GridSystem>();
-        
-        //Instantiate<GameObject>(tower, placePoint);
     }
 }

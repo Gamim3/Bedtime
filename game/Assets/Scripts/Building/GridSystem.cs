@@ -39,9 +39,10 @@ public class GridSystem : MonoBehaviour
         }
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
-            print("nummer0");
-
-            Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+            if (rayHit.transform.tag == ("placeableGround"))
+            {
+                Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+            }
 
             //if (Physics.SphereCast(objectToPlace.transform.position, 1f, objectToPlace.transform.forward, out sphereHit))
             //{

@@ -8,6 +8,8 @@ TagManager:
   - enemy 4
   - enemy 2
   - enemy 1
+  - tower
+  - placeableGround
   layers:
   - Default
   - TransparentFX

@@ -7,12 +7,15 @@ using TMPro;
 public class Spawning : MonoBehaviour
 {
     public float spawnTime;
+
     public float enemy1;
     public float enemy2;
     public float enemy3;
     public float enemy4;
-    public float waveCounter;
+
+    public Text waveCounter;
     public List<GameObject> myObjects;
+
     public bool spawn0;
     public bool spawn1;
     public bool spawn2;
@@ -58,38 +61,33 @@ public class Spawning : MonoBehaviour
         }
 
         //for(int i = 20; i > enemy1; i--)
-        //{
-            
+        //{  
         //}
 
         if (enemy1 < 1)
         {
             spawn0 = false;
-            waveCounter += 1;
         }
         
         if (enemy2 < 1)
         {
             spawn1 = false;
-            waveCounter += 1;
         }
         
         if (enemy3 < 1)
         {
             spawn2 = false;
-            waveCounter += 1;
         }
 
         if (enemy4 < 1)
         {
             spawn3 = false;
             //myObjects.Remove(ScriptableObject.CreateInstance("Enemy 1") as GameObject);
-            waveCounter += 1;
         }
 
-        if(waveCounter == 4)
+        if(enemy4 < 1 && enemy3 < 1 && enemy2 < 1 && enemy1 < 1)
         {
-            //wave2 will begin.
+            waveCounter.text = 2.ToString();
         }
         
         

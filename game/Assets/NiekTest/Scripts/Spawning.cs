@@ -13,6 +13,10 @@ public class Spawning : MonoBehaviour
     public float enemy4;
     public float waveCounter;
     public List<GameObject> myObjects;
+    public bool spawn0;
+    public bool spawn1;
+    public bool spawn2;
+    public bool spawn3;
 
     void Update()
     {
@@ -26,33 +30,59 @@ public class Spawning : MonoBehaviour
         spawnTime += Time.deltaTime;
         if(spawnTime > 1)
         {
-            GameObject instantiatedObject = Instantiate(myObjects[randomIndex], transform.position, Quaternion.identity) as GameObject;
-            spawnTime = 0;
+            if (randomIndex == 0 && spawn0 == true)
+            {
+                spawnTime = 0;
+                GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, Quaternion.identity) as GameObject;
+            }
+
+            if (randomIndex == 1 && spawn1 == true)
+            {
+                spawnTime = 0;
+                GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, Quaternion.identity) as GameObject;
+            }
+
+            if (randomIndex == 2 && spawn2 == true)
+            {
+                spawnTime = 0;
+                GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, Quaternion.identity) as GameObject;
+            }
+
+            if (randomIndex == 3 && spawn3 == true)
+            {
+                spawnTime = 0;
+                GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, Quaternion.identity) as GameObject;
+            }
+
+            
         }
 
-        
+        for(int i = 10; i > 0; i--)
+        {
+
+        }
 
         if (enemy1 < 1)
         {
-            myObjects.Remove(myObjects[0]);
+            spawn0 = false;
             waveCounter += 1;
         }
         
         if (enemy2 < 1)
         {
-            myObjects.Remove(myObjects[1]);
+            spawn1 = false;
             waveCounter += 1;
         }
         
         if (enemy3 < 1)
         {
-            myObjects.Remove(myObjects[2]);
+            spawn2 = false;
             waveCounter += 1;
         }
 
         if (enemy4 < 1)
         {
-            myObjects.Remove(myObjects[3]);
+            spawn3 = false;
             //myObjects.Remove(ScriptableObject.CreateInstance("Enemy 1") as GameObject);
             waveCounter += 1;
         }

@@ -747,6 +747,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1528764649}
+  tower: {fileID: 1148424882}
+  grid: {fileID: 1555415256}
   maxWalkSpeed: 5
   walkSpeed: 1
   move: {x: 0, y: 0, z: 0}

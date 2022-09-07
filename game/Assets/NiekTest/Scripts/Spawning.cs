@@ -20,10 +20,10 @@ public class Spawning : MonoBehaviour
 
     void Update()
     {
-        enemy1 = GameObject.Find("Bullets").GetComponent<Bullet>().float1;
-        enemy2 = GameObject.Find("Bullets").GetComponent<Bullet>().float2;
-        enemy3 = GameObject.Find("Bullets").GetComponent<Bullet>().float3;
-        enemy4 = GameObject.Find("Bullets").GetComponent<Bullet>().float4;
+        enemy1 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float1;
+        enemy2 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float2;
+        enemy3 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float3;
+        enemy4 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float4;
 
 
         int randomIndex = Random.Range(0, 4);
@@ -57,10 +57,10 @@ public class Spawning : MonoBehaviour
             
         }
 
-        for(int i = 10; i > 0; i--)
-        {
-
-        }
+        //for(int i = 20; i > enemy1; i--)
+        //{
+            
+        //}
 
         if (enemy1 < 1)
         {

@@ -13,11 +13,11 @@ public class Bullet : MonoBehaviour
     public float float2;
     public float float3;
     public float float4;
-    // vieze code ;( 
+
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
-        
+
         enemy1textUI = GameObject.Find("Enemy1").GetComponent<Text>();
         enemy2textUI = GameObject.Find("Enemy2").GetComponent<Text>();
         enemy3textUI = GameObject.Find("Enemy3").GetComponent<Text>();
@@ -45,10 +45,11 @@ public class Bullet : MonoBehaviour
 
             if(other.gameObject.tag == "enemy 4")
             {
-                float4 -= 1;
+                float4 -= 1;  
                 Destroy(other.gameObject);
             }
     }
+
     void Update()
     {
         enemy1textUI.text = float1.ToString();
@@ -56,4 +57,5 @@ public class Bullet : MonoBehaviour
         enemy3textUI.text = float3.ToString();
         enemy4textUI.text = float4.ToString();
     }
+    
 }

@@ -13,7 +13,7 @@ public class Bullet : MonoBehaviour
     public float float2;
     public float float3;
     public float float4;
-    // foute code
+    // vieze code ;( 
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;

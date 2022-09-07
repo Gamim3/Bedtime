@@ -136,7 +136,7 @@ GameObject:
   - component: {fileID: 667884061}
   - component: {fileID: 667884060}
   - component: {fileID: 667884064}
-  m_Layer: 0
+  m_Layer: 6
   m_Name: Cube
   m_TagString: Untagged
   m_Icon: {fileID: 0}
@@ -214,7 +214,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 667884059}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: -2, z: 0}
+  m_LocalPosition: {x: 0, y: -1, z: 0}
   m_LocalScale: {x: 10, y: 1, z: 10}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -328,7 +328,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 743207583}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0, y: 3, z: 0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children:
@@ -814,7 +814,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1528764649}
-  tower: {fileID: 1148424882}
+  tower: {fileID: 0}
   grid: {fileID: 1555415256}
   maxWalkSpeed: 5
   walkSpeed: 1
@@ -851,17 +851,15 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 40abb44faee6f534dbc8b441d1c7cb5b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  player: {fileID: 0}
-  target: {fileID: 1090256086}
-  structure: {fileID: 1148424882}
-  truePos: {x: 0, y: 0, z: 0}
-  gridSize: 1.5
-  model: {fileID: 1148424882}
+  player: {fileID: 1528764644}
   cam: {fileID: 1070195296}
-  direction: {x: 0, y: 0, z: 0}
-  distance: 0
-  point: {x: 0, y: 0, z: 0}
-  height: {x: 0, y: 0, z: 0}
+  reachLenght: 3
+  objectToMove: {fileID: 1148424882}
+  objectToPlace: {fileID: 6027181430313377604, guid: 913d53bba39cfa24585a3f99587e8066, type: 3}
+  posY: 0
+  Grid:
+    serializedVersion: 2
+    m_Bits: 64
 --- !u!4 &1555415258
 Transform:
   m_ObjectHideFlags: 0

@@ -82,8 +82,8 @@ public class PlayerInputs : MonoBehaviour
         print("place");
         Transform placePoint;
 
-        placePoint = grid.GetComponent<GridSystem>();
+        //placePoint = grid.GetComponent<GridSystem>();
         
-        Instantiate<GameObject>(tower, placePoint);
+        //Instantiate<GameObject>(tower, placePoint);
     }
 }

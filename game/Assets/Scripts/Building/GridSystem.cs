@@ -6,7 +6,9 @@ public class GridSystem : MonoBehaviour
 {
     public GameObject player;
 
-    public RaycastHit hit;
+    public RaycastHit rayHit;
+    public RaycastHit sphereHit;
+
     public GameObject cam;
 
     public float reachLenght;
@@ -17,25 +19,44 @@ public class GridSystem : MonoBehaviour
     public float posY;
 
     public LayerMask Grid;
+    
+
+
     private void Start()
     {
 
     }
     private void Update()
     {
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out hit, reachLenght))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
-            print(hit.point);
+            print(rayHit.point);
 
-            int posX = (int)Mathf.Round(hit.point.x);
-            int posZ = (int)Mathf.Round(hit.point.z);
+            int posX = (int)Mathf.Round(rayHit.point.x);
+            int posZ = (int)Mathf.Round(rayHit.point.z);
 
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
         }
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
+            print("nummer0");
+
             Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
-            Destroy(gameObject);
+
+            //if (Physics.SphereCast(objectToPlace.transform.position, 1f, objectToPlace.transform.forward, out sphereHit))
+            //{
+            //    print("nummer1");
+            //    if (sphereHit.transform.tag == ("tower"))
+            //    {
+            //        print("tot hier");
+            //    }
+            //    else
+            //    {
+            //        Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+            //    }
+            //    print("checking for towers");
+            //    return;
+            //}
         }
     }
 }

@@ -22,9 +22,15 @@ public class BuildingSystem : MonoBehaviour
 
     public bool canPlace;
 
+    public GameObject placePoint;
+    public RaycastHit placeHit;
+    public float placeLenght;
+
     private void Start()
     {
         canPlace = true;
+
+        placeLenght = 2f;
     }
     private void Update()
     {
@@ -37,15 +43,17 @@ public class BuildingSystem : MonoBehaviour
 
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
         }
+
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
             if (canPlace == true)
             {
-                if (rayHit.transform.tag == ("placeableGround"))
+                if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
                 {
-                    Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
-
-                    canPlace = false;
+                    if (placeHit.transform.tag == ("placeableGround"))
+                    {
+                        Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+                    }
                 }
             }
         }

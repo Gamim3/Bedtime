@@ -37,6 +37,11 @@ public class BuildingSystem : MonoBehaviour
     }
     private void Update()
     {
+        if(hasTower == true)
+        {
+            detection.SetActive(true);
+        }
+
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
             //print(rayHit.point);
@@ -47,10 +52,17 @@ public class BuildingSystem : MonoBehaviour
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
         }
 
+        //if (canPlace == false && canDestroy == false && hasTower == false)
+        //{
+        //    detection.SetActive(false);
+        //}
+
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
             if (hasTower == true)
             {
+                detection.SetActive(true);
+
                 if (canPlace == true)
                 {
                     if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
@@ -74,6 +86,7 @@ public class BuildingSystem : MonoBehaviour
                 Destroy(objectToDestroy);
                 canDestroy = false;
                 canPlace = true;
+                detection.SetActive(false);
             }
         }
     }

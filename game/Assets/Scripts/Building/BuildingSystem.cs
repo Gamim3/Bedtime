@@ -30,7 +30,7 @@ public class BuildingSystem : MonoBehaviour
     {
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
-            print(rayHit.point);
+            //print(rayHit.point);
 
             int posX = (int)Mathf.Round(rayHit.point.x);
             int posZ = (int)Mathf.Round(rayHit.point.z);
@@ -44,30 +44,10 @@ public class BuildingSystem : MonoBehaviour
                 if (rayHit.transform.tag == ("placeableGround"))
                 {
                     Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+
+                    canPlace = false;
                 }
             }
-
-            //if (Physics.SphereCast(objectToPlace.transform.position, 1f, objectToPlace.transform.forward, out sphereHit))
-            //{
-            //    print("nummer1");
-            //    if (sphereHit.transform.tag == ("tower"))
-            //    {
-            //        print("tot hier");
-            //    }
-            //    else
-            //    {
-            //        Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
-            //    }
-            //    print("checking for towers");
-            //    return;
-            //}
-        }
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if(other.tag == ("tower"))
-        {
-            canPlace = false;
         }
     }
 }

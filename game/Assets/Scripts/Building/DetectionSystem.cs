@@ -5,15 +5,17 @@ using UnityEngine;
 public class DetectionSystem : MonoBehaviour
 {
     public GameObject buildingSystem;
+
     private void OnTriggerEnter(Collider other)
     {
-        print("colliding");
-
-        if (other.tag == ("tower"))
+        if (other.CompareTag("tower"))
         {
-            buildingSystem.GetComponent<BuildingSystem>().canPlace = false; 
+            buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
         }
-        else
+    }
+    private void OnTriggerExit(Collider other)
+    {
+        if (other.CompareTag("tower"))
         {
             buildingSystem.GetComponent<BuildingSystem>().canPlace = true;
         }

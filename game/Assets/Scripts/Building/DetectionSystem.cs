@@ -12,10 +12,18 @@ public class DetectionSystem : MonoBehaviour
         {
             buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
         }
+        if (other.CompareTag("player"))
+        {
+            buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
+        }
     }
     private void OnTriggerExit(Collider other)
     {
         if (other.CompareTag("tower"))
+        {
+            buildingSystem.GetComponent<BuildingSystem>().canPlace = true;
+        }
+        if (other.CompareTag("player"))
         {
             buildingSystem.GetComponent<BuildingSystem>().canPlace = true;
         }

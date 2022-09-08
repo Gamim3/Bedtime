@@ -711,6 +711,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   buildingSystem: {fileID: 1555415256}
+  destroyableObject: {fileID: 0}
 --- !u!1 &1346662160
 GameObject:
   m_ObjectHideFlags: 0
@@ -1497,6 +1498,10 @@ PrefabInstance:
       propertyPath: canPlace
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: 6712276016476106834, guid: 557ed8a21896bba47a94e5c5b948254c, type: 3}
+      propertyPath: detection
+      value: 
+      objectReference: {fileID: 1148424882}
     - target: {fileID: 6712276016476106834, guid: 557ed8a21896bba47a94e5c5b948254c, type: 3}
       propertyPath: placePoint
       value: 

@@ -5,12 +5,15 @@ using UnityEngine;
 public class DetectionSystem : MonoBehaviour
 {
     public GameObject buildingSystem;
+    public GameObject destroyableObject;
 
     private void OnTriggerEnter(Collider other)
     {
         if (other.CompareTag("tower"))
         {
             buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
+            buildingSystem.GetComponent<BuildingSystem>().canDestroy = true;
+            destroyableObject = other.gameObject;
         }
         if (other.CompareTag("player"))
         {
@@ -22,6 +25,7 @@ public class DetectionSystem : MonoBehaviour
         if (other.CompareTag("tower"))
         {
             buildingSystem.GetComponent<BuildingSystem>().canPlace = true;
+            buildingSystem.GetComponent<BuildingSystem>().canDestroy = false; 
         }
         if (other.CompareTag("player"))
         {

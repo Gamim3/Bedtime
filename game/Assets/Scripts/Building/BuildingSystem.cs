@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildingSystem : MonoBehaviour
 {
     public GameObject player;
+    public GameObject detection;
 
     public RaycastHit rayHit;
     public RaycastHit sphereHit;
@@ -18,9 +19,11 @@ public class BuildingSystem : MonoBehaviour
 
     public float posY;
 
-    public LayerMask Grid;
+    public LayerMask grid;
 
     public bool canPlace;
+    public bool canDestroy;
+    public bool hasTower;
 
     public GameObject placePoint;
     public RaycastHit placeHit;
@@ -46,17 +49,31 @@ public class BuildingSystem : MonoBehaviour
 
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
-            if (canPlace == true)
+            if (hasTower == true)
             {
-                if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
+                if (canPlace == true)
                 {
-                    if (placeHit.transform.tag == ("placeableGround"))
+                    if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
                     {
-                        Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+                        if (placeHit.transform.tag == ("placeableGround"))
+                        {
+                            Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
 
-                        canPlace = false;
+                            canPlace = false;
+                            hasTower = false;
+                        }
                     }
                 }
+            }
+        }
+        if (player.GetComponent<PlayerInputs>().interactInput == true)
+        {
+            if (canDestroy == true)
+            {
+                GameObject objectToDestroy = detection.GetComponent<DetectionSystem>().destroyableObject;
+                Destroy(objectToDestroy);
+                canDestroy = false;
+                canPlace = true;
             }
         }
     }

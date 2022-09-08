@@ -5,6 +5,7 @@ using UnityEngine;
 public class BuildingSystem : MonoBehaviour
 {
     public GameObject player;
+    public GameObject detection;
 
     public RaycastHit rayHit;
     public RaycastHit sphereHit;
@@ -18,16 +19,29 @@ public class BuildingSystem : MonoBehaviour
 
     public float posY;
 
-    public LayerMask Grid;
+    public LayerMask grid;
 
     public bool canPlace;
+    public bool canDestroy;
+    public bool hasTower;
+
+    public GameObject placePoint;
+    public RaycastHit placeHit;
+    public float placeLenght;
 
     private void Start()
     {
         canPlace = true;
+
+        placeLenght = 2f;
     }
     private void Update()
     {
+        if(hasTower == true)
+        {
+            detection.SetActive(true);
+        }
+
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
             //print(rayHit.point);
@@ -37,16 +51,42 @@ public class BuildingSystem : MonoBehaviour
 
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
         }
+
+        //if (canPlace == false && canDestroy == false && hasTower == false)
+        //{
+        //    detection.SetActive(false);
+        //}
+
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
-            if (canPlace == true)
+            if (hasTower == true)
             {
-                if (rayHit.transform.tag == ("placeableGround"))
-                {
-                    Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+                detection.SetActive(true);
 
-                    canPlace = false;
+                if (canPlace == true)
+                {
+                    if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
+                    {
+                        if (placeHit.transform.tag == ("placeableGround"))
+                        {
+                            Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+
+                            canPlace = false;
+                            hasTower = false;
+                        }
+                    }
                 }
+            }
+        }
+        if (player.GetComponent<PlayerInputs>().interactInput == true)
+        {
+            if (canDestroy == true)
+            {
+                GameObject objectToDestroy = detection.GetComponent<DetectionSystem>().destroyableObject;
+                Destroy(objectToDestroy);
+                canDestroy = false;
+                canPlace = true;
+                detection.SetActive(false);
             }
         }
     }

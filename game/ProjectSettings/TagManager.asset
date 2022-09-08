@@ -10,6 +10,7 @@ TagManager:
   - enemy 1
   - tower
   - placeableGround
+  - player
   layers:
   - Default
   - TransparentFX

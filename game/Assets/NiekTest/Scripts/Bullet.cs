@@ -13,6 +13,8 @@ public class Bullet : MonoBehaviour
     public float float2;
     public float float3;
     public float float4;
+    private bool wave2check;
+    private bool wave2bool;
 
     void Start()
     {
@@ -56,6 +58,19 @@ public class Bullet : MonoBehaviour
         enemy2textUI.text = float2.ToString();
         enemy3textUI.text = float3.ToString();
         enemy4textUI.text = float4.ToString();
+
+        wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
+        if (wave2check == false)
+        {
+            if (wave2bool == true)
+            {
+                float1 = 20;
+                float2 = 16;
+                float3 = 12;
+                float4 = 8;
+                wave2check = true;
+            }
+        }
     }
     
 }

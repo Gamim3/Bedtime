@@ -53,6 +53,8 @@ public class BuildingSystem : MonoBehaviour
                     if (placeHit.transform.tag == ("placeableGround"))
                     {
                         Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+
+                        canPlace = false;
                     }
                 }
             }

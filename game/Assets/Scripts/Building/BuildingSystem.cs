@@ -19,12 +19,12 @@ public class BuildingSystem : MonoBehaviour
     public float posY;
 
     public LayerMask Grid;
-    
 
+    public bool canPlace;
 
     private void Start()
     {
-
+        canPlace = true;
     }
     private void Update()
     {
@@ -39,13 +39,12 @@ public class BuildingSystem : MonoBehaviour
         }
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
-            if (rayHit.transform.tag == ("placeableGround"))
+            if (canPlace == true)
             {
-                Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
-            }
-            else
-            {
-                return;
+                if (rayHit.transform.tag == ("placeableGround"))
+                {
+                    Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+                }
             }
 
             //if (Physics.SphereCast(objectToPlace.transform.position, 1f, objectToPlace.transform.forward, out sphereHit))
@@ -62,6 +61,13 @@ public class BuildingSystem : MonoBehaviour
             //    print("checking for towers");
             //    return;
             //}
+        }
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if(other.tag == ("tower"))
+        {
+            canPlace = false;
         }
     }
 }

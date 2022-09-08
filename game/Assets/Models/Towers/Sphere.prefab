@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 6027181430313377624}
   - component: {fileID: 6027181430313377625}
   - component: {fileID: 6027181430313377626}
-  - component: {fileID: 6027181430313377627}
+  - component: {fileID: -3125532550468614505}
   m_Layer: 0
   m_Name: Sphere
   m_TagString: tower
@@ -84,7 +84,7 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
---- !u!135 &6027181430313377627
+--- !u!135 &-3125532550468614505
 SphereCollider:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -92,7 +92,7 @@ SphereCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6027181430313377604}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Radius: 0.5

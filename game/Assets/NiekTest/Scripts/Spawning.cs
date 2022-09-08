@@ -7,11 +7,13 @@ using TMPro;
 public class Spawning : MonoBehaviour
 {
     public float spawnTime;
-
     public float enemy1;
     public float enemy2;
     public float enemy3;
     public float enemy4;
+
+    public float wave2;
+    public float wave2Time;
 
     public Text waveCounter;
     public List<GameObject> myObjects;
@@ -20,6 +22,7 @@ public class Spawning : MonoBehaviour
     public bool spawn1;
     public bool spawn2;
     public bool spawn3;
+    public bool wave2bool;
 
     void Update()
     {
@@ -55,9 +58,7 @@ public class Spawning : MonoBehaviour
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, Quaternion.identity) as GameObject;
-            }
-
-            
+            }    
         }
 
         //for(int i = 20; i > enemy1; i--)
@@ -68,15 +69,30 @@ public class Spawning : MonoBehaviour
         {
             spawn0 = false;
         }
+
+        else
+        {
+            spawn0 = true;
+        }
         
         if (enemy2 < 1)
         {
             spawn1 = false;
         }
-        
+
+        else
+        {
+            spawn1 = true;
+        }
+
         if (enemy3 < 1)
         {
             spawn2 = false;
+        }
+
+        else
+        {
+            spawn2 = true;
         }
 
         if (enemy4 < 1)
@@ -85,11 +101,29 @@ public class Spawning : MonoBehaviour
             //myObjects.Remove(ScriptableObject.CreateInstance("Enemy 1") as GameObject);
         }
 
-        if(enemy4 < 1 && enemy3 < 1 && enemy2 < 1 && enemy1 < 1)
+        else
+        {
+            spawn3 = true;
+        }
+
+        if (enemy4 < 1 && enemy3 < 1 && enemy2 < 1 && enemy1 < 1)
         {
             waveCounter.text = 2.ToString();
+            wave2Time += Time.deltaTime;
+            
+            if(wave2 == 1)
+            {
+                //waveCounter.text = 100.ToString();
+            }
         }
-        
-        
+
+        if(wave2bool == false)
+        {
+            if (wave2Time > 14)
+            {
+                wave2 += 1;
+                wave2bool = true;
+            }
+        }
     }
 }

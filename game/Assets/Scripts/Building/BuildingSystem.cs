@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class GridSystem : MonoBehaviour
+public class BuildingSystem : MonoBehaviour
 {
     public GameObject player;
 
@@ -42,6 +42,10 @@ public class GridSystem : MonoBehaviour
             if (rayHit.transform.tag == ("placeableGround"))
             {
                 Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+            }
+            else
+            {
+                return;
             }
 
             //if (Physics.SphereCast(objectToPlace.transform.position, 1f, objectToPlace.transform.forward, out sphereHit))

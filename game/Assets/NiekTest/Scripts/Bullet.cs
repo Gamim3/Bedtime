@@ -62,6 +62,8 @@ public class Bullet : MonoBehaviour
 
     void Update()
     {
+        //currency = currency - GameObject.Find("ShopButton").GetComponent<Shop>().currency;
+
         enemy1textUI.text = float1.ToString();
         enemy2textUI.text = float2.ToString();
         enemy3textUI.text = float3.ToString();

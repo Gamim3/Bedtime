@@ -29,5 +29,16 @@ public class ShopManager : MonoBehaviour
         shopUI.SetActive(!shopUI.activeSelf);
     }
 
+    
+
+    [System.Serializable]
+    public class Upgrade
+    {
+        public string name;
+        public int cost;
+        public Sprite image;
+        [HideInInspector] public GameObject itemRef;
+    }
+
 
 }

@@ -843,7 +843,8 @@ MonoBehaviour:
   b: 0
   enemyMask:
     serializedVersion: 2
-    m_Bits: 0
+    m_Bits: 128
+  targetingType: 0
 --- !u!1 &1528764644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1237,7 +1238,7 @@ GameObject:
   - component: {fileID: 1776906569}
   - component: {fileID: 1776906568}
   - component: {fileID: 1776906567}
-  m_Layer: 0
+  m_Layer: 7
   m_Name: Sphere
   m_TagString: enemy
   m_Icon: {fileID: 0}
@@ -1528,6 +1529,10 @@ PrefabInstance:
       propertyPath: placePoint
       value: 
       objectReference: {fileID: 1148424882}
+    - target: {fileID: 6712276016476106834, guid: 557ed8a21896bba47a94e5c5b948254c, type: 3}
+      propertyPath: grid.m_Bits
+      value: 64
+      objectReference: {fileID: 0}
     - target: {fileID: 6712276016476106834, guid: 557ed8a21896bba47a94e5c5b948254c, type: 3}
       propertyPath: objectToMove
       value: 

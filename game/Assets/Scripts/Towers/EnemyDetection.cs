@@ -31,7 +31,7 @@ public class EnemyDetection : MonoBehaviour
         Collider[] EnemiesInRange = (Physics.OverlapSphere(towerStats.towerTransform.position, towerStats.towerRange, towerStats.enemyMask));
         for(int i = 0; i < EnemiesInRange.Length; i++)
         {
-
+            print("enemy");
         }
     }
 

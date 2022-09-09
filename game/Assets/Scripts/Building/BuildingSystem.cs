@@ -11,7 +11,6 @@ public class BuildingSystem : MonoBehaviour
     public RaycastHit sphereHit;
 
     public GameObject cam;
-
     public float reachLenght;
 
     public GameObject objectToMove;
@@ -44,8 +43,6 @@ public class BuildingSystem : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
-            //print(rayHit.point);
-
             int posX = (int)Mathf.Round(rayHit.point.x);
             int posZ = (int)Mathf.Round(rayHit.point.z);
 
@@ -82,7 +79,7 @@ public class BuildingSystem : MonoBehaviour
         {
             if (canDestroy == true)
             {
-                GameObject objectToDestroy = detection.GetComponent<DetectionSystem>().destroyableObject;
+                GameObject objectToDestroy = detection.GetComponent<BuildDetection>().destroyableObject;
                 Destroy(objectToDestroy);
                 canDestroy = false;
                 canPlace = true;

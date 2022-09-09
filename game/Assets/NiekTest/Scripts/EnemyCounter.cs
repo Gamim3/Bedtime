@@ -12,6 +12,7 @@ public class EnemyCounter : MonoBehaviour
     public float float4;
     private bool wave2bool;
     private bool wave2check;
+
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;

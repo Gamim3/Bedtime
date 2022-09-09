@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class DetectionSystem : MonoBehaviour
+public class BuildDetection : MonoBehaviour
 {
     public GameObject buildingSystem;
     public GameObject destroyableObject;

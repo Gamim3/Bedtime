@@ -725,6 +725,7 @@ GameObject:
   - component: {fileID: 1346662163}
   - component: {fileID: 1346662162}
   - component: {fileID: 1346662161}
+  - component: {fileID: 1346662166}
   m_Layer: 0
   m_Name: Cube (1)
   m_TagString: Untagged
@@ -826,6 +827,23 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 7
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1346662166
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1346662160}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 310e1624688313b46bd093bcc6cb2bb6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerStats: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
+  b: 0
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
 --- !u!1 &1528764644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1221,7 +1239,7 @@ GameObject:
   - component: {fileID: 1776906567}
   m_Layer: 0
   m_Name: Sphere
-  m_TagString: tower
+  m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

@@ -11,6 +11,7 @@ TagManager:
   - tower
   - placeableGround
   - player
+  - enemy
   layers:
   - Default
   - TransparentFX

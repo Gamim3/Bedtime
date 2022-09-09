@@ -9,6 +9,8 @@ public class EnemyDetection : MonoBehaviour
     public bool b;
 
     public LayerMask enemyMask;
+
+    public int targetingType;
     private void Start()
     {
         //towerStats.GetComponent<TowerSO>();
@@ -27,6 +29,26 @@ public class EnemyDetection : MonoBehaviour
     void CheckForEnemies()
     {
         Collider[] EnemiesInRange = (Physics.OverlapSphere(towerStats.towerTransform.position, towerStats.towerRange, towerStats.enemyMask));
+        for(int i = 0; i < EnemiesInRange.Length; i++)
+        {
 
+        }
+    }
+
+    void SearchForEnemy()
+    {
+        switch (targetingType)
+        {
+            case 0: // frist enemy
+                break;
+            case 1: // last
+                break;
+            case 2: // close
+                break;
+            case 3: // strong
+                break;
+            case 4: // weak
+                break;
+        }
     }
 }

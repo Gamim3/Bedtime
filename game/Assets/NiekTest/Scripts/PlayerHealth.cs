@@ -16,7 +16,10 @@ public class PlayerHealth : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        if(slider.value == 0)
+        {
+            //gameOverScherm
+        }
     }
 
     void OnCollisionEnter(Collision other)

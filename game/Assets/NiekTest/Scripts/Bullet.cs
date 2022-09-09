@@ -13,6 +13,10 @@ public class Bullet : MonoBehaviour
     public float float2;
     public float float3;
     public float float4;
+    public float currency;
+    public Text currencyUI;
+    public List<float> enemyValue;
+
     private bool wave2check;
     private bool wave2bool;
 
@@ -31,24 +35,28 @@ public class Bullet : MonoBehaviour
             {
                 float1 -= 1;
                 Destroy(other.gameObject);
+                currency = currency + enemyValue[0];
             }
 
             if(other.gameObject.tag == "enemy 2")
             {
                 float2 -= 1;
                 Destroy(other.gameObject);
+                currency = currency + enemyValue[1];
             }
 
             if(other.gameObject.tag == "enemy 3")
             {
                 float3 -= 1;
                 Destroy(other.gameObject);
+                currency = currency + enemyValue[2];
             }
 
             if(other.gameObject.tag == "enemy 4")
             {
                 float4 -= 1;  
                 Destroy(other.gameObject);
+                currency = currency + enemyValue[3];
             }
     }
 
@@ -58,7 +66,7 @@ public class Bullet : MonoBehaviour
         enemy2textUI.text = float2.ToString();
         enemy3textUI.text = float3.ToString();
         enemy4textUI.text = float4.ToString();
-
+        currencyUI.text = currency.ToString();
         wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
         if (wave2check == false)
         {

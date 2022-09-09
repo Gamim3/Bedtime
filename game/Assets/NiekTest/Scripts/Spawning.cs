@@ -113,7 +113,7 @@ public class Spawning : MonoBehaviour
             
             if(wave2 == 1)
             {
-                //waveCounter.text = 100.ToString();
+                //waveCounter.text = 3.ToString();
             }
         }
 

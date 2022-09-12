@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public float currency;
-    public Text currencyText;
    
     public void LoadMenu()
     {

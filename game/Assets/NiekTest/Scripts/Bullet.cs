@@ -81,6 +81,7 @@ public class Bullet : MonoBehaviour
                 wave2check = true;
             }
         }
+        //currency = currency + GameObject.Find("ShopItem1").GetComponent<Shop>().currency; //werkt alleen als shop open is
     }
     
 }

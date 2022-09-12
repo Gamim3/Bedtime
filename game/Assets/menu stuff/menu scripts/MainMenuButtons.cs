@@ -16,6 +16,6 @@ public class MainMenuButtons : MonoBehaviour
 
     public void StartGame()
     {
-        SceneManager.LoadScene("KamerScene");
+        SceneManager.LoadScene("lvl select");
     }
 }

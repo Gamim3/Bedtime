@@ -8,18 +8,7 @@ public class Shop : MonoBehaviour
 {
     public float currency;
     public Text currencyText;
-    // Start is called before the first frame update
-    void Start()
-    {
-        currencyText = GameObject.Find("CurrencyValue").GetComponent<Text>();
-    }
-
-    // Update is called once per frame
-    void Update()
-    {
-        currencyText.text = currency.ToString();
-    }
-
+   
     public void LoadMenu()
     {
         ShopManager.instance.ToggleShop();

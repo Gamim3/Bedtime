@@ -1,8 +1,9 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
-public class mainmenubuttons : MonoBehaviour
+public class MainMenuButtons : MonoBehaviour
 {
     //this will exit the game
     public void ExitButton()
@@ -12,4 +13,9 @@ public class mainmenubuttons : MonoBehaviour
     }
 
     //this will go to the lvl scene
+
+    public void StartGame()
+    {
+        SceneManager.LoadScene("KamerScene");
+    }
 }

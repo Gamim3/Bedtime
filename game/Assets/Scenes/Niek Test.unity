@@ -380,6 +380,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  currencyText: {fileID: 0}
 --- !u!1 &194112571
 GameObject:
   m_ObjectHideFlags: 0
@@ -528,6 +529,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  currencyText: {fileID: 0}
 --- !u!1 &226354784
 GameObject:
   m_ObjectHideFlags: 0
@@ -599,7 +601,7 @@ MonoBehaviour:
     m_HorizontalOverflow: 0
     m_VerticalOverflow: 0
     m_LineSpacing: 1
-  m_Text: 'Price: 40'
+  m_Text: 'Price: 60'
 --- !u!222 &226354787
 CanvasRenderer:
   m_ObjectHideFlags: 0
@@ -1380,6 +1382,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  currencyText: {fileID: 0}
 --- !u!1 &705507993
 GameObject:
   m_ObjectHideFlags: 0
@@ -3643,6 +3646,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
+  currencyText: {fileID: 0}
 --- !u!1 &1800916477
 GameObject:
   m_ObjectHideFlags: 0

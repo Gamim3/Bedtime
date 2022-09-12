@@ -82,6 +82,7 @@ public class Bullet : MonoBehaviour
             }
         }
         //currency = currency + GameObject.Find("ShopItem1").GetComponent<Shop>().currency; //werkt alleen als shop open is
+        currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
     }
     
 }

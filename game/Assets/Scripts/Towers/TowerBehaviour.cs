@@ -4,15 +4,22 @@ using UnityEngine;
 
 public class TowerBehaviour : MonoBehaviour
 {
-    // Start is called before the first frame update
-    void Start()
-    {
-        
-    }
+    public TowerSO towerData;
+    public float towerRange;
+    public float towerDamage;
+    public float towerFireSpeed;
+    public float towerCost;
 
-    // Update is called once per frame
-    void Update()
+    public Transform towerTransform;
+    public LayerMask enemyMask;
+
+
+    private void Start()
     {
-        
+        towerRange = towerData.towerRange;
+        towerDamage = towerData.towerDamage;
+        towerFireSpeed = towerData.towerFireSpeed;
+        towerCost = towerData.towerCost;
+        enemyMask = towerData.enemyMask;
     }
 }

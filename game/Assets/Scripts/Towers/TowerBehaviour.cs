@@ -5,21 +5,30 @@ using UnityEngine;
 public class TowerBehaviour : MonoBehaviour
 {
     public TowerSO towerData;
-    public float towerRange;
-    public float towerDamage;
-    public float towerFireSpeed;
-    public float towerCost;
 
-    public Transform towerTransform;
-    public LayerMask enemyMask;
-
+    public enum TargetType
+    {
+        first,
+        last,
+        closest,
+        strongest,
+        weakest,
+    }
 
     private void Start()
     {
-        towerRange = towerData.towerRange;
-        towerDamage = towerData.towerDamage;
-        towerFireSpeed = towerData.towerFireSpeed;
-        towerCost = towerData.towerCost;
-        enemyMask = towerData.enemyMask;
+
+    }
+    public void TowerDetection()
+    {
+        Collider[] enemyData = Physics.OverlapSphere(towerData.towerTransform.position, towerData.towerRange, towerData.enemyMask);
+    }
+    public void Shoot()
+    {
+
+    }
+    public void Tracking()
+    {
+
     }
 }

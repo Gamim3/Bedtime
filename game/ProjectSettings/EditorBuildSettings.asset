@@ -9,6 +9,9 @@ EditorBuildSettings:
     path: Assets/Scenes/main menu.unity
     guid: c0e57230932fdaa4a95a5cf6acfeaa14
   - enabled: 1
+    path: Assets/Scenes/lvl select.unity
+    guid: 191d80e765d7b744295bdc8e8c3c2df3
+  - enabled: 1
     path: Assets/Scenes/KamerScene.unity
     guid: af425b64a07115a4b9940fdf3ffdd9bc
   m_configObjects:

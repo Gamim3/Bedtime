@@ -836,15 +836,15 @@ MonoBehaviour:
   m_GameObject: {fileID: 1346662160}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 310e1624688313b46bd093bcc6cb2bb6, type: 3}
+  m_Script: {fileID: 11500000, guid: f2a238dd6526e2f448861395e828c99a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerStats: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
-  b: 0
+  towerData: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
+  target: {fileID: 0}
   enemyMask:
     serializedVersion: 2
     m_Bits: 128
-  targetingType: 0
+  enemyData: []
 --- !u!1 &1528764644
 GameObject:
   m_ObjectHideFlags: 0
@@ -1239,7 +1239,7 @@ GameObject:
   - component: {fileID: 1776906568}
   - component: {fileID: 1776906567}
   m_Layer: 7
-  m_Name: Sphere
+  m_Name: balls
   m_TagString: enemy
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0

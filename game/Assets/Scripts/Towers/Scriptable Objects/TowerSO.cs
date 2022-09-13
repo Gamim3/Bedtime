@@ -9,6 +9,5 @@ public class TowerSO : ScriptableObject
     public float towerFireSpeed;
     public float towerCost;
     public Transform towerTransform;
-    public LayerMask enemyMask;
 }
 

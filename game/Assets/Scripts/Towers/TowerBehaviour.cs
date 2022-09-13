@@ -6,6 +6,11 @@ public class TowerBehaviour : MonoBehaviour
 {
     public TowerSO towerData;
 
+    public Transform target;
+
+    public LayerMask enemyMask;
+
+    public Collider[] enemyData;
     public enum TargetType
     {
         first,
@@ -21,7 +26,16 @@ public class TowerBehaviour : MonoBehaviour
     }
     public void TowerDetection()
     {
-        Collider[] enemyData = Physics.OverlapSphere(towerData.towerTransform.position, towerData.towerRange, towerData.enemyMask);
+        enemyData = Physics.OverlapSphere(towerData.towerTransform.position, towerData.towerRange, enemyMask);
+
+        for (int i = 0; i <= enemyData.Length; i++)
+        {
+            if (enemyData[i].CompareTag("enemy"))
+            {
+                print(enemyData[i].name);
+                //target specific enemy
+            }
+        }
     }
     public void Shoot()
     {
@@ -30,5 +44,15 @@ public class TowerBehaviour : MonoBehaviour
     public void Tracking()
     {
 
+    }
+    private void Update()
+    {
+        TowerDetection();
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.color = Color.red;
+        Gizmos.DrawSphere(transform.position, towerData.towerRange);
     }
 }

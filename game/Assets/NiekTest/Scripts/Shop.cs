@@ -10,6 +10,7 @@ public class Shop : MonoBehaviour
     public float oldCurrency;
     public bool buttonPressed;
     public bool currencyReset;
+    public float bulletCurrency;
    
     public void LoadMenu()
     {
@@ -18,19 +19,30 @@ public class Shop : MonoBehaviour
 
     public void LoadItem1()
     {
-        currency = currency - 20;
-        buttonPressed = true;
+        if(bulletCurrency > 20)
+        {
+            currency = currency - 20;
+            buttonPressed = true;
+        }
+        
     }
     public void LoadItem2()
     {
-        currency = currency - 40;
-        buttonPressed = true;
+        if(bulletCurrency > 40)
+        {
+            currency = currency - 40;
+            buttonPressed = true;
+        }
+        
     }
 
     public void LoadItem3()
     {
-        currency = currency - 60;
-        buttonPressed = true;
+        if(bulletCurrency > 60)
+        {
+            currency = currency - 60;
+            buttonPressed = true;
+        }
     }
 
     public void Update()
@@ -57,5 +69,7 @@ public class Shop : MonoBehaviour
             currency = 0;
             oldCurrency = 0;
         }
+
+        bulletCurrency = GameObject.Find("Bullets").GetComponent<Bullet>().currency;
     }
 }

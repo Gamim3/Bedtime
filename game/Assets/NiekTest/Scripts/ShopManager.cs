@@ -29,8 +29,6 @@ public class ShopManager : MonoBehaviour
         shopUI.SetActive(!shopUI.activeSelf);
     }
 
-    
-
     [System.Serializable]
     public class Upgrade
     {
@@ -39,6 +37,4 @@ public class ShopManager : MonoBehaviour
         public Sprite image;
         [HideInInspector] public GameObject itemRef;
     }
-
-
 }

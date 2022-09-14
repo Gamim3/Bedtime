@@ -7,10 +7,7 @@ using TMPro;
 public class Spawning : MonoBehaviour
 {
     public float spawnTime;
-    public float enemy1;
-    public float enemy2;
-    public float enemy3;
-    public float enemy4;
+    public float[] enemy;
 
     public float wave2;
     public float wave2Time;
@@ -18,43 +15,40 @@ public class Spawning : MonoBehaviour
     public Text waveCounter;
     public List<GameObject> myObjects;
 
-    public bool spawn0;
-    public bool spawn1;
-    public bool spawn2;
-    public bool spawn3;
+    public bool[] spawn;
     public bool wave2bool;
 
     void Update()
     {
-        enemy1 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float1;
-        enemy2 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float2;
-        enemy3 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float3;
-        enemy4 = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float4;
+        enemy[0] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float1;
+        enemy[1] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float2;
+        enemy[2] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float3;
+        enemy[3] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().float4;
 
 
         int randomIndex = Random.Range(0, 4);
         spawnTime += Time.deltaTime;
         if(spawnTime > 1)
         {
-            if (randomIndex == 0 && spawn0 == true)
+            if (randomIndex == 0 && spawn[0] == true)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, Quaternion.identity) as GameObject;
             }
 
-            if (randomIndex == 1 && spawn1 == true)
+            if (randomIndex == 1 && spawn[1] == true)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, Quaternion.identity) as GameObject;
             }
 
-            if (randomIndex == 2 && spawn2 == true)
+            if (randomIndex == 2 && spawn[2] == true)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, Quaternion.identity) as GameObject;
             }
 
-            if (randomIndex == 3 && spawn3 == true)
+            if (randomIndex == 3 && spawn[3] == true)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, Quaternion.identity) as GameObject;
@@ -65,48 +59,48 @@ public class Spawning : MonoBehaviour
         //{  
         //}
 
-        if (enemy1 < 1)
+        if (enemy[0] < 1)
         {
-            spawn0 = false;
+            spawn[0] = false;
         }
 
         else
         {
-            spawn0 = true;
+            spawn[0] = true;
         }
         
-        if (enemy2 < 1)
+        if (enemy[1] < 1)
         {
-            spawn1 = false;
+            spawn[1] = false;
         }
 
         else
         {
-            spawn1 = true;
+            spawn[1] = true;
         }
 
-        if (enemy3 < 1)
+        if (enemy[2] < 1)
         {
-            spawn2 = false;
+            spawn[2] = false;
         }
 
         else
         {
-            spawn2 = true;
+            spawn[2] = true;
         }
 
-        if (enemy4 < 1)
+        if (enemy[3] < 1)
         {
-            spawn3 = false;
+            spawn[3] = false;
             //myObjects.Remove(ScriptableObject.CreateInstance("Enemy 1") as GameObject);
         }
 
         else
         {
-            spawn3 = true;
+            spawn[3] = true;
         }
 
-        if (enemy4 < 1 && enemy3 < 1 && enemy2 < 1 && enemy1 < 1)
+        if (enemy[3] < 1 && enemy[2] < 1 && enemy[1] < 1 && enemy[0] < 1)
         {
             waveCounter.text = 2.ToString();
             wave2Time += Time.deltaTime;

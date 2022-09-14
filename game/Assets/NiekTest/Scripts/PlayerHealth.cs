@@ -12,8 +12,6 @@ public class PlayerHealth : MonoBehaviour
     {
         slider.value = levens;
     }
-
-    // Update is called once per frame
     void Update()
     {
         if(slider.value == 0)
@@ -24,9 +22,7 @@ public class PlayerHealth : MonoBehaviour
 
     void OnCollisionEnter(Collision other)
     {
-
         Destroy(other.gameObject);
         slider.value -= 1;
-        
     }
 }

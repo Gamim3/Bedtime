@@ -90,5 +90,4 @@ public class Bullet : MonoBehaviour
             buttonPressed = false;
         }
     }
-    
 }

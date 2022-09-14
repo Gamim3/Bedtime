@@ -57,6 +57,5 @@ public class Shop : MonoBehaviour
             currency = 0;
             oldCurrency = 0;
         }
-       
     }
 }

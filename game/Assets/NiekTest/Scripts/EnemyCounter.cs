@@ -16,8 +16,6 @@ public class EnemyCounter : MonoBehaviour
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
-
-        
     }
 
     void Update()
@@ -63,5 +61,4 @@ public class EnemyCounter : MonoBehaviour
             
         }
     }
-    
 }

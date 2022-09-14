@@ -18,14 +18,16 @@ public class Bullet : MonoBehaviour
     private bool wave2bool;
     private bool buttonPressed;
 
+    public Text[] enemyText;
+
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
 
-        enemy1textUI = GameObject.Find("Enemy1").GetComponent<Text>();
-        enemy2textUI = GameObject.Find("Enemy2").GetComponent<Text>();
-        enemy3textUI = GameObject.Find("Enemy3").GetComponent<Text>();
-        enemy4textUI = GameObject.Find("Enemy4").GetComponent<Text>();
+        enemy1textUI = enemyText[0];
+        enemy2textUI = enemyText[1];
+        enemy3textUI = enemyText[2];
+        enemy4textUI = enemyText[3];
     }
     void OnCollisionEnter(Collision other)
     {

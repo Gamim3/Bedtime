@@ -383,6 +383,7 @@ MonoBehaviour:
   oldCurrency: 0
   buttonPressed: 0
   currencyReset: 0
+  bulletCurrency: 0
 --- !u!1 &194112571
 GameObject:
   m_ObjectHideFlags: 0
@@ -2333,6 +2334,11 @@ MonoBehaviour:
   - 10
   - 15
   - 20
+  enemyText:
+  - {fileID: 1192512011}
+  - {fileID: 1941531300}
+  - {fileID: 2052774351}
+  - {fileID: 1804131199}
 --- !u!65 &1101015372
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -3621,6 +3627,7 @@ MonoBehaviour:
   oldCurrency: 0
   buttonPressed: 0
   currencyReset: 0
+  bulletCurrency: 0
 --- !u!1 &1800916477
 GameObject:
   m_ObjectHideFlags: 0

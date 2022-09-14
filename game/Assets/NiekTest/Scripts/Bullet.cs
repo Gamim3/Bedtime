@@ -19,6 +19,7 @@ public class Bullet : MonoBehaviour
 
     private bool wave2check;
     private bool wave2bool;
+    private bool buttonPressed;
 
     void Start()
     {
@@ -82,7 +83,11 @@ public class Bullet : MonoBehaviour
             }
         }
         //currency = currency + GameObject.Find("ShopItem1").GetComponent<Shop>().currency; //werkt alleen als shop open is
-        currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
+        buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
+        if(buttonPressed == true)
+        {
+            currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
+        }
     }
     
 }

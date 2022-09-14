@@ -2171,10 +2171,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f9d314575af31954d9e3d08c72bb5249, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  float1: 10
-  float2: 8
-  float3: 6
-  float4: 4
+  counter:
+  - 10
+  - 8
+  - 6
+  - 4
 --- !u!1 &1001181975
 GameObject:
   m_ObjectHideFlags: 0
@@ -2320,10 +2321,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f599293bc24e4aa40823941a8878d2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  float1: 10
-  float2: 8
-  float3: 6
-  float4: 4
+  counter:
+  - 10
+  - 8
+  - 6
+  - 4
   currency: 0
   currencyUI: {fileID: 1899705872}
   enemyValue:

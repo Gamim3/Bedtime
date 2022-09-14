@@ -6,10 +6,7 @@ using UnityEngine.UI;
 public class EnemyCounter : MonoBehaviour
 {
     
-    public float float1;
-    public float float2;
-    public float float3;
-    public float float4;
+    public float[] counter;
     private bool wave2bool;
     private bool wave2check;
 
@@ -25,10 +22,10 @@ public class EnemyCounter : MonoBehaviour
         {
             if (wave2bool == true)
             {
-                float1 = 20;
-                float2 = 16;
-                float3 = 12;
-                float4 = 8;
+                counter[0] = 20;
+                counter[1] = 16;
+                counter[2] = 12;
+                counter[3] = 8;
                 wave2check = true;
             }
         }
@@ -39,25 +36,25 @@ public class EnemyCounter : MonoBehaviour
     {
         if (other.gameObject.tag == "enemy 1")
         {
-            float1 -= 1;
+            counter[0] -= 1;
             
         }
 
         if (other.gameObject.tag == "enemy 2")
         {
-            float2 -= 1;
+            counter[1] -= 1;
             
         }
 
         if (other.gameObject.tag == "enemy 3")
         {
-            float3 -= 1;
+            counter[2] -= 1;
             
         }
 
         if (other.gameObject.tag == "enemy 4")
         {
-            float4 -= 1;
+            counter[3] -= 1;
             
         }
     }

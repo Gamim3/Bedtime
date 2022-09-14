@@ -9,10 +9,7 @@ public class Bullet : MonoBehaviour
     private Text enemy2textUI;
     private Text enemy3textUI;
     private Text enemy4textUI;
-    public float float1;
-    public float float2;
-    public float float3;
-    public float float4;
+    public float[] counter;
     public float currency;
     public Text currencyUI;
     public List<float> enemyValue;
@@ -34,28 +31,28 @@ public class Bullet : MonoBehaviour
     {
             if(other.gameObject.tag == "enemy 1")
             {
-                float1 -= 1;
+                counter[0] -= 1;
                 Destroy(other.gameObject);
                 currency = currency + enemyValue[0];
             }
 
             if(other.gameObject.tag == "enemy 2")
             {
-                float2 -= 1;
+                counter[1] -= 1;
                 Destroy(other.gameObject);
                 currency = currency + enemyValue[1];
             }
 
             if(other.gameObject.tag == "enemy 3")
             {
-                float3 -= 1;
+                counter[2] -= 1;
                 Destroy(other.gameObject);
                 currency = currency + enemyValue[2];
             }
 
             if(other.gameObject.tag == "enemy 4")
             {
-                float4 -= 1;  
+                counter[3] -= 1;  
                 Destroy(other.gameObject);
                 currency = currency + enemyValue[3];
             }
@@ -65,20 +62,20 @@ public class Bullet : MonoBehaviour
     {
         //currency = currency - GameObject.Find("ShopButton").GetComponent<Shop>().currency;
 
-        enemy1textUI.text = float1.ToString();
-        enemy2textUI.text = float2.ToString();
-        enemy3textUI.text = float3.ToString();
-        enemy4textUI.text = float4.ToString();
+        enemy1textUI.text = counter[0].ToString();
+        enemy2textUI.text = counter[1].ToString();
+        enemy3textUI.text = counter[2].ToString();
+        enemy4textUI.text = counter[3].ToString();
         currencyUI.text = currency.ToString();
         wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
         if (wave2check == false)
         {
             if (wave2bool == true)
             {
-                float1 = 20;
-                float2 = 16;
-                float3 = 12;
-                float4 = 8;
+                counter[0] = 20;
+                counter[1] = 16;
+                counter[2] = 12;
+                counter[3] = 8;
                 wave2check = true;
             }
         }

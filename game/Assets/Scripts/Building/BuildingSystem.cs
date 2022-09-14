@@ -48,7 +48,11 @@ public class BuildingSystem : MonoBehaviour
 
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
 
-            if (hasTower == true || canDestroy == true)
+            if (rayHit.transform.CompareTag("tower"))
+            {
+                detection.SetActive(true);
+            }
+            if (hasTower == true)
             {
                 detection.SetActive(true);
             }

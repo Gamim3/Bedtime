@@ -11,14 +11,8 @@ public class TowerBehaviour : MonoBehaviour
     public LayerMask enemyMask;
 
     public Collider[] enemyData;
-    public enum TargetType
-    {
-        first,
-        last,
-        closest,
-        strongest,
-        weakest,
-    }
+
+    public Transform towerTransform;
 
     private void Start()
     {
@@ -26,14 +20,20 @@ public class TowerBehaviour : MonoBehaviour
     }
     public void TowerDetection()
     {
-        enemyData = Physics.OverlapSphere(towerData.towerTransform.position, towerData.towerRange, enemyMask);
+        enemyData = Physics.OverlapSphere(towerTransform.position, towerData.towerRange, enemyMask);
 
-        for (int i = 0; i <= enemyData.Length; i++)
+        for (int i = 1; i < enemyData.Length; i++)
         {
             if (enemyData[i].CompareTag("enemy"))
             {
                 print(enemyData[i].name);
                 //target specific enemy
+
+                
+            }
+            else
+            {
+                return;
             }
         }
     }

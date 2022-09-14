@@ -8,6 +8,14 @@ public class TowerSO : ScriptableObject
     public float towerDamage;
     public float towerFireSpeed;
     public float towerCost;
-    public Transform towerTransform;
+    public enum TowerTargetingType
+    {
+        first,
+        last,
+        closest,
+        strongest,
+        weakest,
+    }
+
 }
 

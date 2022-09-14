@@ -14,13 +14,15 @@ public class TowerBehaviour : MonoBehaviour
 
     public Transform towerTransform;
 
+    public string targetingType;
+
     private void Start()
     {
-
+        targetingType = towerData.targetType;
     }
     public void TowerDetection()
     {
-        enemyData = Physics.OverlapSphere(towerTransform.position, towerData.towerRange, enemyMask);
+        enemyData = Physics.OverlapSphere(towerTransform.position, towerData.range, enemyMask);
 
         for (int i = 1; i < enemyData.Length; i++)
         {
@@ -29,6 +31,10 @@ public class TowerBehaviour : MonoBehaviour
                 print(enemyData[i].name);
                 //target specific enemy
 
+                if (targetingType == ("first"))
+                {
+
+                }
                 
             }
             else
@@ -53,6 +59,6 @@ public class TowerBehaviour : MonoBehaviour
     private void OnDrawGizmosSelected()
     {
         Gizmos.color = Color.red;
-        Gizmos.DrawSphere(transform.position, towerData.towerRange);
+        Gizmos.DrawSphere(transform.position, towerData.range);
     }
 }

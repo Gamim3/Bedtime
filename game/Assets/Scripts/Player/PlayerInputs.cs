@@ -6,8 +6,6 @@ public class PlayerInputs : MonoBehaviour
 {
     NewControls newControls;
     public Transform playerTransform;
-    public GameObject tower;
-    public GameObject grid;
 
     [Header("statistics")]
     #region
@@ -57,10 +55,7 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Update()
     {
-        if (placeInput == true)
-        {
-            Placement();
-        }
+
     }
     private void Movement()
     {
@@ -76,9 +71,5 @@ public class PlayerInputs : MonoBehaviour
         {
             walkSpeed = maxWalkSpeed;
         }
-    }
-    private void Placement()
-    {
-
     }
 }

@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class BuildingSystem : MonoBehaviour
 {
+    #region
     public GameObject player;
     public GameObject detection;
 
@@ -27,6 +28,7 @@ public class BuildingSystem : MonoBehaviour
     public GameObject placePoint;
     public RaycastHit placeHit;
     public float placeLenght;
+    #endregion
 
     private void Start()
     {
@@ -36,10 +38,8 @@ public class BuildingSystem : MonoBehaviour
     }
     private void Update()
     {
-        if(hasTower == true)
-        {
-            detection.SetActive(true);
-        }
+
+
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
@@ -47,12 +47,16 @@ public class BuildingSystem : MonoBehaviour
             int posZ = (int)Mathf.Round(rayHit.point.z);
 
             objectToMove.transform.position = new Vector3(posX, posY, posZ);
-        }
 
-        //if (canPlace == false && canDestroy == false && hasTower == false)
-        //{
-        //    detection.SetActive(false);
-        //}
+            if (hasTower == true || canDestroy == true)
+            {
+                detection.SetActive(true);
+            }
+        }
+        else
+        {
+            detection.SetActive(false);
+        }
 
         if (player.GetComponent<PlayerInputs>().placeInput == true)
         {
@@ -75,6 +79,7 @@ public class BuildingSystem : MonoBehaviour
                 }
             }
         }
+
         if (player.GetComponent<PlayerInputs>().interactInput == true)
         {
             if (canDestroy == true)

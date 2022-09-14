@@ -33,7 +33,7 @@ public class TowerBehaviour : MonoBehaviour
 
                 if (targetingType == ("first"))
                 {
-
+                    
                 }
                 
             }
@@ -42,14 +42,6 @@ public class TowerBehaviour : MonoBehaviour
                 return;
             }
         }
-    }
-    public void Shoot()
-    {
-
-    }
-    public void Tracking()
-    {
-
     }
     private void Update()
     {

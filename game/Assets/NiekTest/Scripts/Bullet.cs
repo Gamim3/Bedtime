@@ -87,6 +87,7 @@ public class Bullet : MonoBehaviour
         if(buttonPressed == true)
         {
             currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
+            buttonPressed = false;
         }
     }
     

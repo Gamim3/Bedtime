@@ -9,6 +9,7 @@ public class Shop : MonoBehaviour
     public float currency;
     public float oldCurrency;
     public bool buttonPressed;
+    public bool currencyReset;
    
     public void LoadMenu()
     {
@@ -28,8 +29,8 @@ public class Shop : MonoBehaviour
 
     public void LoadItem3()
     {
-        buttonPressed = true;
         currency = currency - 60;
+        buttonPressed = true;
     }
 
     public void Update()
@@ -37,12 +38,25 @@ public class Shop : MonoBehaviour
         if(currency != oldCurrency)
         {
             oldCurrency = currency;
-            buttonPressed = true;
+        }
+
+        if(currencyReset == true)
+        {
+            currency = 0;
+            oldCurrency = 0;
+            currencyReset = false;
         }
 
         else
         {
             buttonPressed = false;
         }
+
+        if(buttonPressed == false)
+        {
+            currency = 0;
+            oldCurrency = 0;
+        }
+       
     }
 }

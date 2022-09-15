@@ -16,17 +16,29 @@ public class EnemyStats : ScriptableObject
     private int value;
     [SerializeField]
     private int attackDamage;
-    
 
-    
-    void Start()
+
+
+    public float Health
     {
-        
+        get
+        {
+            return health;
+        }
+    }
+    public int Value
+    {
+        get
+        {
+            return value;
+        }
     }
 
-    
-    void Update()
+    public int AttackDamage
     {
-        
+        get
+        {
+            return attackDamage;
+        }
     }
 }

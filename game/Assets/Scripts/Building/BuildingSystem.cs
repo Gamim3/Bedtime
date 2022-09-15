@@ -28,6 +28,9 @@ public class BuildingSystem : MonoBehaviour
     public GameObject placePoint;
     public RaycastHit placeHit;
     public float placeLenght;
+
+    public Renderer arrowMaterial;
+
     #endregion
 
     private void Start()
@@ -38,9 +41,6 @@ public class BuildingSystem : MonoBehaviour
     }
     private void Update()
     {
-
-
-
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out rayHit, reachLenght))
         {
             int posX = (int)Mathf.Round(rayHit.point.x);
@@ -62,17 +62,19 @@ public class BuildingSystem : MonoBehaviour
             detection.SetActive(false);
         }
 
-        if (player.GetComponent<PlayerInputs>().placeInput == true)
+        if (hasTower == true)
         {
-            if (hasTower == true)
-            {
-                detection.SetActive(true);
+            detection.SetActive(true);
 
-                if (canPlace == true)
+            if (canPlace == true)
+            {
+                arrowMaterial.material.color = Color.green;
+
+                if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
                 {
-                    if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
+                    if (placeHit.transform.tag == ("placeableGround"))
                     {
-                        if (placeHit.transform.tag == ("placeableGround"))
+                        if (player.GetComponent<PlayerInputs>().placeInput == true)
                         {
                             Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
 
@@ -84,12 +86,15 @@ public class BuildingSystem : MonoBehaviour
             }
         }
 
-        if (player.GetComponent<PlayerInputs>().interactInput == true)
+        if (canDestroy == true)
         {
-            if (canDestroy == true)
+            arrowMaterial.material.color = Color.red;
+
+            if (player.GetComponent<PlayerInputs>().interactInput == true)
             {
                 GameObject objectToDestroy = detection.GetComponent<BuildDetection>().destroyableObject;
                 Destroy(objectToDestroy);
+
                 canDestroy = false;
                 canPlace = true;
                 detection.SetActive(false);

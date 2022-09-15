@@ -24,6 +24,7 @@ public class BuildingSystem : MonoBehaviour
     public bool canPlace;
     public bool canDestroy;
     public bool hasTower;
+    public bool detectionBool;
 
     public GameObject placePoint;
     public RaycastHit placeHit;
@@ -38,6 +39,8 @@ public class BuildingSystem : MonoBehaviour
         canPlace = true;
 
         placeLenght = 2f;
+
+        detectionBool = true;
     }
     private void Update()
     {
@@ -51,21 +54,22 @@ public class BuildingSystem : MonoBehaviour
             if (rayHit.transform.CompareTag("tower"))
             {
                 detection.SetActive(true);
+                detectionBool = true;
             }
             if (hasTower == true)
             {
                 detection.SetActive(true);
+                detectionBool = true;
             }
         }
         else
         {
             detection.SetActive(false);
+            detectionBool = false;
         }
 
         if (hasTower == true)
         {
-            detection.SetActive(true);
-
             if (canPlace == true)
             {
                 arrowMaterial.material.color = Color.green;
@@ -74,7 +78,7 @@ public class BuildingSystem : MonoBehaviour
                 {
                     if (placeHit.transform.tag == ("placeableGround"))
                     {
-                        if (player.GetComponent<PlayerInputs>().placeInput == true)
+                        if (player.GetComponent<PlayerInputs>().placeInput == true && detectionBool == true)
                         {
                             Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
 
@@ -90,7 +94,7 @@ public class BuildingSystem : MonoBehaviour
         {
             arrowMaterial.material.color = Color.red;
 
-            if (player.GetComponent<PlayerInputs>().interactInput == true)
+            if (player.GetComponent<PlayerInputs>().interactInput == true && detectionBool == true)
             {
                 GameObject objectToDestroy = detection.GetComponent<BuildDetection>().destroyableObject;
                 Destroy(objectToDestroy);
@@ -98,6 +102,7 @@ public class BuildingSystem : MonoBehaviour
                 canDestroy = false;
                 canPlace = true;
                 detection.SetActive(false);
+                detectionBool = false; 
             }
         }
     }

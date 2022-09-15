@@ -11,8 +11,9 @@ public class BuildDetection : MonoBehaviour
     {
         if (other.CompareTag("tower"))
         {
-            buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
             buildingSystem.GetComponent<BuildingSystem>().canDestroy = true;
+            buildingSystem.GetComponent<BuildingSystem>().canPlace = false;
+
             destroyableObject = other.gameObject;
         }
         if (other.CompareTag("player"))
@@ -24,8 +25,8 @@ public class BuildDetection : MonoBehaviour
     {
         if (other.CompareTag("tower"))
         {
+            buildingSystem.GetComponent<BuildingSystem>().canDestroy = false;
             buildingSystem.GetComponent<BuildingSystem>().canPlace = true;
-            buildingSystem.GetComponent<BuildingSystem>().canDestroy = false; 
         }
         if (other.CompareTag("player"))
         {

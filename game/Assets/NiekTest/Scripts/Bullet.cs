@@ -5,10 +5,6 @@ using UnityEngine.UI;
 
 public class Bullet : MonoBehaviour
 {
-    private Text enemy1textUI;
-    private Text enemy2textUI;
-    private Text enemy3textUI;
-    private Text enemy4textUI;
     public float[] counter;
     public float currency;
     public Text currencyUI;
@@ -24,10 +20,6 @@ public class Bullet : MonoBehaviour
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
 
-        enemy1textUI = enemyText[0];
-        enemy2textUI = enemyText[1];
-        enemy3textUI = enemyText[2];
-        enemy4textUI = enemyText[3];
     }
     void OnCollisionEnter(Collision other)
     {
@@ -64,10 +56,10 @@ public class Bullet : MonoBehaviour
     {
         //currency = currency - GameObject.Find("ShopButton").GetComponent<Shop>().currency;
 
-        enemy1textUI.text = counter[0].ToString();
-        enemy2textUI.text = counter[1].ToString();
-        enemy3textUI.text = counter[2].ToString();
-        enemy4textUI.text = counter[3].ToString();
+        enemyText[0].text = counter[0].ToString();
+        enemyText[1].text = counter[1].ToString();
+        enemyText[2].text = counter[2].ToString();
+        enemyText[3].text = counter[3].ToString();
         currencyUI.text = currency.ToString();
         wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
         if (wave2check == false)

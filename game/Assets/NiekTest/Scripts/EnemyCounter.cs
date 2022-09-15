@@ -10,10 +10,6 @@ public class EnemyCounter : MonoBehaviour
     private bool wave2bool;
     private bool wave2check;
 
-    void Start()
-    {
-        //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
-    }
 
     void Update()
     {

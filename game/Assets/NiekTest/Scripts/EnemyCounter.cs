@@ -9,8 +9,6 @@ public class EnemyCounter : MonoBehaviour
     public float[] counter;
     private bool wave2bool;
     private bool wave2check;
-
-
     void Update()
     {
         wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
@@ -26,7 +24,6 @@ public class EnemyCounter : MonoBehaviour
             }
         }
     }
-
 
     void OnTriggerEnter(Collider other)
     {

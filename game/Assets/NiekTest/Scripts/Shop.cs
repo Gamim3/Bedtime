@@ -7,7 +7,6 @@ using UnityEngine.UI;
 public class Shop : MonoBehaviour
 {
     public float currency;
-    public float oldCurrency;
     public bool buttonPressed;
     public bool currencyReset;
     public float bulletCurrency;
@@ -47,15 +46,8 @@ public class Shop : MonoBehaviour
 
     public void Update()
     {
-        if(currency != oldCurrency)
-        {
-            oldCurrency = currency;
-        }
-
         if(currencyReset == true)
         {
-            currency = 0;
-            oldCurrency = 0;
             currencyReset = false;
         }
 
@@ -67,7 +59,6 @@ public class Shop : MonoBehaviour
         if(buttonPressed == false)
         {
             currency = 0;
-            oldCurrency = 0;
         }
 
         bulletCurrency = GameObject.Find("Bullets").GetComponent<Bullet>().currency;

@@ -7,7 +7,7 @@ public class PlayerHealth : MonoBehaviour
 {
     public Slider slider;
     public float levens;
-    // Start is called before the first frame update
+
     void Start()
     {
         slider.value = levens;

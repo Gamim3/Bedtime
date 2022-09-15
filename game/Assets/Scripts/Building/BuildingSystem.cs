@@ -41,6 +41,8 @@ public class BuildingSystem : MonoBehaviour
         placeLenght = 2f;
 
         detectionBool = true;
+
+        arrowMaterial.material.color = Color.green;
     }
     private void Update()
     {
@@ -68,26 +70,31 @@ public class BuildingSystem : MonoBehaviour
             detectionBool = false;
         }
 
-        if (hasTower == true)
+        if (hasTower == true && canPlace == true)
         {
-            if (canPlace == true)
+            arrowMaterial.material.color = Color.green;
+
+            if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
             {
-                arrowMaterial.material.color = Color.green;
-
-                if (Physics.Raycast(placePoint.transform.position, -placePoint.transform.up, out placeHit, placeLenght))
+                if (placeHit.transform.CompareTag("placeableGround"))
                 {
-                    if (placeHit.transform.tag == ("placeableGround"))
+                    if (player.GetComponent<PlayerInputs>().placeInput == true && detectionBool == true)
                     {
-                        if (player.GetComponent<PlayerInputs>().placeInput == true && detectionBool == true)
-                        {
-                            Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
+                        Instantiate<GameObject>(objectToPlace, objectToMove.transform.position, Quaternion.identity);
 
-                            canPlace = false;
-                            hasTower = false;
-                        }
+                        canPlace = false;
+                        hasTower = false;
                     }
                 }
             }
+        }
+        else
+        {
+            arrowMaterial.material.color = Color.red;
+        }
+        if (placeHit.transform.tag != ("placeableGround"))
+        {
+            arrowMaterial.material.color = Color.red;
         }
 
         if (canDestroy == true)

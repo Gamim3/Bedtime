@@ -102,9 +102,7 @@ public class Spawning : MonoBehaviour
 
         if (enemy[3] < 1 && enemy[2] < 1 && enemy[1] < 1 && enemy[0] < 1)
         {
-            waveCounter.text = 2.ToString();
             wave2Time += Time.deltaTime;
-            
             if(wave2 == 1)
             {
                 //waveCounter.text = 3.ToString();
@@ -117,6 +115,7 @@ public class Spawning : MonoBehaviour
             {
                 wave2 += 1;
                 wave2bool = true;
+                waveCounter.text = 2.ToString();
             }
         }
     }

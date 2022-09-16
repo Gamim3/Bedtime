@@ -17,8 +17,6 @@ public class EnemyStats : ScriptableObject
     [SerializeField]
     private int attackDamage;
 
-
-
     public float Health
     {
         get

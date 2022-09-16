@@ -23,33 +23,33 @@ public class Bullet : MonoBehaviour
     }
     void OnCollisionEnter(Collision other)
     {
-            if(other.gameObject.tag == "enemy 1")
-            {
-                counter[0] -= 1;
-                Destroy(other.gameObject);
-                currency = currency + enemyValue[0];
-            }
+        if(other.gameObject.tag == "enemy 1")
+        {
+            counter[0] -= 1;
+            Destroy(other.gameObject);
+            currency = currency + enemyValue[0];
+        }
 
-            if(other.gameObject.tag == "enemy 2")
-            {
-                counter[1] -= 1;
-                Destroy(other.gameObject);
-                currency = currency + enemyValue[1];
-            }
+        if(other.gameObject.tag == "enemy 2")
+        {
+            counter[1] -= 1;
+            Destroy(other.gameObject);
+            currency = currency + enemyValue[1];
+        }
 
-            if(other.gameObject.tag == "enemy 3")
-            {
-                counter[2] -= 1;
-                Destroy(other.gameObject);
-                currency = currency + enemyValue[2];
-            }
+        if(other.gameObject.tag == "enemy 3")
+        {
+            counter[2] -= 1;
+            Destroy(other.gameObject);
+            currency = currency + enemyValue[2];
+        }
 
-            if(other.gameObject.tag == "enemy 4")
-            {
-                counter[3] -= 1;  
-                Destroy(other.gameObject);
-                currency = currency + enemyValue[3];
-            }
+        if(other.gameObject.tag == "enemy 4")
+        {
+            counter[3] -= 1;  
+            Destroy(other.gameObject);
+            currency = currency + enemyValue[3];
+        }
     }
 
     void Update()

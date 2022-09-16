@@ -20,7 +20,7 @@ public class Shop : MonoBehaviour
     {
         if(bulletCurrency > 20)
         {
-            currency = currency - 20;
+            currency =- 20;
             buttonPressed = true;
         }
         
@@ -29,7 +29,7 @@ public class Shop : MonoBehaviour
     {
         if(bulletCurrency > 40)
         {
-            currency = currency - 40;
+            currency =- 40;
             buttonPressed = true;
         }
         
@@ -39,7 +39,7 @@ public class Shop : MonoBehaviour
     {
         if(bulletCurrency > 60)
         {
-            currency = currency - 60;
+            currency =- 60;
             buttonPressed = true;
         }
     }

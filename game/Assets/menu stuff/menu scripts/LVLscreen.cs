@@ -5,13 +5,6 @@ using UnityEngine.SceneManagement;
 
 public class LVLscreen : MonoBehaviour
 {
-    // to settings menu
-    public void Settings()
-    {
-        SceneManager.LoadScene("settings");
-    }
-
-
     // to main menu
     public void MainMenu()
     {

@@ -18,4 +18,9 @@ public class MainMenuButtons : MonoBehaviour
     {
         SceneManager.LoadScene("lvl select");
     }
+
+    public void Settings()
+    {
+        SceneManager.LoadScene("settings");
+    }
 }

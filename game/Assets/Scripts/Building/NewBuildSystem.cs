@@ -39,18 +39,16 @@ public class NewBuildSystem : MonoBehaviour
         if (distanceToArrow < placeRange)
         {
             inPlaceRange = true;
-            arrowPlacer.SetActive(true);
         }
         else
         {
-            arrowPlacer.SetActive(false);
             inPlaceRange = false;
 
             posX = 100f;
             posZ = 100f;
         }
 
-        Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up);
+        Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
 
         raycastOrigin.x = arrowPlacer.transform.position.x;
         raycastOrigin.y = arrowPlacer.transform.position.y;
@@ -63,8 +61,6 @@ public class NewBuildSystem : MonoBehaviour
             
             if (arrowHit.transform.CompareTag("tower"))
             {
-                print("hai");
-
                 arrowRenderer.material.color = Color.blue;
 
                 canPlace = false;
@@ -78,6 +74,8 @@ public class NewBuildSystem : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
         {
+            arrowPlacer.SetActive(true);
+
             posX = playerHit.point.x;
             posZ = playerHit.point.z;
 
@@ -86,6 +84,10 @@ public class NewBuildSystem : MonoBehaviour
                 posX = playerHit.transform.position.x;
                 posZ = playerHit.transform.position.z;
             }
+        }
+        else
+        {
+            arrowPlacer.SetActive(false);
         }
 
         if (arrowHit.transform.CompareTag("placeableGround"))

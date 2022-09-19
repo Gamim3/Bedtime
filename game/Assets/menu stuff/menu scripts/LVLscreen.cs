@@ -8,7 +8,7 @@ public class LVLscreen : MonoBehaviour
     // to settings menu
     public void Settings()
     {
-        SceneManager.LoadScene("empty");
+        SceneManager.LoadScene("settings");
     }
 
 

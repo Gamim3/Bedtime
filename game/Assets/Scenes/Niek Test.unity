@@ -380,7 +380,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
-  oldCurrency: 0
   buttonPressed: 0
   currencyReset: 0
   bulletCurrency: 0
@@ -3624,7 +3623,6 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
-  oldCurrency: 0
   buttonPressed: 0
   currencyReset: 0
   bulletCurrency: 0

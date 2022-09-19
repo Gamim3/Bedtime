@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class Enemy : MonoBehaviour
 {
@@ -9,6 +10,9 @@ public class Enemy : MonoBehaviour
     public float enemySpeed;
     private Waypoints Wpoints;
     private int waypointIndex;
+
+    public bool healthBool;
+    public Slider slider;
 
     void Update()
     {
@@ -19,11 +23,19 @@ public class Enemy : MonoBehaviour
     void Start()
     {
         Wpoints = GameObject.FindGameObjectWithTag("waypoint").GetComponent<Waypoints>();
+
+        //slider.value = 10;
     }
 
     void health()
     {
-        
+        slider.value -= stats.attackDamage;
+        slider = GameObject.Find("Health Bar").GetComponent<Slider>();
+
+        if (slider.value == 0)
+        {
+            //gameOverScherm
+        }
     }
 
     void speed()
@@ -46,9 +58,11 @@ public class Enemy : MonoBehaviour
 
     }
 
-    
-
-    
-
-    
+    void OnTriggerEnter(Collider other)
+    {
+        if(other.gameObject.tag == "baseDoor")
+        {
+            health();
+        }
+    }
 }

@@ -12,6 +12,13 @@ TagManager:
   - placeableGround
   - player
   - nonPlaceableGround
+  - waypoint
+  - bullet
+  - enemy1text
+  - enemy4text
+  - enemy2text
+  - enemy3text
+  - baseDoor
   layers:
   - Default
   - TransparentFX

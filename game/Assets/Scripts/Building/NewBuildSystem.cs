@@ -27,6 +27,8 @@ public class NewBuildSystem : MonoBehaviour
     public GameObject tower;
 
     public Vector3 raycastOrigin;
+
+    public GameObject objectToDestroy;
     void Update()
     {
 
@@ -56,7 +58,7 @@ public class NewBuildSystem : MonoBehaviour
 
         raycastOrigin.y += 1f;
 
-        if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 5f))
+        if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
             
             if (arrowHit.transform.CompareTag("tower"))
@@ -106,9 +108,12 @@ public class NewBuildSystem : MonoBehaviour
         {
             if (player.GetComponent<PlayerInputs>().interactInput)
             {
-                GameObject objectToDestroy = arrowHit.transform.GetComponent<GameObject>();
+                if (arrowHit.transform.CompareTag("tower"))
+                {
+                    objectToDestroy = arrowHit.transform.gameObject;
 
-                Destroy(objectToDestroy);
+                    Destroy(objectToDestroy);
+                }
             }
         }
 

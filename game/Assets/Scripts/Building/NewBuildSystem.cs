@@ -65,9 +65,6 @@ public class NewBuildSystem : MonoBehaviour
 
                 arrowRenderer.material.color = Color.blue;
 
-                posX = playerHit.transform.position.x;
-                posZ = playerHit.transform.position.z;
-
                 canPlace = false;
                 canDestroy = true;
             }
@@ -81,6 +78,12 @@ public class NewBuildSystem : MonoBehaviour
         {
             posX = playerHit.point.x;
             posZ = playerHit.point.z;
+
+            if (playerHit.transform.CompareTag("tower"))
+            {
+                posX = playerHit.transform.position.x;
+                posZ = playerHit.transform.position.z;
+            }
         }
 
         if (arrowHit.transform.CompareTag("placeableGround"))

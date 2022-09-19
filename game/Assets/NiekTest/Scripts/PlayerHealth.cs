@@ -20,7 +20,7 @@ public class PlayerHealth : MonoBehaviour
         }
     }
 
-    void OnCollisionEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         Destroy(other.gameObject);
         slider.value -= 1;

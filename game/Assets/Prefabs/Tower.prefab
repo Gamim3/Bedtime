@@ -12,7 +12,8 @@ GameObject:
   - component: {fileID: 8117237944706771891}
   - component: {fileID: 3627054089071168452}
   - component: {fileID: -426379352613628687}
-  - component: {fileID: -4290203727870988852}
+  - component: {fileID: 6961578337599755709}
+  - component: {fileID: -7017549390590173943}
   m_Layer: 0
   m_Name: Tower
   m_TagString: tower
@@ -98,16 +99,38 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 3, y: 1, z: 3}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!65 &-4290203727870988852
-BoxCollider:
+--- !u!114 &6961578337599755709
+MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5785321850180901201}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
   m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f2a238dd6526e2f448861395e828c99a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerData: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
+  target: {fileID: 0}
+  enemyMask:
+    serializedVersion: 2
+    m_Bits: 0
+  enemyData: []
+  towerTransform: {fileID: 8598444626985080827}
+  targetingType: 
+--- !u!114 &-7017549390590173943
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 5785321850180901201}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0e5c12c5de261ef448be0104d9fa1e7d, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  towerData: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
+  range: 0
+  towerT: {fileID: 8598444626985080827}

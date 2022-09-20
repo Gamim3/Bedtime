@@ -18,7 +18,7 @@ public class Shop : MonoBehaviour
 
     public void LoadItem1()
     {
-        if(bulletCurrency > 20)
+        if(bulletCurrency > 19)
         {
             currency =- 20;
             buttonPressed = true;
@@ -27,7 +27,7 @@ public class Shop : MonoBehaviour
     }
     public void LoadItem2()
     {
-        if(bulletCurrency > 40)
+        if(bulletCurrency > 39)
         {
             currency =- 40;
             buttonPressed = true;
@@ -37,7 +37,7 @@ public class Shop : MonoBehaviour
 
     public void LoadItem3()
     {
-        if(bulletCurrency > 60)
+        if(bulletCurrency > 59)
         {
             currency =- 60;
             buttonPressed = true;

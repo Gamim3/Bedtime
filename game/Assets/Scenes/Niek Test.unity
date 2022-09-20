@@ -2188,7 +2188,6 @@ GameObject:
   - component: {fileID: 1001181979}
   - component: {fileID: 1001181978}
   - component: {fileID: 1001181977}
-  - component: {fileID: 1001181980}
   m_Layer: 0
   m_Name: BaseDoor
   m_TagString: baseDoor
@@ -2274,20 +2273,6 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1001181975}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
---- !u!114 &1001181980
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1001181975}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: e0ec11f25dc0bed4ea841a41c395f69a, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  slider: {fileID: 853463781}
-  levens: 10
 --- !u!1 &1101015370
 GameObject:
   m_ObjectHideFlags: 0
@@ -2409,7 +2394,7 @@ Transform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1101015370}
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 32.6, y: 0.49, z: -126.5}
+  m_LocalPosition: {x: 19.7, y: 0.49, z: -126.5}
   m_LocalScale: {x: 13.873, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []

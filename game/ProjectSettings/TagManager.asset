@@ -19,6 +19,7 @@ TagManager:
   - enemy2text
   - enemy3text
   - baseDoor
+  - path
   layers:
   - Default
   - TransparentFX

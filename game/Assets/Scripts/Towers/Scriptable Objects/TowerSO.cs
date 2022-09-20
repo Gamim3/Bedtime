@@ -8,6 +8,10 @@ public class TowerSO : ScriptableObject
     public float damage;
     public float fireSpeed;
     public float cost;
+
     public string targetType;
+
+    public string placeTag;
+    public string nonPlaceTag;
 }
 

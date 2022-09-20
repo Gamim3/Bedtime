@@ -5,6 +5,7 @@ using UnityEngine;
 public class NewBuildSystem : MonoBehaviour
 {
     public GameObject player;
+    public GameObject tower;
     public GameObject arrowPlacer;
     public Renderer arrowRenderer;
     public GameObject cam;
@@ -23,12 +24,16 @@ public class NewBuildSystem : MonoBehaviour
     public bool canPlace;
     public bool canDestroy;
     public bool inPlaceRange;
-
-    public GameObject tower;
+    public bool hasTower;
 
     public Vector3 raycastOrigin;
 
     public GameObject objectToDestroy;
+
+    public string placeTag;
+    public string nonPlaceTag;
+
+
     void Update()
     {
 
@@ -90,7 +95,7 @@ public class NewBuildSystem : MonoBehaviour
             arrowPlacer.SetActive(false);
         }
 
-        if (arrowHit.transform.CompareTag("placeableGround"))
+        if (arrowHit.transform.CompareTag(placeTag))
         {
             arrowRenderer.material.color = Color.green;
             canPlace = true;
@@ -100,7 +105,7 @@ public class NewBuildSystem : MonoBehaviour
             canPlace = false;
         }
 
-        if (arrowHit.transform.CompareTag("nonPlaceableGround"))
+        if (arrowHit.transform.CompareTag(nonPlaceTag))
         {
             arrowRenderer.material.color = Color.red;
             canPlace = false;
@@ -127,5 +132,12 @@ public class NewBuildSystem : MonoBehaviour
                 canPlace = false;
             }
         }
+    }
+    public void AddTowerData()
+    {
+        placeTag = tower.GetComponent<TowerSO>().placeTag;
+        nonPlaceTag = tower.GetComponent<TowerSO>().nonPlaceTag;
+
+        hasTower = true;
     }
 }

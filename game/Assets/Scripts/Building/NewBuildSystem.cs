@@ -128,7 +128,7 @@ public class NewBuildSystem : MonoBehaviour
         {
             if (player.GetComponent<PlayerInputs>().placeInput)
             {
-                Instantiate<GameObject>(tower, arrowPlacer.transform.position, Quaternion.identity);
+                Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
                 canPlace = false;
             }
         }

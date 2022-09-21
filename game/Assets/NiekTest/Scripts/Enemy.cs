@@ -9,7 +9,7 @@ public class Enemy : MonoBehaviour
 
     public float enemySpeed;
     private Waypoints Wpoints;
-    private int waypointIndex;
+    public int waypointIndex;
 
     public bool healthBool;
     private Slider slider;
@@ -41,7 +41,15 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Wpoints.waypoints[waypointIndex].position) < 0.1f)
         {
-            waypointIndex++;
+            if(waypointIndex < 2)
+            {
+                waypointIndex++;
+            }
+            
+            else
+            {
+                Destroy(gameObject);
+            }
         }
         transform.position = Vector3.MoveTowards(transform.position, Wpoints.waypoints[waypointIndex].position, enemySpeed * Time.deltaTime);
         transform.LookAt(Wpoints.waypoints[waypointIndex].position);

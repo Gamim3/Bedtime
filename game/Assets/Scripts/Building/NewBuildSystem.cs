@@ -12,6 +12,7 @@ public class NewBuildSystem : MonoBehaviour
 
     public RaycastHit playerHit;
     public RaycastHit arrowHit;
+    public RaycastHit sphereHit;
 
     public float placeRange;
 
@@ -25,6 +26,7 @@ public class NewBuildSystem : MonoBehaviour
     public bool canDestroy;
     public bool inPlaceRange;
     public bool hasTower;
+    public bool insideWall;
 
     public Vector3 raycastOrigin;
 
@@ -33,7 +35,7 @@ public class NewBuildSystem : MonoBehaviour
     public string placeTag;
     public string nonPlaceTag;
 
-
+    public float towerSize;
     void Update()
     {
 
@@ -60,6 +62,18 @@ public class NewBuildSystem : MonoBehaviour
         raycastOrigin.z = arrowPlacer.transform.position.z;
 
         raycastOrigin.y += 1f;
+
+        //if (Physics.SphereCast(raycastOrigin, towerSize, -arrowPlacer.transform.up, out sphereHit, 3f))
+        //{
+        //    if (sphereHit.transform.CompareTag("wall"))
+        //    {
+        //        insideWall = true;
+        //    }
+        //    else
+        //    {
+        //        insideWall = false;
+        //    }
+        //}
 
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
@@ -124,7 +138,7 @@ public class NewBuildSystem : MonoBehaviour
             }
         }
 
-        if (canPlace && inPlaceRange)
+        if (canPlace && inPlaceRange && hasTower && insideWall == false)
         {
             if (player.GetComponent<PlayerInputs>().placeInput)
             {

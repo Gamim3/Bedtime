@@ -354,11 +354,13 @@ MonoBehaviour:
   canPlace: 1
   canDestroy: 0
   inPlaceRange: 0
-  hasTower: 0
+  hasTower: 1
+  insideWall: 0
   raycastOrigin: {x: 0, y: 0, z: 0}
   objectToDestroy: {fileID: 0}
   placeTag: path
   nonPlaceTag: placeableGround
+  towerSize: 2
 --- !u!1 &734667676
 GameObject:
   m_ObjectHideFlags: 0
@@ -797,7 +799,7 @@ GameObject:
   - component: {fileID: 1198308209}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: Untagged
+  m_TagString: wall
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

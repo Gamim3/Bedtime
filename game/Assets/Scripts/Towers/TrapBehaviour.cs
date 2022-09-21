@@ -43,7 +43,7 @@ public class TrapBehaviour : MonoBehaviour
         {
             // remove enemy
 
-            enemyOnTrap[0] = null;
+            //enemyOnTrap[0] = null;
         }
     }
     private void Update()

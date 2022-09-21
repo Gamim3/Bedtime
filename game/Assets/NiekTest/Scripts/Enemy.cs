@@ -9,9 +9,8 @@ public class Enemy : MonoBehaviour
 
     public float enemySpeed;
     private Waypoints Wpoints;
-    public int waypointIndex;
+    private int waypointIndex;
 
-    public bool healthBool;
     private Slider slider;
 
     void Update()
@@ -27,9 +26,10 @@ public class Enemy : MonoBehaviour
         //slider.value = 10;
     }
 
-    void health()
+    void damage()
     {
-        slider.value -= stats.attackDamage;
+        
+        slider.value -= stats.damage;
 
         if (slider.value == 0)
         {
@@ -55,11 +55,6 @@ public class Enemy : MonoBehaviour
         transform.LookAt(Wpoints.waypoints[waypointIndex].position);
     }
 
-    void damage()
-    {
-        //stats1.AttackDamage
-    }
-
     void value()
     {
 
@@ -69,9 +64,8 @@ public class Enemy : MonoBehaviour
     {
         if(other.gameObject.tag == "baseDoor" && gameObject.transform != null)
         {
-            
             slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
-            health();
+            damage();
         }
     }
 }

@@ -12,7 +12,7 @@ public class Enemy : MonoBehaviour
     private int waypointIndex;
 
     public bool healthBool;
-    public Slider slider;
+    private Slider slider;
 
     void Update()
     {
@@ -30,7 +30,6 @@ public class Enemy : MonoBehaviour
     void health()
     {
         slider.value -= stats.attackDamage;
-        slider = GameObject.Find("Health Bar").GetComponent<Slider>();
 
         if (slider.value == 0)
         {
@@ -60,8 +59,10 @@ public class Enemy : MonoBehaviour
 
     void OnTriggerEnter(Collider other)
     {
-        if(other.gameObject.tag == "baseDoor")
+        if(other.gameObject.tag == "baseDoor" && gameObject.transform != null)
         {
+            
+            slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
             health();
         }
     }

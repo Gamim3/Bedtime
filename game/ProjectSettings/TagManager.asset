@@ -18,9 +18,10 @@ TagManager:
   - enemy4text
   - enemy2text
   - enemy3text
-  - baseDoor
   - path
   - enemy
+  - Health
+  - baseDoor
   layers:
   - Default
   - TransparentFX

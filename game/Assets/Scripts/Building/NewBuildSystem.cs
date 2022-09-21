@@ -63,18 +63,6 @@ public class NewBuildSystem : MonoBehaviour
 
         raycastOrigin.y += 1f;
 
-        //if (Physics.SphereCast(raycastOrigin, towerSize, -arrowPlacer.transform.up, out sphereHit, 3f))
-        //{
-        //    if (sphereHit.transform.CompareTag("wall"))
-        //    {
-        //        insideWall = true;
-        //    }
-        //    else
-        //    {
-        //        insideWall = false;
-        //    }
-        //}
-
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
             
@@ -88,6 +76,16 @@ public class NewBuildSystem : MonoBehaviour
             else
             {
                 arrowRenderer.material.color = Color.green;
+            }
+
+            if (arrowHit.transform.CompareTag("wall"))
+            {
+                insideWall = true;
+                arrowRenderer.material.color = Color.red;
+            }
+            else
+            {
+                insideWall = false;
             }
         }
 

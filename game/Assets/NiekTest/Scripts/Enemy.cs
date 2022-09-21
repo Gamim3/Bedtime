@@ -8,28 +8,35 @@ public class Enemy : MonoBehaviour
     public EnemyStats stats;
 
     public float enemySpeed;
+
     private Waypoints Wpoints;
     private int waypointIndex;
 
     private Slider slider;
+    public float damageTimer;
 
     void Update()
     {
         speed();
-        enemySpeed = stats.speed;
     }
 
     void Start()
     {
         Wpoints = GameObject.FindGameObjectWithTag("waypoint").GetComponent<Waypoints>();
+        enemySpeed = stats.speed;
 
         //slider.value = 10;
     }
 
     void damage()
     {
-        
-        slider.value -= stats.damage;
+        enemySpeed = 0;
+        damageTimer += Time.deltaTime;
+        if (damageTimer > 1)
+        {
+            slider.value -= stats.damage;
+            damageTimer = 0;
+        }
 
         if (slider.value == 0)
         {
@@ -41,15 +48,7 @@ public class Enemy : MonoBehaviour
     {
         if (Vector3.Distance(transform.position, Wpoints.waypoints[waypointIndex].position) < 0.1f)
         {
-            if(waypointIndex < 2)
-            {
-                waypointIndex++;
-            }
-            
-            else
-            {
-                Destroy(gameObject);
-            }
+            waypointIndex++;
         }
         transform.position = Vector3.MoveTowards(transform.position, Wpoints.waypoints[waypointIndex].position, enemySpeed * Time.deltaTime);
         transform.LookAt(Wpoints.waypoints[waypointIndex].position);
@@ -60,7 +59,7 @@ public class Enemy : MonoBehaviour
 
     }
 
-    void OnTriggerEnter(Collider other)
+    void OnTriggerStay(Collider other)
     {
         if(other.gameObject.tag == "baseDoor" && gameObject.transform != null)
         {

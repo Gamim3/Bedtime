@@ -10,19 +10,21 @@ public class Bullet : MonoBehaviour
     public float currency;
     public Text currencyUI;
 
-    private bool wave2check;
-    private bool wave2bool;
+    public bool wave2check;
     private bool buttonPressed;
+    public float[] enemyAmount;
+    public float waveMultiplier;
+
 
     public Text[] enemyText;
 
     void Start()
     {
         //public GameObject[] myObjects = GameObject.Find("Spawnpoint").GetComponent<Spawning>().myObjects;
-        counter[0] = 10;
-        counter[1] = 8;
-        counter[2] = 6;
-        counter[3] = 4;
+        enemyAmount[0] = counter[0];
+        enemyAmount[1] = counter[1];
+        enemyAmount[2] = counter[2];
+        enemyAmount[3] = counter[3];
     }
     void OnTriggerEnter(Collider other)
     {
@@ -70,18 +72,23 @@ public class Bullet : MonoBehaviour
         enemyText[2].text = counter[2].ToString();
         enemyText[3].text = counter[3].ToString();
         currencyUI.text = currency.ToString();
-        wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
-        if (wave2check == false)
+        wave2check = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2check;
+        
+        if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter [3] < 1)
         {
-            if (wave2bool == true)
-            {
-                counter[0] = 20;
-                counter[1] = 16;
-                counter[2] = 12;
-                counter[3] = 8;
-                wave2check = true;
-            }
+            waveMultiplier += 1;
+            counter[0] = enemyAmount[0] * waveMultiplier;
+            counter[1] = enemyAmount[1] * waveMultiplier;
+            counter[2] = enemyAmount[2] * waveMultiplier;
+            counter[3] = enemyAmount[3] * waveMultiplier;
+            wave2check = true;
         }
+
+        else
+        {
+            wave2check = false;
+        }
+        
         //currency = currency + GameObject.Find("ShopItem1").GetComponent<Shop>().currency; //werkt alleen als shop open is
         buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
         if(buttonPressed == true)

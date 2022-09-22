@@ -11,18 +11,16 @@ public class EnemyCounter : MonoBehaviour
     private bool wave2check;
     void Update()
     {
-        wave2bool = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2bool;
-        if(wave2check == false)
-        {
-            if (wave2bool == true)
+        wave2check = GameObject.Find("Bullets").GetComponent<Bullet>().wave2check;
+        
+            if (wave2check == true)
             {
                 counter[0] = 20;
                 counter[1] = 16;
                 counter[2] = 12;
                 counter[3] = 8;
-                wave2check = true;
             }
-        }
+        
     }
 
     void OnTriggerEnter(Collider other)

@@ -28,6 +28,4 @@ public class ShopManager : MonoBehaviour
     {
         shopUI.SetActive(!shopUI.activeSelf);
     }
-
-    
 }

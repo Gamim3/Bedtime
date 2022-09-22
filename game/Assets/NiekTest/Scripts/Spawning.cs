@@ -16,14 +16,15 @@ public class Spawning : MonoBehaviour
     public List<GameObject> myObjects;
 
     public bool[] spawn;
-    public bool wave2bool;
-
+    public bool wave2check;
     void Update()
     {
         enemy[0] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().counter[0];
         enemy[1] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().counter[1];
         enemy[2] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().counter[2];
         enemy[3] = GameObject.Find("EnemyCounter").GetComponent<EnemyCounter>().counter[3];
+
+        wave2check = GameObject.Find("Bullets").GetComponent<Bullet>().wave2check;
 
 
         int randomIndex = Random.Range(0, 4);
@@ -102,21 +103,17 @@ public class Spawning : MonoBehaviour
 
         if (enemy[3] < 1 && enemy[2] < 1 && enemy[1] < 1 && enemy[0] < 1)
         {
-            wave2Time += Time.deltaTime;
             if(wave2 == 1)
             {
                 //waveCounter.text = 3.ToString();
             }
         }
-
-        if(wave2bool == false)
+       
+        if(wave2check == true)
         {
-            if (wave2Time > 14)
-            {
-                wave2 += 1;
-                wave2bool = true;
-                waveCounter.text = 2.ToString();
-            }
+            wave2 += 1;
+            waveCounter.text = 2.ToString();
         }
+        
     }
 }

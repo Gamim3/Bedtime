@@ -26,7 +26,8 @@ public class NewBuildSystem : MonoBehaviour
     public bool canDestroy;
     public bool inPlaceRange;
     public bool hasTower;
-    public bool insideWall;
+    public bool inWall;
+    public bool inTower;
 
     public Vector3 raycastOrigin;
 
@@ -38,11 +39,10 @@ public class NewBuildSystem : MonoBehaviour
     public float towerSize;
 
     public float waitTimeForDelete;
-    
+    public float timeToDestroy;
     void Update()
     {
         arrowPlacer.transform.position = new Vector3(posX, posY, posZ);
-
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
 
         if (distanceToArrow < placeRange)
@@ -55,6 +55,29 @@ public class NewBuildSystem : MonoBehaviour
 
             posX = 100f;
             posZ = 100f;
+        }
+
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
+        {
+            arrowPlacer.SetActive(true);
+
+            posX = playerHit.point.x;
+            posZ = playerHit.point.z;
+
+            if (playerHit.transform.CompareTag("tower"))
+            {
+                posX = playerHit.transform.position.x;
+                posZ = playerHit.transform.position.z;
+            }
+        }
+
+        if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
+        {
+            arrowPlacer.SetActive(true);
+        }
+        else
+        {
+            arrowPlacer.SetActive(false);
         }
 
         Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
@@ -71,102 +94,148 @@ public class NewBuildSystem : MonoBehaviour
             if (sphereHit[i].collider.CompareTag("wall"))
             {
                 print("wall");
-                insideWall = true;
+                inWall = true;
+                arrowRenderer.material.color = Color.black;
             }
             else
             {
-                insideWall = false;
+                inWall = false;
             }
-            //if (sphereHit[i].collider.CompareTag("tower"))
-            //{
-            //    print("tower");
-            //    canPlace = false;
-            //}
-            //else
-            //{
-            //    canPlace = true;
-            //}
-        }
 
-        if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
-        {
-            if (arrowHit.transform.CompareTag("tower"))
+            if (sphereHit[i].collider.CompareTag("tower"))
             {
-                canPlace = false;
+                print("tower");
+                inTower = true;
                 canDestroy = true;
+                arrowRenderer.material.color = Color.blue;
             }
-        }
-
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
-        {
-            arrowPlacer.SetActive(true);
-
-            posX = playerHit.point.x;
-            posZ = playerHit.point.z;
-
-            if (playerHit.transform.CompareTag("tower"))
+            else
             {
-                posX = playerHit.transform.position.x;
-                posZ = playerHit.transform.position.z;
+                inTower = false;
+                canDestroy = false;
             }
-        }
-        else
-        {
-            arrowPlacer.SetActive(false);
-        }
 
-        if (arrowHit.transform.CompareTag(placeTag))
-        {
-
-            canPlace = true;
-        }
-        else
-        {
-            canPlace = false;
-        }
-
-        if (arrowHit.transform.CompareTag(nonPlaceTag))
-        {
-            canPlace = false;
-        }
-
-        if (canDestroy)
-        {
-            if (arrowHit.transform.CompareTag("tower"))
+            if (inWall == false && inTower == false)
             {
-                if (player.GetComponent<PlayerInputs>().interactInput)
+                // VRAGEN VOOR OPLOSSING
+                if (arrowHit.transform.CompareTag(placeTag))
                 {
-                    waitTimeForDelete += Time.deltaTime;
-
-                    if (waitTimeForDelete > 1)
-                    {
-                        waitTimeForDelete = 0;
-
-                        objectToDestroy = arrowHit.transform.gameObject;
-                        Destroy(objectToDestroy);
-                    }
+                    canPlace = true;
+                    arrowRenderer.material.color = Color.green;
                 }
                 else
                 {
-                    waitTimeForDelete = 0;
+                    canPlace = false;
+                    arrowRenderer.material.color = Color.red;
                 }
             }
         }
 
-        if (canPlace && inPlaceRange && hasTower && insideWall == false)
+        if (canPlace && hasTower && inTower == false && inWall == false)
         {
             if (player.GetComponent<PlayerInputs>().placeInput)
             {
                 Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
-                canPlace = false;
+                hasTower = false;
             }
         }
-    }
-    public void AddTowerData()
-    {
-        placeTag = tower.GetComponent<TowerSO>().placeTag;
-        nonPlaceTag = tower.GetComponent<TowerSO>().nonPlaceTag;
 
-        hasTower = true;
+        if (canDestroy && inTower)
+        {
+            if (player.GetComponent<PlayerInputs>().interactInput)
+            {
+                waitTimeForDelete += Time.deltaTime;
+                arrowRenderer.material.color = Color.magenta;
+
+                if (waitTimeForDelete > timeToDestroy)
+                {
+                    waitTimeForDelete = 0;
+
+                    objectToDestroy = arrowHit.transform.gameObject;
+                    Destroy(objectToDestroy);
+                }
+            }
+        }
+
+        //    
+        //    {
+        //        if (arrowHit.transform.CompareTag("tower"))
+        //        {
+        //            canPlace = false;
+        //            canDestroy = true;
+        //        }
+        //    }
+
+        //    if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
+        //    {
+        //        arrowPlacer.SetActive(true);
+
+        //        posX = playerHit.point.x;
+        //        posZ = playerHit.point.z;
+
+        //        if (playerHit.transform.CompareTag("tower"))
+        //        {
+        //            posX = playerHit.transform.position.x;
+        //            posZ = playerHit.transform.position.z;
+        //        }
+        //    }
+        //    else
+        //    {
+        //        arrowPlacer.SetActive(false);
+        //    }
+
+        //    if (arrowHit.transform.CompareTag(placeTag))
+        //    {
+
+        //        canPlace = true;
+        //    }
+        //    else
+        //    {
+        //        canPlace = false;
+        //    }
+
+        //    if (arrowHit.transform.CompareTag(nonPlaceTag))
+        //    {
+        //        canPlace = false;
+        //    }
+
+        //    if (canDestroy)
+        //    {
+        //        if (arrowHit.transform.CompareTag("tower"))
+        //        {
+        //            if (player.GetComponent<PlayerInputs>().interactInput)
+        //            {
+        //                waitTimeForDelete += Time.deltaTime;
+
+        //                if (waitTimeForDelete > 1)
+        //                {
+        //                    waitTimeForDelete = 0;
+
+        //                    objectToDestroy = arrowHit.transform.gameObject;
+        //                    Destroy(objectToDestroy);
+        //                }
+        //            }
+        //            else
+        //            {
+        //                waitTimeForDelete = 0;
+        //            }
+        //        }
+        //    }
+
+        //    if (canPlace && inPlaceRange && hasTower && inWall == false)
+        //    {
+        //        if (player.GetComponent<PlayerInputs>().placeInput)
+        //        {
+        //            Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
+        //            canPlace = false;
+        //        }
+        //    }
+        //}
+        //public void AddTowerData()
+        //{
+        //    placeTag = tower.GetComponent<TowerSO>().placeTag;
+        //    nonPlaceTag = tower.GetComponent<TowerSO>().nonPlaceTag;
+
+        //    hasTower = true;
     }
 }

@@ -77,20 +77,23 @@ public class NewBuildSystem : MonoBehaviour
             {
                 insideWall = false;
             }
+            //if (sphereHit[i].collider.CompareTag("tower"))
+            //{
+            //    print("tower");
+            //    canPlace = false;
+            //}
+            //else
+            //{
+            //    canPlace = true;
+            //}
         }
 
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
             if (arrowHit.transform.CompareTag("tower"))
             {
-                arrowRenderer.material.color = Color.blue;
-
                 canPlace = false;
                 canDestroy = true;
-            }
-            else
-            {
-                arrowRenderer.material.color = Color.green;
             }
         }
 
@@ -114,7 +117,7 @@ public class NewBuildSystem : MonoBehaviour
 
         if (arrowHit.transform.CompareTag(placeTag))
         {
-            arrowRenderer.material.color = Color.green;
+
             canPlace = true;
         }
         else
@@ -124,7 +127,6 @@ public class NewBuildSystem : MonoBehaviour
 
         if (arrowHit.transform.CompareTag(nonPlaceTag))
         {
-            arrowRenderer.material.color = Color.red;
             canPlace = false;
         }
 

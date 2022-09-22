@@ -12,7 +12,7 @@ public class NewBuildSystem : MonoBehaviour
 
     public RaycastHit playerHit;
     public RaycastHit arrowHit;
-    public RaycastHit sphereHit;
+    public RaycastHit[] sphereHit;
 
     public float placeRange;
 
@@ -38,9 +38,9 @@ public class NewBuildSystem : MonoBehaviour
     public float towerSize;
 
     public float waitTimeForDelete;
+    
     void Update()
     {
-
         arrowPlacer.transform.position = new Vector3(posX, posY, posZ);
 
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
@@ -65,10 +65,19 @@ public class NewBuildSystem : MonoBehaviour
 
         raycastOrigin.y += 1f;
 
-        //if (Physics.SphereCast(arrowHit.point, 20f, arrowPlacer.transform.up, out sphereHit))
-        //{
-        //    print("haha");
-        //}
+        sphereHit = Physics.SphereCastAll(arrowHit.point, 1f, -arrowPlacer.transform.up);
+        for (int i = 0; i < sphereHit.Length; i++)
+        {
+            if (sphereHit[i].collider.CompareTag("wall"))
+            {
+                print("wall");
+                insideWall = true;
+            }
+            else
+            {
+                insideWall = false;
+            }
+        }
 
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
@@ -82,16 +91,6 @@ public class NewBuildSystem : MonoBehaviour
             else
             {
                 arrowRenderer.material.color = Color.green;
-            }
-
-            if (arrowHit.transform.CompareTag("wall"))
-            {
-                insideWall = true;
-                arrowRenderer.material.color = Color.red;
-            }
-            else
-            {
-                insideWall = false;
             }
         }
 

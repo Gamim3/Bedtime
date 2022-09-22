@@ -36,6 +36,8 @@ public class NewBuildSystem : MonoBehaviour
     public string nonPlaceTag;
 
     public float towerSize;
+
+    public float waitTimeForDelete;
     void Update()
     {
 
@@ -63,9 +65,13 @@ public class NewBuildSystem : MonoBehaviour
 
         raycastOrigin.y += 1f;
 
+        //if (Physics.SphereCast(arrowHit.point, 20f, arrowPlacer.transform.up, out sphereHit))
+        //{
+        //    print("haha");
+        //}
+
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
-            
             if (arrowHit.transform.CompareTag("tower"))
             {
                 arrowRenderer.material.color = Color.blue;
@@ -125,13 +131,23 @@ public class NewBuildSystem : MonoBehaviour
 
         if (canDestroy)
         {
-            if (player.GetComponent<PlayerInputs>().interactInput)
+            if (arrowHit.transform.CompareTag("tower"))
             {
-                if (arrowHit.transform.CompareTag("tower"))
+                if (player.GetComponent<PlayerInputs>().interactInput)
                 {
-                    objectToDestroy = arrowHit.transform.gameObject;
+                    waitTimeForDelete += Time.deltaTime;
 
-                    Destroy(objectToDestroy);
+                    if (waitTimeForDelete > 1)
+                    {
+                        waitTimeForDelete = 0;
+
+                        objectToDestroy = arrowHit.transform.gameObject;
+                        Destroy(objectToDestroy);
+                    }
+                }
+                else
+                {
+                    waitTimeForDelete = 0;
                 }
             }
         }

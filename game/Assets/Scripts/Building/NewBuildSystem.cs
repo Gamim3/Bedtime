@@ -78,11 +78,24 @@ public class NewBuildSystem : MonoBehaviour
 
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
-            arrowPlacer.SetActive(true);
+            //arrowPlacer.SetActive(true);
+
+            if (arrowHit.transform.CompareTag("tower"))
+            {
+                print("tower");
+                inTower = true;
+                canDestroy = true;
+                arrowRenderer.material.color = Color.blue;
+            }
+            else
+            {
+                inTower = false;
+                canDestroy = false;
+            }
         }
         else
         {
-            arrowPlacer.SetActive(false);
+            //arrowPlacer.SetActive(false);
         }
 
         Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
@@ -106,19 +119,6 @@ public class NewBuildSystem : MonoBehaviour
             else
             {
                 inWall = false;
-            }
-
-            if (sphereHit[i].collider.CompareTag("tower"))
-            {
-                print("tower");
-                inTower = true;
-                canDestroy = true;
-                arrowRenderer.material.color = Color.blue;
-            }
-            else
-            {
-                inTower = false;
-                canDestroy = false;
             }
 
             if (inWall == false && inTower == false)

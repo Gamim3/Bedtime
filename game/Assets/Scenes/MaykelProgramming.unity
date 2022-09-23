@@ -458,7 +458,7 @@ MonoBehaviour:
   raycastOrigin: {x: 0, y: 0, z: 0}
   objectToDestroy: {fileID: 0}
   placeTag: 
-  towerSize: 2
+  towerSize: 1
   waitTimeForDelete: 0
   timeToDestroy: 1
 --- !u!1 &734667676
@@ -921,7 +921,7 @@ GameObject:
   - component: {fileID: 1070195297}
   - component: {fileID: 1070195300}
   - component: {fileID: 1070195301}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Main Camera
   m_TagString: MainCamera
   m_Icon: {fileID: 0}
@@ -1154,9 +1154,9 @@ GameObject:
   - component: {fileID: 1528764646}
   - component: {fileID: 1528764645}
   - component: {fileID: 1528764650}
-  m_Layer: 0
+  m_Layer: 8
   m_Name: Player
-  m_TagString: player
+  m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

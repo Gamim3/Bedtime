@@ -40,7 +40,6 @@ public class NewBuildSystem : MonoBehaviour
 
     public float waitTimeForDelete;
     public float timeToDestroy;
-
     void Update()
     {
         if (hasTower)
@@ -64,8 +63,6 @@ public class NewBuildSystem : MonoBehaviour
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
         {
-            arrowPlacer.SetActive(true);
-
             posX = playerHit.point.x;
             posZ = playerHit.point.z;
 
@@ -78,11 +75,10 @@ public class NewBuildSystem : MonoBehaviour
 
         if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
         {
-            //arrowPlacer.SetActive(true);
-
             if (arrowHit.transform.CompareTag("tower"))
             {
                 print("tower");
+
                 inTower = true;
                 canDestroy = true;
                 arrowRenderer.material.color = Color.blue;
@@ -92,10 +88,6 @@ public class NewBuildSystem : MonoBehaviour
                 inTower = false;
                 canDestroy = false;
             }
-        }
-        else
-        {
-            //arrowPlacer.SetActive(false);
         }
 
         Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
@@ -114,6 +106,7 @@ public class NewBuildSystem : MonoBehaviour
             {
                 print("wall");
                 inWall = true;
+
                 arrowRenderer.material.color = Color.black;
             }
             else
@@ -126,8 +119,11 @@ public class NewBuildSystem : MonoBehaviour
                 // VRAGEN VOOR OPLOSSING
                 if (arrowHit.transform.CompareTag(placeTag))
                 {
-                    canPlace = true;
-                    arrowRenderer.material.color = Color.green;
+                    if (inWall == false)
+                    {
+                        canPlace = true;
+                        arrowRenderer.material.color = Color.green;
+                    }
                 }
                 else
                 {

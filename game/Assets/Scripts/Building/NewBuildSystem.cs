@@ -6,6 +6,7 @@ public class NewBuildSystem : MonoBehaviour
 {
     public GameObject player;
     public GameObject tower;
+    public TowerSO towerData;
     public GameObject arrowPlacer;
     public Renderer arrowRenderer;
     public GameObject cam;
@@ -34,14 +35,18 @@ public class NewBuildSystem : MonoBehaviour
     public GameObject objectToDestroy;
 
     public string placeTag;
-    public string nonPlaceTag;
 
     public float towerSize;
 
     public float waitTimeForDelete;
     public float timeToDestroy;
+
     void Update()
     {
+        if (hasTower)
+        {
+            GetTowerInfo();
+        }
         arrowPlacer.transform.position = new Vector3(posX, posY, posZ);
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
 
@@ -88,7 +93,8 @@ public class NewBuildSystem : MonoBehaviour
 
         raycastOrigin.y += 1f;
 
-        sphereHit = Physics.SphereCastAll(arrowHit.point, 1f, -arrowPlacer.transform.up);
+        sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up);
+
         for (int i = 0; i < sphereHit.Length; i++)
         {
             if (sphereHit[i].collider.CompareTag("wall"))
@@ -155,87 +161,16 @@ public class NewBuildSystem : MonoBehaviour
                     Destroy(objectToDestroy);
                 }
             }
+            else
+            {
+                waitTimeForDelete = 0;
+            }
         }
+    }
+    public void GetTowerInfo()
+    {
+        print("hai");
 
-        //    
-        //    {
-        //        if (arrowHit.transform.CompareTag("tower"))
-        //        {
-        //            canPlace = false;
-        //            canDestroy = true;
-        //        }
-        //    }
-
-        //    if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
-        //    {
-        //        arrowPlacer.SetActive(true);
-
-        //        posX = playerHit.point.x;
-        //        posZ = playerHit.point.z;
-
-        //        if (playerHit.transform.CompareTag("tower"))
-        //        {
-        //            posX = playerHit.transform.position.x;
-        //            posZ = playerHit.transform.position.z;
-        //        }
-        //    }
-        //    else
-        //    {
-        //        arrowPlacer.SetActive(false);
-        //    }
-
-        //    if (arrowHit.transform.CompareTag(placeTag))
-        //    {
-
-        //        canPlace = true;
-        //    }
-        //    else
-        //    {
-        //        canPlace = false;
-        //    }
-
-        //    if (arrowHit.transform.CompareTag(nonPlaceTag))
-        //    {
-        //        canPlace = false;
-        //    }
-
-        //    if (canDestroy)
-        //    {
-        //        if (arrowHit.transform.CompareTag("tower"))
-        //        {
-        //            if (player.GetComponent<PlayerInputs>().interactInput)
-        //            {
-        //                waitTimeForDelete += Time.deltaTime;
-
-        //                if (waitTimeForDelete > 1)
-        //                {
-        //                    waitTimeForDelete = 0;
-
-        //                    objectToDestroy = arrowHit.transform.gameObject;
-        //                    Destroy(objectToDestroy);
-        //                }
-        //            }
-        //            else
-        //            {
-        //                waitTimeForDelete = 0;
-        //            }
-        //        }
-        //    }
-
-        //    if (canPlace && inPlaceRange && hasTower && inWall == false)
-        //    {
-        //        if (player.GetComponent<PlayerInputs>().placeInput)
-        //        {
-        //            Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
-        //            canPlace = false;
-        //        }
-        //    }
-        //}
-        //public void AddTowerData()
-        //{
-        //    placeTag = tower.GetComponent<TowerSO>().placeTag;
-        //    nonPlaceTag = tower.GetComponent<TowerSO>().nonPlaceTag;
-
-        //    hasTower = true;
+        placeTag = tower.GetComponent<TowerBase>().towerData.placeTag;
     }
 }

@@ -19,4 +19,3 @@ MonoBehaviour:
   health: 5
   targetType: 
   placeTag: path
-  nonPlaceTag: placeableGround

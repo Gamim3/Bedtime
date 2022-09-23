@@ -9,7 +9,7 @@ public class Spawning : MonoBehaviour
     public float spawnTime;
     public float[] enemy;
 
-    public float wave2;
+    public float wave;
 
     public Text waveCounter;
     public List<GameObject> myObjects;
@@ -99,21 +99,12 @@ public class Spawning : MonoBehaviour
         {
             spawn[3] = true;
         }
-
-        if (enemy[3] < 1 && enemy[2] < 1 && enemy[1] < 1 && enemy[0] < 1)
-        {
-            if(wave2 == 1)
-            {
-                //waveCounter.text = 3.ToString();
-            }
-        }
        
         if(wave2check == true)
         {
-            wave2 += 1;
-            waveCounter.text = wave2.ToString();
+            wave += 1;
+            waveCounter.text = wave.ToString();
             
         }
-        
     }
 }

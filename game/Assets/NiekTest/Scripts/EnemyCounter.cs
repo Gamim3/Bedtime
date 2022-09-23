@@ -7,7 +7,6 @@ public class EnemyCounter : MonoBehaviour
 {
     
     public float[] counter;
-    private bool wave2bool;
     private bool wave2check;
     private float[] enemyAmount;
     private float waveMultiplier;

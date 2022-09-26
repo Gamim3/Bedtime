@@ -106,6 +106,7 @@ public class NewBuildSystem : MonoBehaviour
 
                 arrowRenderer.material.color = Color.black;
             }
+            
             //WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
 
             if (inWall == false && inTower == false)

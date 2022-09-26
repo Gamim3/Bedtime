@@ -56,9 +56,6 @@ public class NewBuildSystem : MonoBehaviour
         else
         {
             inPlaceRange = false;
-
-            posX = 100f;
-            posZ = 100f;
         }
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
@@ -109,14 +106,10 @@ public class NewBuildSystem : MonoBehaviour
 
                 arrowRenderer.material.color = Color.black;
             }
-            else
-            {
-                inWall = false;
-            }
+            //WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
 
             if (inWall == false && inTower == false)
             {
-                // VRAGEN VOOR OPLOSSING
                 if (arrowHit.transform.CompareTag(placeTag))
                 {
                     if (inWall == false)
@@ -155,6 +148,8 @@ public class NewBuildSystem : MonoBehaviour
 
                     objectToDestroy = arrowHit.transform.gameObject;
                     Destroy(objectToDestroy);
+
+                    hasTower = true;
                 }
             }
             else

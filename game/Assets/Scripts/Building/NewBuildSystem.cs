@@ -99,12 +99,14 @@ public class NewBuildSystem : MonoBehaviour
 
         for (int i = 0; i < sphereHit.Length; i++)
         {
-            if (sphereHit[i].collider.CompareTag("wall"))
+            if (sphereHit[i].collider.CompareTag("nonPlaceable"))
             {
                 print("wall");
                 inWall = true;
-
-                arrowRenderer.material.color = Color.black;
+            }
+            else
+            {
+                inWall = false;
             }
             
             //WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
@@ -127,6 +129,10 @@ public class NewBuildSystem : MonoBehaviour
             }
         }
 
+        if (inWall)
+        {
+            arrowRenderer.material.color = Color.black;
+        }
         if (canPlace && hasTower && inTower == false && inWall == false)
         {
             if (player.GetComponent<PlayerInputs>().placeInput)

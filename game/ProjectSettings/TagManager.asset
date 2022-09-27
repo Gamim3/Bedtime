@@ -23,6 +23,7 @@ TagManager:
   - Health
   - baseDoor
   - wall
+  - nonPlaceable
   layers:
   - Default
   - TransparentFX

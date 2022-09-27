@@ -687,7 +687,7 @@ GameObject:
   - component: {fileID: 936092315}
   m_Layer: 0
   m_Name: Cube (2)
-  m_TagString: wall
+  m_TagString: nonPlaceable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -1018,7 +1018,7 @@ GameObject:
   - component: {fileID: 1528764650}
   m_Layer: 8
   m_Name: Player
-  m_TagString: Player
+  m_TagString: nonPlaceable
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0

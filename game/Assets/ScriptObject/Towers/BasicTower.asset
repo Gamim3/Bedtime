@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98511de66a530b4786290e91f1f9339, type: 3}
   m_Name: BasicTower
   m_EditorClassIdentifier: 
-  towerRange: 5
-  towerDamage: 10
-  towerFireSpeed: 3
-  towerCost: 35
-  towerTransform: {fileID: 0}
-  enemyMask:
-    serializedVersion: 2
-    m_Bits: 0
+  range: 2
+  damage: 2
+  fireSpeed: 2
+  cost: 2
+  size: 2
+  health: 2
+  targetType: 
+  placeTag: 

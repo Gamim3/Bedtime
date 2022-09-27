@@ -111,10 +111,11 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   towerData: {fileID: 11400000, guid: 6230125c14ebab2439374974e9722b68, type: 2}
-  enemyOnTrap: []
   range: 0
   damage: 0
-  fireSpeed: 0
+  fireRate: 0
+  cost: 0
+  size: 0
+  placeTag: placeableGround
   health: 0
-  enemyIsOnTrap: 0
-  enemyNumber: 0
+  enemyToAttack: {fileID: 0}

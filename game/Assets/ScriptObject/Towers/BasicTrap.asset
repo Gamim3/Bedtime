@@ -16,6 +16,7 @@ MonoBehaviour:
   damage: 0
   fireSpeed: 0
   cost: 0
+  size: 0
   health: 5
   targetType: 
-  placeTag: path
+  placeTag: placeableGround

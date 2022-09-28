@@ -24,6 +24,7 @@ TagManager:
   - baseDoor
   - wall
   - nonPlaceable
+  - Shop
   layers:
   - Default
   - TransparentFX

@@ -10,43 +10,47 @@ public class Shop : MonoBehaviour
     public bool buttonPressed;
     public bool currencyReset;
     public float bulletCurrency;
-   
+    public RaycastHit hit;
+    public GameObject shopUI;
+
     public void LoadMenu()
     {
-        ShopManager.instance.ToggleShop();
+        shopUI.SetActive(true);
     }
+
+
 
     public void LoadItem1()
     {
-        if(bulletCurrency > 19)
+        if (bulletCurrency > 19)
         {
-            currency =- 20;
+            currency = -20;
             buttonPressed = true;
         }
-        
+
     }
     public void LoadItem2()
     {
-        if(bulletCurrency > 39)
+        if (bulletCurrency > 39)
         {
-            currency =- 40;
+            currency = -40;
             buttonPressed = true;
         }
-        
+
     }
 
     public void LoadItem3()
     {
-        if(bulletCurrency > 59)
+        if (bulletCurrency > 59)
         {
-            currency =- 60;
+            currency = -60;
             buttonPressed = true;
         }
     }
 
     public void Update()
     {
-        if(currencyReset == true)
+        if (currencyReset == true)
         {
             currencyReset = false;
         }
@@ -56,11 +60,29 @@ public class Shop : MonoBehaviour
             buttonPressed = false;
         }
 
-        if(buttonPressed == false)
+        if (buttonPressed == false)
         {
             currency = 0;
         }
 
         bulletCurrency = GameObject.Find("Bullets").GetComponent<Bullet>().currency;
+
+
+    }
+
+    void OnTriggerEnter(Collider other)
+    {
+        if (other.gameObject.tag == "player")
+        {
+            LoadMenu();
+        }
+    }
+
+    void OnTriggerExit(Collider other)
+    {
+        if(other.gameObject.tag == "player")
+        {
+            shopUI.SetActive(false);
+        }
     }
 }

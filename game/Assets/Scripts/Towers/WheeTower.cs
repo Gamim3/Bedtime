@@ -8,9 +8,9 @@ public class WheeTower : TowerBase
     public float detectionRange;
     public Transform towerTransform;
     public RaycastHit[] detection;
-    public Transform[] enemyTransform;
+    public GameObject[] enemy;
     public int ie;
-    
+
     private void Start()
     {
         range = towerData.range;
@@ -29,7 +29,7 @@ public class WheeTower : TowerBase
 
         for (int i = 0; i < detection.Length; i++)
         {
-            enemyTransform[i] = detection[i].transform;
+            enemy[i] = detection[i].transform.gameObject;
         }
     }
 }

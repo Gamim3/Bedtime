@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8117237944706771891}
   - component: {fileID: 3627054089071168452}
   - component: {fileID: 3691452614476161879}
-  - component: {fileID: 7020951581287124597}
+  - component: {fileID: 6186793695988815245}
   m_Layer: 0
   m_Name: Tower
   m_TagString: tower
@@ -98,7 +98,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &7020951581287124597
+--- !u!114 &6186793695988815245
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -118,7 +118,7 @@ MonoBehaviour:
   size: 0
   placeTag: 
   targetType: 
-  detectionRange: 8
+  detectionRange: 5
   towerTransform: {fileID: 8598444626985080827}
-  enemyTransform: []
+  enemy: []
   ie: 0

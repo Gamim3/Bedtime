@@ -24,8 +24,6 @@ public class Enemy : MonoBehaviour
     {
         Wpoints = GameObject.FindGameObjectWithTag("waypoint").GetComponent<Waypoints>();
         enemySpeed = stats.speed;
-
-        //slider.value = 10;
     }
 
     void damage()

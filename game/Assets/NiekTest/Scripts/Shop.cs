@@ -12,13 +12,7 @@ public class Shop : MonoBehaviour
     public float bulletCurrency;
     public RaycastHit hit;
     public GameObject shopUI;
-
-    public void LoadMenu()
-    {
-        shopUI.SetActive(true);
-    }
-
-
+    public bool inMenu;
 
     public void LoadItem1()
     {
@@ -66,7 +60,7 @@ public class Shop : MonoBehaviour
         }
 
         bulletCurrency = GameObject.Find("Bullets").GetComponent<Bullet>().currency;
-
+        GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
     }
 
@@ -74,7 +68,8 @@ public class Shop : MonoBehaviour
     {
         if (other.gameObject.tag == "player")
         {
-            LoadMenu();
+            shopUI.SetActive(true);
+            inMenu = true;
         }
     }
 
@@ -83,6 +78,7 @@ public class Shop : MonoBehaviour
         if(other.gameObject.tag == "player")
         {
             shopUI.SetActive(false);
+            inMenu = false;
         }
     }
 }

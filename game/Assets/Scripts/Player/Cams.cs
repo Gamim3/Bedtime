@@ -24,6 +24,11 @@ public class Cams : MonoBehaviour
         if(inMenu == false)
         {
             Cam();
+            Cursor.lockState = CursorLockMode.Locked;
+        }
+        else
+        {
+            Cursor.lockState = CursorLockMode.None;
         }
     }
     void Cam()

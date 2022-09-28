@@ -5,7 +5,12 @@ using UnityEngine;
 public class WheeTower : TowerBase
 {
     public string targetType;
-
+    public float detectionRange;
+    public Transform towerTransform;
+    public RaycastHit[] detection;
+    public Transform[] enemyTransform;
+    public int ie;
+    
     private void Start()
     {
         range = towerData.range;
@@ -14,5 +19,17 @@ public class WheeTower : TowerBase
         cost = towerData.cost;
         size = towerData.size;
         placeTag = towerData.placeTag;
+    }
+
+    private void Update()
+    {
+        detection = Physics.SphereCastAll(towerTransform.position, detectionRange, towerTransform.up);
+
+        print(detection.Length);
+
+        for (int i = 0; i < detection.Length; i++)
+        {
+            enemyTransform[i] = detection[i].transform;
+        }
     }
 }

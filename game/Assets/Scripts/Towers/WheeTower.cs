@@ -4,32 +4,32 @@ using UnityEngine;
 
 public class WheeTower : TowerBase
 {
-    public string targetType;
-    public float detectionRange;
-    public Transform towerTransform;
-    public RaycastHit[] detection;
-    public GameObject[] enemy;
-    public int ie;
+    public Transform target;
+    public Transform partToRotate;
+    public float rotationSpeed;
 
-    private void Start()
+    private void OnTriggerEnter(Collider other)
     {
-        range = towerData.range;
-        damage = towerData.damage;
-        fireRate = towerData.fireSpeed;
-        cost = towerData.cost;
-        size = towerData.size;
-        placeTag = towerData.placeTag;
+        if (other.CompareTag("enemy"))
+        {
+            target = other.transform;
+        }
     }
-
     private void Update()
     {
-        detection = Physics.SphereCastAll(towerTransform.position, detectionRange, towerTransform.up);
-
-        print(detection.Length);
-
-        for (int i = 0; i < detection.Length; i++)
-        {
-            enemy[i] = detection[i].transform.gameObject;
+        if (target == null){
+            return;
         }
+
+        Vector3 dir = target.position - transform.position;
+        Quaternion lookrotation = Quaternion.LookRotation(dir);
+        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookrotation, Time.deltaTime * 10f).eulerAngles;
+        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
+        
+    }
+
+    private void OnDrawGizmosSelected()
+    {
+        Gizmos.DrawSphere(transform.position, range);
     }
 }

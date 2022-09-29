@@ -80,6 +80,10 @@ public class Enemy : MonoBehaviour
         }
     }
 
+
+
+    // nope dit is niet de goede manier nooit damage doen met een ontrigger enter en bullet
+    /*
     void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "bullet")
@@ -108,6 +112,18 @@ public class Enemy : MonoBehaviour
                 currency = currency + stats.value;
                 enemyCounter[3] += 1;
             }
+        }
+    }
+    */
+
+    //meer iets als dit
+    public void damage(float damage)
+    {
+        enemyHealth -= damage;
+
+        if (enemyHealth <= 0)
+        {
+            Destroy(this.gameObject);
         }
     }
 }

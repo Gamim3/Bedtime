@@ -129,5 +129,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: 29199c6011f6f0448bb9b32b9933e742, type: 2}
-  enemySpeed: 0
   damageTimer: 0
+  currency: 0
+  enemyCounter:
+  - 0
+  - 0
+  - 0
+  - 0

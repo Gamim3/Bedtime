@@ -15,3 +15,5 @@ MonoBehaviour:
   value: 20
   damage: 4
   speed: 0.25
+  enemyType: 4
+  health: 8

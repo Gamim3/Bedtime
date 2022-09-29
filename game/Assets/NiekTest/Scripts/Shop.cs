@@ -59,7 +59,7 @@ public class Shop : MonoBehaviour
             currency = 0;
         }
 
-        bulletCurrency = GameObject.Find("Bullets").GetComponent<Bullet>().currency;
+        bulletCurrency = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency;
         GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
     }

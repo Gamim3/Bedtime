@@ -18,12 +18,12 @@ public class Spawning : MonoBehaviour
     private float waveMultiplier;
     void Update()
     {
-        wave2check = GameObject.Find("Bullets").GetComponent<Bullet>().wave2check;
+        wave2check = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().wave2check;
 
         if (wave2check == true)
         {
-            enemyAmount = GameObject.Find("Bullets").GetComponent<Bullet>().enemyAmount;
-            waveMultiplier = GameObject.Find("Bullets").GetComponent<Bullet>().waveMultiplier;
+            enemyAmount = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().enemyAmount;
+            waveMultiplier = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().waveMultiplier;
             counter[0] = enemyAmount[0] * waveMultiplier;
             counter[1] = enemyAmount[1] * waveMultiplier;
             counter[2] = enemyAmount[2] * waveMultiplier;

@@ -12,11 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98511de66a530b4786290e91f1f9339, type: 3}
   m_Name: BasicTower
   m_EditorClassIdentifier: 
-  range: 2
-  damage: 2
-  fireSpeed: 2
-  cost: 2
-  size: 2
-  health: 2
+  range: 3
+  damage: 0
+  fireSpeed: 0
+  cost: 0
+  size: 0
+  health: 0
   targetType: 
   placeTag: placeableGround

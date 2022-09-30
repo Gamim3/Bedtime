@@ -40,8 +40,19 @@ public class NewBuildSystem : MonoBehaviour
 
     public float waitTimeForDelete;
     public float timeToDestroy;
+
+    public float towerReGetTime;
+    public float towerregret = 1f;
     void Update()
     {
+        towerReGetTime += Time.deltaTime;
+
+        if (towerReGetTime < towerregret)
+        {
+            towerReGetTime = 0f;
+            hasTower = true;
+        }
+
         if (hasTower)
         {
             GetTowerInfo();

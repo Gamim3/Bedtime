@@ -120,9 +120,9 @@ public class Enemy : MonoBehaviour
     public void Damage(float damage)
     {
         print(damage);
-
+        
         enemyHealth -= damage;
-
+        print(enemyHealth);
         if (enemyHealth <= 0)
         {
             Destroy(this.gameObject);

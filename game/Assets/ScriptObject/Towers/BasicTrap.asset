@@ -19,4 +19,4 @@ MonoBehaviour:
   size: 1
   health: 1
   targetType: 
-  placeTag: placeableGround
+  placeTag: path

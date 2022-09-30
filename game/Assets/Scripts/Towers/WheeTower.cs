@@ -9,7 +9,7 @@ public class WheeTower : TowerBase
     public float rotationSpeed;
     public bool isDamageDone;
     public float timeBetweenShooting;
-
+    
     private void Start()
     {
         damage = towerData.damage;
@@ -31,7 +31,7 @@ public class WheeTower : TowerBase
         if (target == null){
             return;
         }
-
+        
         timeBetweenShooting += Time.deltaTime;
 
         if (timeBetweenShooting >= fireRate)

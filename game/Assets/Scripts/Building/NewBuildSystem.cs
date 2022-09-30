@@ -146,7 +146,7 @@ public class NewBuildSystem : MonoBehaviour
         {
             if (player.GetComponent<PlayerInputs>().interactInput)
             {
-                waitTimeForDelete += Time.deltaTime;
+                waitTimeForDelete += Time.deltaTime * 10;
                 arrowRenderer.material.color = Color.magenta;
 
                 if (waitTimeForDelete > timeToDestroy)

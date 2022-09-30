@@ -117,8 +117,10 @@ public class Enemy : MonoBehaviour
     */
 
     //meer iets als dit
-    public void damage(float damage)
+    public void Damage(float damage)
     {
+        print(damage);
+
         enemyHealth -= damage;
 
         if (enemyHealth <= 0)

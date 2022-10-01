@@ -21,20 +21,7 @@ public class Enemy : MonoBehaviour
 
     void Update()
     {
-        if(enemyHealth < 1)
-        {
-           
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency += currency;
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[0] -= enemyCounter[0];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[1] -= enemyCounter[1];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[2] -= enemyCounter[2];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[3] -= enemyCounter[3];
-            Destroy(gameObject);
-            //dit kan niet in 1 array volgens unity :/  (moet gefixd worden)
-        }
-
         speed();
-
     }
 
     void Start()
@@ -80,42 +67,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-
-
-    // nope dit is niet de goede manier nooit damage doen met een ontrigger enter en bullet
-    /*
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "bullet")
-        {
-            enemyHealth -= 1;
-            if(stats.enemyType == 1 && enemyHealth < 1)
-            {
-                currency = currency + stats.value;
-                enemyCounter[0] += 1;
-            }
-
-            if (stats.enemyType == 2 && enemyHealth < 1)
-            {
-                currency = currency + stats.value;
-                enemyCounter[1] += 1;
-            }
-
-            if (stats.enemyType == 3 && enemyHealth < 1)
-            {
-                currency = currency + stats.value;
-                enemyCounter[2] += 1;
-            }
-
-            if (stats.enemyType == 4 && enemyHealth < 1)
-            {
-                currency = currency + stats.value;
-                enemyCounter[3] += 1;
-            }
-        }
-    }
-    */
-
     //meer iets als dit
     public void Damage(float damage)
     {
@@ -125,7 +76,37 @@ public class Enemy : MonoBehaviour
         print(enemyHealth);
         if (enemyHealth <= 0)
         {
+            currency = currency + stats.value;
+
+            if (stats.enemyType == 1)
+            {
+                enemyCounter[0] += 1;
+            }
+
+            if (stats.enemyType == 2)
+            {
+                enemyCounter[1] += 1;
+            }
+
+            if (stats.enemyType == 3)
+            {
+                enemyCounter[2] += 1;
+            }
+
+            if (stats.enemyType == 4)
+            {
+                enemyCounter[3] += 1;
+            }
+
+            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency += currency;
+            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[0] -= enemyCounter[0];
+            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[1] -= enemyCounter[1];
+            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[2] -= enemyCounter[2];
+            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[3] -= enemyCounter[3];
+
             Destroy(this.gameObject);
         }
+
+        
     }
 }

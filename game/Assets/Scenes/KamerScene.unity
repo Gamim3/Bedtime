@@ -1012,8 +1012,8 @@ MonoBehaviour:
   waveCounter: {fileID: 1354475498}
   myObjects:
   - {fileID: 5614471132071462348, guid: feeb57f759fcc724985d310ac5f7749f, type: 3}
-  - {fileID: 6783075844411093165, guid: 149d582359715244591af927c1a8c876, type: 3}
-  - {fileID: 6776598029856732502, guid: d4af2001fca027f499c6bda673f63170, type: 3}
+  - {fileID: 2839621372510160385, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
+  - {fileID: 1038103274913091638, guid: bca67429152074a48851d67f037fe671, type: 3}
   - {fileID: 3416940110439412467, guid: e40e8a242629b5b4995ce6e4ca735bd1, type: 3}
   spawn: 00000000
   wave2check: 0

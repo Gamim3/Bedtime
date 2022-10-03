@@ -2,19 +2,19 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.UI;
-
+using TMPro;
 public class WaveCounter : MonoBehaviour
 {
-
+    
     public float[] counter;
     public float currency;
-    public Text currencyUI;
+    public TMP_Text currencyUI;
 
     public bool wave2check;
     private bool buttonPressed;
     public float[] enemyAmount;
     public float waveMultiplier;
-    public Text[] enemyText;
+    public TMP_Text[] enemyText;
 
     void Start()
     {

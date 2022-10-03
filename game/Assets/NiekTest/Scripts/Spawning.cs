@@ -8,7 +8,7 @@ public class Spawning : MonoBehaviour
 {
     public float spawnTime;
     public float wave;
-    public Text waveCounter;
+    public TMP_Text waveCounter;
     public List<GameObject> myObjects;
 
     public bool[] spawn;

@@ -101,7 +101,11 @@ MonoBehaviour:
   stats: {fileID: 11400000, guid: fb8100e249f7dfe44863502c3162baf6, type: 2}
   damageTimer: 0
   currency: 0
-  enemyCounter: []
+  enemyCounter:
+  - 0
+  - 0
+  - 0
+  - 0
 --- !u!54 &7221003183089799643
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -126,7 +130,7 @@ BoxCollider:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6776598029856732502}
   m_Material: {fileID: 0}
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
   m_Size: {x: 0.4935171, y: 0.82652605, z: 0.15193452}

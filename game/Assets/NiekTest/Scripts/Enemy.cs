@@ -18,10 +18,12 @@ public class Enemy : MonoBehaviour
     public float currency;
 
     public float[] enemyCounter;
+    private Animator animator;
 
     void Update()
     {
         speed();
+        animator = gameObject.GetComponent<Animator>();
     }
 
     void Start()
@@ -33,6 +35,7 @@ public class Enemy : MonoBehaviour
 
     void damage()
     {
+        animator.SetBool("attack", true);
         enemySpeed = 0;
         damageTimer += Time.deltaTime;
         if (damageTimer > 1)

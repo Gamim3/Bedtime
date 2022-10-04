@@ -10,8 +10,8 @@ public class Enemy : MonoBehaviour
     private float enemySpeed;
     private float enemyHealth;
 
-    private Waypoints Wpoints;
-    private int waypointIndex;
+    public Waypoints Wpoints;
+    public int waypointIndex;
 
     private Slider slider;
     public float damageTimer;
@@ -28,7 +28,7 @@ public class Enemy : MonoBehaviour
 
     void Start()
     {
-        Wpoints = GameObject.FindGameObjectWithTag("waypoint").GetComponent<Waypoints>();
+        //Wpoints = GameObject.FindGameObjectWithTag("waypoint").GetComponent<Waypoints>();
         enemySpeed = stats.speed;
         enemyHealth = stats.health;
     }

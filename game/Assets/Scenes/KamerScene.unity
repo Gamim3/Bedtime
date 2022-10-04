@@ -1158,6 +1158,7 @@ MonoBehaviour:
   - 8
   - 6
   - 4
+  Waypoints: {fileID: 2070545819}
 --- !u!1 &579893118
 GameObject:
   m_ObjectHideFlags: 0
@@ -2834,6 +2835,10 @@ PrefabInstance:
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
       objectReference: {fileID: 0}
+    - target: {fileID: -7511558181221131132, guid: c884d104de8e4974b837a232e4b44296, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08115c6a64f2ead4096e871f221dae5c, type: 2}
     - target: {fileID: 919132149155446097, guid: c884d104de8e4974b837a232e4b44296, type: 3}
       propertyPath: m_Name
       value: deurFrame
@@ -3574,6 +3579,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: deur
       objectReference: {fileID: 0}
+    - target: {fileID: 6666867488608077602, guid: 7288153c2d62bfc4d83d8c2f55fe7c1c, type: 3}
+      propertyPath: m_Materials.Array.data[0]
+      value: 
+      objectReference: {fileID: 2100000, guid: 08115c6a64f2ead4096e871f221dae5c, type: 2}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 7288153c2d62bfc4d83d8c2f55fe7c1c, type: 3}
 --- !u!1 &1273401925

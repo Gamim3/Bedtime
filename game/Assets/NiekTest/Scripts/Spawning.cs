@@ -16,6 +16,8 @@ public class Spawning : MonoBehaviour
     public float[] counter;
     private float[] enemyAmount;
     private float waveMultiplier;
+
+    public GameObject Waypoints;
     void Update()
     {
         wave2check = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().wave2check;
@@ -38,6 +40,7 @@ public class Spawning : MonoBehaviour
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, Quaternion.identity) as GameObject;
+                instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[0] -= 1;
             }
 
@@ -45,6 +48,7 @@ public class Spawning : MonoBehaviour
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, Quaternion.identity) as GameObject;
+                instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[1] -= 1;
             }
 
@@ -52,6 +56,7 @@ public class Spawning : MonoBehaviour
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, Quaternion.identity) as GameObject;
+                instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[2] -= 1;
             }
 
@@ -59,6 +64,7 @@ public class Spawning : MonoBehaviour
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, Quaternion.identity) as GameObject;
+                instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[3] -= 1;
             }    
         }

@@ -43,8 +43,11 @@ public class NewBuildSystem : MonoBehaviour
 
     public float towerReGetTime;
     public float towerregret = 1f;
+
+    public bool arrow;
     void Update()
     {
+
         towerReGetTime += Time.deltaTime;
 
         if (towerReGetTime < towerregret)
@@ -57,16 +60,19 @@ public class NewBuildSystem : MonoBehaviour
         {
             GetTowerInfo();
         }
+
         arrowPlacer.transform.position = new Vector3(posX, posY, posZ);
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
 
         if (distanceToArrow < placeRange)
         {
-            inPlaceRange = true;
+            arrow = true;
+            arrowPlacer.SetActive(true);
         }
         else
         {
-            inPlaceRange = false;
+            arrow = false;
+            arrowPlacer.SetActive(false);
         }
 
         if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
@@ -81,105 +87,118 @@ public class NewBuildSystem : MonoBehaviour
             }
         }
 
-        if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
+        if (arrow)
         {
-            if (arrowHit.transform.CompareTag("tower"))
+            if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
             {
-                print("tower");
-
-                inTower = true;
-                canDestroy = true;
-                arrowRenderer.material.color = Color.blue;
-            }
-            else
-            {
-                inTower = false;
-                canDestroy = false;
-            }
-        }
-
-        Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
-
-        raycastOrigin.x = arrowPlacer.transform.position.x;
-        raycastOrigin.y = arrowPlacer.transform.position.y;
-        raycastOrigin.z = arrowPlacer.transform.position.z;
-
-        raycastOrigin.y += 1f;
-
-        sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up);
-
-        for (int i = 0; i < sphereHit.Length; i++)
-        {
-            if (sphereHit[i].collider.CompareTag("nonPlaceable"))
-            {
-                print("wall");
-                inWall = true;
-            }
-            else
-            {
-                inWall = false;
-            }
-            
-            //WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
-
-            if (inWall == false && inTower == false)
-            {
-                if (arrowHit.transform.CompareTag(placeTag))
+                if (arrowHit.transform.CompareTag("tower"))
                 {
-                    if (inWall == false)
+                    print("tower");
+
+                    inTower = true;
+                    canDestroy = true;
+                    arrowRenderer.material.color = Color.blue;
+                }
+                else
+                {
+                    inTower = false;
+                    canDestroy = false;
+                }
+            }
+
+            Debug.DrawRay(arrowPlacer.transform.position, -arrowPlacer.transform.up, Color.red);
+
+            raycastOrigin.x = arrowPlacer.transform.position.x;
+            raycastOrigin.y = arrowPlacer.transform.position.y;
+            raycastOrigin.z = arrowPlacer.transform.position.z;
+
+            raycastOrigin.y += 1f;
+
+            sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up);
+
+            for (int i = 0; i < sphereHit.Length; i++)
+            {
+                if (sphereHit[i].collider.CompareTag(placeTag))
+                {
+                    canPlace = true;
+                }
+                if (sphereHit[i].collider.CompareTag("wall"))
+                {
+                    inWall = true;
+                }
+                if (sphereHit[i].collider.CompareTag("player"))
+                {
+                    inWall = true;
+                }
+                if (sphereHit[i].collider.CompareTag("tower"))
+                {
+                    inTower = true;
+                }
+                if (!sphereHit[i].collider.CompareTag("wall"))
+                {
+                    inWall = false;
+                }
+                ////WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
+
+                if (inWall == false && inTower == false)
+                {
+                    if (arrowHit.transform.CompareTag(placeTag))
                     {
-                        canPlace = true;
-                        arrowRenderer.material.color = Color.green;
+                        if (inWall == false)
+                        {
+                            canPlace = true;
+                            arrowRenderer.material.color = Color.green;
+                        }
+                    }
+                    else
+                    {
+                        canPlace = false;
+                        arrowRenderer.material.color = Color.red;
+                    }
+                }
+            }
+
+            if (inWall)
+            {
+                arrowRenderer.material.color = Color.black;
+            }
+            if (canPlace && hasTower && inTower == false && inWall == false)
+            {
+                if (player.GetComponent<PlayerInputs>().placeInput)
+                {
+                    Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
+                    hasTower = false;
+                }
+            }
+
+            if (canDestroy && inTower)
+            {
+                if (player.GetComponent<PlayerInputs>().interactInput)
+                {
+                    waitTimeForDelete += Time.deltaTime;
+                    arrowRenderer.material.color = Color.magenta;
+
+                    if (waitTimeForDelete > timeToDestroy)
+                    {
+                        waitTimeForDelete = 0;
+
+                        objectToDestroy = arrowHit.transform.gameObject;
+                        Destroy(objectToDestroy);
+
+                        hasTower = true;
                     }
                 }
                 else
                 {
-                    canPlace = false;
-                    arrowRenderer.material.color = Color.red;
-                }
-            }
-        }
-
-        if (inWall)
-        {
-            arrowRenderer.material.color = Color.black;
-        }
-        if (canPlace && hasTower && inTower == false && inWall == false)
-        {
-            if (player.GetComponent<PlayerInputs>().placeInput)
-            {
-                Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
-                hasTower = false;
-            }
-        }
-
-        if (canDestroy && inTower)
-        {
-            if (player.GetComponent<PlayerInputs>().interactInput)
-            {
-                waitTimeForDelete += Time.deltaTime;
-                arrowRenderer.material.color = Color.magenta;
-
-                if (waitTimeForDelete > timeToDestroy)
-                {
                     waitTimeForDelete = 0;
-
-                    objectToDestroy = arrowHit.transform.gameObject;
-                    Destroy(objectToDestroy);
-
-                    hasTower = true;
                 }
-            }
-            else
-            {
-                waitTimeForDelete = 0;
             }
         }
     }
     public void GetTowerInfo()
     {
         print("hai");
-
+        towerSize = tower.GetComponent<TowerBase>().towerData.size;
         placeTag = tower.GetComponent<TowerBase>().towerData.placeTag;
     }
 }

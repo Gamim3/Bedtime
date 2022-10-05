@@ -582,6 +582,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1528764649}
+  playerRigidbody: {fileID: 0}
+  nonMoveVector: {x: 0, y: 0, z: 0}
   maxWalkSpeed: 5
   walkSpeed: 1
   move: {x: 0, y: 0, z: 0}
@@ -716,6 +718,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: b197eef0c0484a34a9c09311adfc12bc, type: 2}
+  Wpoints: {fileID: 0}
+  waypointIndex: 0
   damageTimer: 0
   currency: 0
   enemyCounter: []
@@ -1030,7 +1034,11 @@ PrefabInstance:
       objectReference: {fileID: 1528764644}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: towerSize
-      value: 0.5
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: placeRange
+      value: 1.5
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877127, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: m_RootOrder

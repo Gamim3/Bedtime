@@ -4037,6 +4037,14 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 1848289113}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: towerSize
+      value: 0.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: placeRange
+      value: 1.5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: towerregret
       value: 2
       objectReference: {fileID: 0}

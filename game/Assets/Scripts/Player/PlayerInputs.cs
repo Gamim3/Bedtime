@@ -55,21 +55,15 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Update()
     {
-
+        
     }
     private void Movement()
     {
         move.x = walkInput.x;
         move.z = walkInput.y;
 
-        playerTransform.Translate(move * walkSpeed * Time.deltaTime, Space.Self);
-        if (walkSpeed < maxWalkSpeed)
-        {
-            walkSpeed += Time.deltaTime;
-        }
-        else
-        {
-            walkSpeed = maxWalkSpeed;
-        }
+        playerTransform.Translate(move * walkSpeed * Time.deltaTime);
+
+        print("ismoving");
     }
 }

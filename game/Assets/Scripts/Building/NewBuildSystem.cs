@@ -45,6 +45,7 @@ public class NewBuildSystem : MonoBehaviour
     public float towerregret = 1f;
 
     public bool arrow;
+    public LayerMask towerMask;
     void Update()
     {
 
@@ -75,7 +76,7 @@ public class NewBuildSystem : MonoBehaviour
             arrowPlacer.SetActive(false);
         }
 
-        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange))
+        if (Physics.Raycast(cam.transform.position, cam.transform.forward, out playerHit, placeRange, towerMask))
         {
             posX = playerHit.point.x;
             posZ = playerHit.point.z;

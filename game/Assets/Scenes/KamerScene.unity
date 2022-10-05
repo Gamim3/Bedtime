@@ -4038,7 +4038,7 @@ PrefabInstance:
       objectReference: {fileID: 1848289113}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: towerSize
-      value: 0.5
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: placeRange
@@ -4050,6 +4050,10 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: raycastOrigin.y
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: towerMask.m_Bits
       value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877127, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}

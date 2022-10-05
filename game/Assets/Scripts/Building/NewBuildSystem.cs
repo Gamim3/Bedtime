@@ -14,7 +14,7 @@ public class NewBuildSystem : MonoBehaviour
     public RaycastHit playerHit;
     public RaycastHit arrowHit;
     public RaycastHit[] sphereHit;
-
+    public RaycastHit[] pathdetecthit;
     public float placeRange;
 
     public float posX;
@@ -46,6 +46,8 @@ public class NewBuildSystem : MonoBehaviour
 
     public bool arrow;
     public LayerMask towerMask;
+
+    public bool nonplace;
     void Update()
     {
 
@@ -90,7 +92,7 @@ public class NewBuildSystem : MonoBehaviour
 
         if (arrow)
         {
-            if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f))
+            if (Physics.Raycast(raycastOrigin, -arrowPlacer.transform.up, out arrowHit, 3f, towerMask))
             {
                 if (arrowHit.transform.CompareTag("tower"))
                 {
@@ -115,8 +117,11 @@ public class NewBuildSystem : MonoBehaviour
 
             raycastOrigin.y += 1f;
 
-            sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up);
+            sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up, towerMask);
 
+            float sizehalf = towerSize / 2;
+
+            pathdetecthit = Physics.SphereCastAll(arrowHit.point, sizehalf, -arrowPlacer.transform.up, towerMask);
             for (int i = 0; i < sphereHit.Length; i++)
             {
                 if (sphereHit[i].collider.CompareTag(placeTag))
@@ -138,6 +143,16 @@ public class NewBuildSystem : MonoBehaviour
                 if (!sphereHit[i].collider.CompareTag("wall"))
                 {
                     inWall = false;
+                }
+                if (pathdetecthit[i].collider.CompareTag("path"))
+                {
+                    print("aa ee oo");
+                    nonplace = true;
+                }
+
+                if (!pathdetecthit[i].collider.CompareTag("path"))
+                {
+                    nonplace = true;
                 }
                 ////WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
 
@@ -163,7 +178,7 @@ public class NewBuildSystem : MonoBehaviour
             {
                 arrowRenderer.material.color = Color.black;
             }
-            if (canPlace && hasTower && inTower == false && inWall == false)
+            if (canPlace && hasTower && inTower == false && inWall == false && nonplace)
             {
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {

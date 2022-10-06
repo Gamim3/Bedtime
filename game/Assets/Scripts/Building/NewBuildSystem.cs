@@ -144,16 +144,17 @@ public class NewBuildSystem : MonoBehaviour
                 {
                     inWall = false;
                 }
-                if (pathdetecthit[i].collider.CompareTag("path"))
-                {
-                    print("aa ee oo");
-                    nonplace = true;
-                }
+                //if (pathdetecthit[i].collider.CompareTag("path"))
+                //{
+                //    print("aa ee oo");
+                //    nonplace = true;
+                //}
 
-                if (!pathdetecthit[i].collider.CompareTag("path"))
-                {
-                    nonplace = true;
-                }
+                //if (!pathdetecthit[i].collider.CompareTag("path"))
+                //{
+                //    nonplace = true;
+                //}
+
                 ////WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
 
                 if (inWall == false && inTower == false)

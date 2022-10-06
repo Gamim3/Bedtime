@@ -24,21 +24,20 @@ public class WaveCounter : MonoBehaviour
     void Update()
     {
         //currency = currency - GameObject.Find("ShopButton").GetComponent<Shop>().currency;
-
-        enemyText[0].text = counter[0].ToString();
-        enemyText[1].text = counter[1].ToString();
-        enemyText[2].text = counter[2].ToString();
-        enemyText[3].text = counter[3].ToString();
+        for (int i = 0; i < counter.Length; i++)
+        {
+            enemyText[i].text = counter[i].ToString();
+        }
         currencyUI.text = currency.ToString();
         wave2check = GameObject.Find("Spawnpoint").GetComponent<Spawning>().wave2check;
         
         if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter [3] < 1)
         {
             waveMultiplier += 1;
-            counter[0] = enemyAmount[0] * waveMultiplier;
-            counter[1] = enemyAmount[1] * waveMultiplier;
-            counter[2] = enemyAmount[2] * waveMultiplier;
-            counter[3] = enemyAmount[3] * waveMultiplier;
+            for (int i = 0; i < counter.Length; i++)
+            {
+                counter[i] = enemyAmount[i] * waveMultiplier;
+            }
             wave2check = true;
         }
 

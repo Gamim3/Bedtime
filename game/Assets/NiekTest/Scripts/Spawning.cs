@@ -26,10 +26,15 @@ public class Spawning : MonoBehaviour
         {
             enemyAmount = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().enemyAmount;
             waveMultiplier = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().waveMultiplier;
-            counter[0] = enemyAmount[0] * waveMultiplier;
-            counter[1] = enemyAmount[1] * waveMultiplier;
-            counter[2] = enemyAmount[2] * waveMultiplier;
-            counter[3] = enemyAmount[3] * waveMultiplier;
+            for (int i = 0; i < counter.Length; i ++)
+            {
+                counter[i] = enemyAmount[i] * waveMultiplier;
+            }
+            //counter[0] = enemyAmount[0] * waveMultiplier;
+            //counter[1] = enemyAmount[1] * waveMultiplier;
+            //counter[2] = enemyAmount[2] * waveMultiplier;
+            //counter[3] = enemyAmount[3] * waveMultiplier;
+            //kijken of het werkt zonder dit als de grid weer werkt
         }
 
         int randomIndex = Random.Range(0, 4);

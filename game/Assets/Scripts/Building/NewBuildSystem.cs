@@ -121,7 +121,7 @@ public class NewBuildSystem : MonoBehaviour
 
             float sizehalf = towerSize / 2;
 
-            pathdetecthit = Physics.SphereCastAll(arrowHit.point, sizehalf, -arrowPlacer.transform.up, towerMask);
+            //pathdetecthit = Physics.SphereCastAll(arrowHit.point, sizehalf, -arrowPlacer.transform.up, towerMask);
             for (int i = 0; i < sphereHit.Length; i++)
             {
                 if (sphereHit[i].collider.CompareTag(placeTag))

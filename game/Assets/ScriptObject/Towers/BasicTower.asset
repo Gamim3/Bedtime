@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98511de66a530b4786290e91f1f9339, type: 3}
   m_Name: BasicTower
   m_EditorClassIdentifier: 
-  range: 3
+  range: 5
   damage: 1
   fireSpeed: 1
   cost: 0

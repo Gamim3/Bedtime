@@ -7,7 +7,6 @@ public class PlayerInputs : MonoBehaviour
     NewControls newControls;
     public Transform playerTransform;
     public Rigidbody playerRigidbody;
-    public Vector3 nonMoveVector;
 
     [Header("statistics")]
     #region
@@ -57,10 +56,7 @@ public class PlayerInputs : MonoBehaviour
     }
     private void Update()
     {
-        if (walkInput == null)
-        {
-            playerRigidbody.velocity = nonMoveVector;
-        }
+
     }
     private void Movement()
     {
@@ -68,7 +64,5 @@ public class PlayerInputs : MonoBehaviour
         move.z = walkInput.y;
 
         playerTransform.Translate(move * walkSpeed * Time.deltaTime);
-
-        print("ismoving");
     }
 }

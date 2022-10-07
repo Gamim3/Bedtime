@@ -4,49 +4,68 @@ using UnityEngine;
 
 public class WheeTower : TowerBase
 {
-    public Vector3 towerTranform;
-    public Transform target;
-    public Transform partToRotate;
-    public float rotationSpeed;
-    public bool isDamageDone;
-    public float timeBetweenShooting;
-    public RaycastHit[] enemyDetecionHit;
+    public GameObject[] enemies;
+    public RaycastHit[] enemyDetectionHit;
+    public Transform towerTransform;
+    public int indexterst;
 
-    private void Start()
+    public Transform target;
+    public float towerDistance;
+
+    public int i;
+    // Start is called before the first frame update
+    void Start()
     {
+        #region
+        range = towerData.range;
         damage = towerData.damage;
         fireRate = towerData.fireSpeed;
+        cost = towerData.cost;
+        size = towerData.size;
+        #endregion
     }
-    private void Update()
-    {
-        enemyDetecionHit = Physics.SphereCastAll(towerTranform, range);
-        if (target == null){
-            return;
-        }
-        
-        timeBetweenShooting += Time.deltaTime;
 
-        if (timeBetweenShooting >= fireRate)
+    // Update is called once per frame
+    void Update()
+    {
+        
+
+        enemyDetectionHit = Physics.SphereCastAll(towerTransform.position, range, towerTransform.up);
+
+        for (i = 0; i < enemyDetectionHit.Length; i++)
         {
-            DoDamage();
-            timeBetweenShooting = 0f;
+            if (enemyDetectionHit[i].collider.CompareTag("enemy"))
+            {
+                enemies[indexterst] = enemyDetectionHit[i].transform.gameObject;
+                
+
+
+                towerDistance = Vector3.Distance(towerTransform.position, enemies[i].transform.position);
+                print(towerDistance);
+
+                //if (towerDistance > range)
+                //{
+                //    enemies[i] = null;
+                //}
+
+                indexterst++;
+                if (i < 5)
+                {
+                    i = 0;
+                }
+            }
         }
 
-        Vector3 dir = target.position - transform.position;
-        Quaternion lookrotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(partToRotate.rotation, lookrotation, Time.deltaTime * 10f).eulerAngles;
-        partToRotate.rotation = Quaternion.Euler(0f, rotation.y, 0f);
-        
-    }
-
-    public void DoDamage()
-    {
-        target.GetComponent<Enemy>().Damage(damage);
-        isDamageDone = true;
-    }
-
-    private void OnDrawGizmosSelected()
-    {
-        Gizmos.DrawSphere(transform.position, range);
+        for (int i = 0; i < enemies.Length; i++)
+        {
+            if (i == 0)
+            {
+                target = enemies[i].transform;
+            }
+            else if (enemies[i].GetComponent<Enemy>().waypointIndex > enemies[i - 1].GetComponent<Enemy>().waypointIndex)
+            {
+                target = enemies[i].transform;
+            }
+        }
     }
 }

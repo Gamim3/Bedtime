@@ -4,30 +4,22 @@ using UnityEngine;
 
 public class WheeTower : TowerBase
 {
+    public Vector3 towerTranform;
     public Transform target;
     public Transform partToRotate;
     public float rotationSpeed;
     public bool isDamageDone;
     public float timeBetweenShooting;
-    
+    public RaycastHit[] enemyDetecionHit;
+
     private void Start()
     {
         damage = towerData.damage;
         fireRate = towerData.fireSpeed;
     }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (isDamageDone || target == null)
-        {
-            if (other.CompareTag("enemy"))
-            {
-                target = other.transform;
-                isDamageDone = false;
-            }
-        }
-    }
     private void Update()
     {
+        enemyDetecionHit = Physics.SphereCastAll(towerTranform, range);
         if (target == null){
             return;
         }

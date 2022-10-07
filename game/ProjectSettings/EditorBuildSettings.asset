@@ -6,16 +6,16 @@ EditorBuildSettings:
   serializedVersion: 2
   m_Scenes:
   - enabled: 1
-    path: Assets/Scenes/main menu.unity
+    path: Assets/Scenes/joram scenes/main menu.unity
     guid: c0e57230932fdaa4a95a5cf6acfeaa14
   - enabled: 1
-    path: Assets/Scenes/settings.unity
+    path: Assets/Scenes/joram scenes/settings.unity
     guid: 76032e402c8c68d4ebe2dd9305467320
   - enabled: 1
-    path: Assets/Scenes/lvl select.unity
+    path: Assets/Scenes/joram scenes/lvl select.unity
     guid: 191d80e765d7b744295bdc8e8c3c2df3
   - enabled: 1
-    path: Assets/Scenes/Infoscreen.unity
+    path: Assets/Scenes/joram scenes/Infoscreen.unity
     guid: 26b00dbfa9d3c124ebc9d0415174e01b
   - enabled: 1
     path: Assets/Scenes/KamerScene.unity

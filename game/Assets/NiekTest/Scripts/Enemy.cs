@@ -19,6 +19,7 @@ public class Enemy : MonoBehaviour
 
     public float[] enemyCounter;
     private Animator animator;
+    public float distance;
 
     void Update()
     {
@@ -52,6 +53,7 @@ public class Enemy : MonoBehaviour
 
     void speed()
     {
+        distance = Vector3.Distance(transform.position, Wpoints.waypoints[waypointIndex].position);
         if (Vector3.Distance(transform.position, Wpoints.waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;

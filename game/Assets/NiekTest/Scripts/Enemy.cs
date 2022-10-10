@@ -104,11 +104,10 @@ public class Enemy : MonoBehaviour
             }
 
             GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency += currency;
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[0] -= enemyCounter[0];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[1] -= enemyCounter[1];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[2] -= enemyCounter[2];
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[3] -= enemyCounter[3];
-
+            for (int i = 0; i < enemyCounter.Length; i++)
+            {
+                GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[i] -= enemyCounter[i];
+            }
             Destroy(this.gameObject);
         }
 

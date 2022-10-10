@@ -1409,6 +1409,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: b197eef0c0484a34a9c09311adfc12bc, type: 2}
+  enemyTranform: {fileID: 9133862388798341115}
   Wpoints: {fileID: 0}
   waypointIndex: 0
   damageTimer: 0
@@ -1418,6 +1419,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  distance: 0
 --- !u!54 &5079764974480625356
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -123,6 +123,11 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!4 &80441664 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8598444626985080827, guid: d13bfd516ad45924db85999c93249142, type: 3}
+  m_PrefabInstance: {fileID: 1744703280}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &667884059
 GameObject:
   m_ObjectHideFlags: 0
@@ -253,8 +258,8 @@ MonoBehaviour:
   target: {fileID: 0}
   towerDistance: 0
   i: 0
-  games: 
-  games2: []
+  enemyWaypoint: 
+  enemyDistance: []
 --- !u!1 &1070195296
 GameObject:
   m_ObjectHideFlags: 0
@@ -390,6 +395,11 @@ MonoBehaviour:
   playerBody: {fileID: 1528764649}
   mSpeed: 60
   inMenu: 0
+--- !u!4 &1495079812 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 254335615498803890, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
+  m_PrefabInstance: {fileID: 3432896158436090132}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1528764644
 GameObject:
   m_ObjectHideFlags: 0
@@ -534,6 +544,26 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 661892806396367935, guid: d13bfd516ad45924db85999c93249142, type: 3}
+      propertyPath: towerTransform
+      value: 
+      objectReference: {fileID: 80441664}
+    - target: {fileID: 661892806396367935, guid: d13bfd516ad45924db85999c93249142, type: 3}
+      propertyPath: enemies.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 661892806396367935, guid: d13bfd516ad45924db85999c93249142, type: 3}
+      propertyPath: enemyDistance.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 661892806396367935, guid: d13bfd516ad45924db85999c93249142, type: 3}
+      propertyPath: enemyWaypoint.Array.size
+      value: 3
+      objectReference: {fileID: 0}
+    - target: {fileID: 661892806396367935, guid: d13bfd516ad45924db85999c93249142, type: 3}
+      propertyPath: enemiesInRange.Array.size
+      value: 3
+      objectReference: {fileID: 0}
     - target: {fileID: 5785321850180901201, guid: d13bfd516ad45924db85999c93249142, type: 3}
       propertyPath: m_Name
       value: Tower
@@ -820,6 +850,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: monster2Pickle 1
       objectReference: {fileID: 0}
+    - target: {fileID: 8291293460235075411, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
+      propertyPath: enemyTranform
+      value: 
+      objectReference: {fileID: 1495079812}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
 --- !u!1001 &4062445190585016369

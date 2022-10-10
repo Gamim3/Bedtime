@@ -96,8 +96,6 @@ public class NewBuildSystem : MonoBehaviour
             {
                 if (arrowHit.transform.CompareTag("tower"))
                 {
-                    print("tower");
-
                     inTower = true;
                     canDestroy = true;
                     arrowRenderer.material.color = Color.blue;
@@ -167,7 +165,6 @@ public class NewBuildSystem : MonoBehaviour
 
             if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false)
             {
-                print("canplace a tower");
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
                     Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
@@ -201,7 +198,6 @@ public class NewBuildSystem : MonoBehaviour
     }
     public void GetTowerInfo()
     {
-        print("hai");
         towerSize = tower.GetComponent<TowerBase>().towerData.size;
         placeTag = tower.GetComponent<TowerBase>().towerData.placeTag;
     }

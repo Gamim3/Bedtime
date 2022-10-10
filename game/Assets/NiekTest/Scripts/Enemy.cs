@@ -6,7 +6,7 @@ using UnityEngine.UI;
 public class Enemy : MonoBehaviour
 {
     public EnemyStats stats;
-
+    public Transform enemyTranform;
     private float enemySpeed;
     private float enemyHealth;
 

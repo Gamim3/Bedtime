@@ -15,8 +15,9 @@ public class WheeTower : TowerBase
     public Transform target;
     public float towerDistance;
     public int i;
-    public int[] games;
-    public float[] games2;
+
+    public int[] enemyWaypoint;
+    public float[] enemyDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -41,13 +42,35 @@ public class WheeTower : TowerBase
     // Update is called once per frame
     private void Update()
     {
-        enemiesInRange = Physics.OverlapSphere(towerTransform.position, range);
+        enemiesInRange = Physics.OverlapSphere(towerTransform.position, range, enemiesLayer);
 
         for (i = 0; i < enemiesInRange.Length; i++)
         {
             if (enemiesInRange[i].CompareTag("enemy"))
             {
-                print(enemiesInRange[i].name);
+                //THIS WORKS target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform; THIS WORKS
+
+
+
+                if (target == null)
+                {
+                    target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+                }
+                else
+                {
+                    ////maybe like this?
+                    //if (enemyWaypoint[i - 1] > enemyWaypoint[i])
+                    //{
+                    //    print("bigger");
+                    //}
+                    //if (enemyWaypoint[i - 1] < enemyWaypoint[i])
+                    //{
+                    //    print("smaller");
+                    //}
+                    ////maybe like this?
+                }
+                
+
             }
         }
     }

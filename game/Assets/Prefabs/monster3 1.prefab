@@ -413,6 +413,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: fb8100e249f7dfe44863502c3162baf6, type: 2}
+  enemyTranform: {fileID: 1349083878757752413}
   Wpoints: {fileID: 0}
   waypointIndex: 0
   damageTimer: 0
@@ -422,6 +423,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
+  distance: 0
 --- !u!95 &1701003186767862305
 Animator:
   serializedVersion: 4

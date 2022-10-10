@@ -12,7 +12,7 @@ GameObject:
   - component: {fileID: 8117237944706771891}
   - component: {fileID: 3627054089071168452}
   - component: {fileID: 3691452614476161879}
-  - component: {fileID: 6186793695988815245}
+  - component: {fileID: 661892806396367935}
   m_Layer: 0
   m_Name: Tower
   m_TagString: tower
@@ -99,7 +99,7 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 1, y: 1, z: 1}
   m_Center: {x: 0, y: 0, z: 0}
---- !u!114 &6186793695988815245
+--- !u!114 &661892806396367935
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -108,7 +108,7 @@ MonoBehaviour:
   m_GameObject: {fileID: 5785321850180901201}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: ebcecd1f738bb8e4e9d84f0562866062, type: 3}
+  m_Script: {fileID: 11500000, guid: 3d8f83254b147dd4d837792d4e5dd92d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
   towerData: {fileID: 11400000, guid: 9fd7b6e399bbdd94085117227151b5ad, type: 2}
@@ -118,11 +118,18 @@ MonoBehaviour:
   cost: 0
   size: 0
   placeTag: 
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  enemies: []
+  towerTransform: {fileID: 0}
+  indexterst: 0
+  enemiesInRange: []
   target: {fileID: 0}
-  partToRotate: {fileID: 4440699813255862859}
-  rotationSpeed: 0
-  isDamageDone: 0
-  timeBetweenShooting: 0
+  towerDistance: 0
+  i: 0
+  games: 
+  games2: []
 --- !u!1001 &4191216892230188448
 PrefabInstance:
   m_ObjectHideFlags: 0

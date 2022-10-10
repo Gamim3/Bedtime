@@ -25,7 +25,7 @@ public class NewBuildSystem : MonoBehaviour
 
     public bool canPlace;
     public bool canDestroy;
-    public bool inPlaceRange;
+    //public bool inPlaceRange;
     public bool hasTower;
     public bool inWall;
     public bool inTower;
@@ -119,9 +119,6 @@ public class NewBuildSystem : MonoBehaviour
 
             sphereHit = Physics.SphereCastAll(arrowHit.point, towerSize, -arrowPlacer.transform.up, towerMask);
 
-            float sizehalf = towerSize / 2;
-
-            //pathdetecthit = Physics.SphereCastAll(arrowHit.point, sizehalf, -arrowPlacer.transform.up, towerMask);
             for (int i = 0; i < sphereHit.Length; i++)
             {
                 if (sphereHit[i].collider.CompareTag(placeTag))
@@ -144,18 +141,6 @@ public class NewBuildSystem : MonoBehaviour
                 {
                     inWall = false;
                 }
-                //if (pathdetecthit[i].collider.CompareTag("path"))
-                //{
-                //    print("aa ee oo");
-                //    nonplace = true;
-                //}
-
-                //if (!pathdetecthit[i].collider.CompareTag("path"))
-                //{
-                //    nonplace = true;
-                //}
-
-                ////WERKT NIET OMDAT ALS SPELER IN DE COLLIDER LOOPT HET VERANDERT OPLOSSING VOOR ZOEKEN
 
                 if (inWall == false && inTower == false)
                 {
@@ -179,8 +164,10 @@ public class NewBuildSystem : MonoBehaviour
             {
                 arrowRenderer.material.color = Color.black;
             }
-            if (canPlace && hasTower && inTower == false && inWall == false && nonplace)
+
+            if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false)
             {
+                print("canplace a tower");
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
                     Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);

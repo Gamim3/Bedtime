@@ -240,15 +240,21 @@ MonoBehaviour:
   cost: 0
   size: 0
   placeTag: 
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 128
   enemies:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
   towerTransform: {fileID: 667884063}
   indexterst: 0
+  enemiesInRange: []
   target: {fileID: 0}
   towerDistance: 0
   i: 0
+  games: 
+  games2: []
 --- !u!1 &1070195296
 GameObject:
   m_ObjectHideFlags: 0
@@ -898,11 +904,15 @@ PrefabInstance:
       objectReference: {fileID: 1528764644}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: towerSize
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: placeRange
-      value: 1.5
+      value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: towerMask.m_Bits
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877127, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: m_RootOrder

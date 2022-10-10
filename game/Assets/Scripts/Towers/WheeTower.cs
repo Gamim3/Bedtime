@@ -1,5 +1,6 @@
 using System.Collections;
 using System.Collections.Generic;
+using Unity.Collections;
 using UnityEngine;
 
 public class WheeTower : TowerBase
@@ -9,10 +10,14 @@ public class WheeTower : TowerBase
     public Transform towerTransform;
     public int indexterst;
 
+    public Collider[] enemiesInRange;
+
     public Transform target;
     public float towerDistance;
-
     public int i;
+    public int[] games;
+    public float[] games2;
+
     // Start is called before the first frame update
     void Start()
     {
@@ -25,46 +30,24 @@ public class WheeTower : TowerBase
         #endregion
     }
 
-    // Update is called once per frame
-    void Update()
+    public enum TargetType
     {
-        
+        First,
+        Close,
+        Strong,
+        Weak,
+        Last
+    }
+    // Update is called once per frame
+    private void Update()
+    {
+        enemiesInRange = Physics.OverlapSphere(towerTransform.position, range);
 
-        enemyDetectionHit = Physics.SphereCastAll(towerTransform.position, range, towerTransform.up);
-
-        for (i = 0; i < enemyDetectionHit.Length; i++)
+        for (i = 0; i < enemiesInRange.Length; i++)
         {
-            if (enemyDetectionHit[i].collider.CompareTag("enemy"))
+            if (enemiesInRange[i].CompareTag("enemy"))
             {
-                enemies[indexterst] = enemyDetectionHit[i].transform.gameObject;
-                
-
-
-                towerDistance = Vector3.Distance(towerTransform.position, enemies[i].transform.position);
-                print(towerDistance);
-
-                //if (towerDistance > range)
-                //{
-                //    enemies[i] = null;
-                //}
-
-                indexterst++;
-                if (i < 5)
-                {
-                    i = 0;
-                }
-            }
-        }
-
-        for (int i = 0; i < enemies.Length; i++)
-        {
-            if (i == 0)
-            {
-                target = enemies[i].transform;
-            }
-            else if (enemies[i].GetComponent<Enemy>().waypointIndex > enemies[i - 1].GetComponent<Enemy>().waypointIndex)
-            {
-                target = enemies[i].transform;
+                print(enemiesInRange[i].name);
             }
         }
     }

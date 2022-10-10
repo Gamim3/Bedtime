@@ -12,6 +12,7 @@ public class TowerBase : MonoBehaviour
     public float cost;
     public float size;
     public string placeTag;
+    public LayerMask enemiesLayer;
 
     private void Start()
     {

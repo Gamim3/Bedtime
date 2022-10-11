@@ -16,8 +16,10 @@ public class WheeTower : TowerBase
     public float towerDistance;
     public int i;
 
-    public int[] enemyWaypoint;
-    public float[] enemyDistance;
+    public int newWaypoint;
+    public int oldWaypoints;
+    public float newDistance;
+    public float oldDistance;
 
     // Start is called before the first frame update
     void Start()
@@ -50,27 +52,30 @@ public class WheeTower : TowerBase
             {
                 //THIS WORKS target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform; THIS WORKS
 
-
+                newDistance = enemiesInRange[i].GetComponent<Enemy>().distance;
+                newWaypoint = enemiesInRange[i].GetComponent<Enemy>().waypointIndex;
 
                 if (target == null)
                 {
                     target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+                    oldDistance = newDistance;
+                    oldWaypoints = newWaypoint;
                 }
                 else
                 {
-                    ////maybe like this?
-                    //if (enemyWaypoint[i - 1] > enemyWaypoint[i])
-                    //{
-                    //    print("bigger");
-                    //}
-                    //if (enemyWaypoint[i - 1] < enemyWaypoint[i])
-                    //{
-                    //    print("smaller");
-                    //}
-                    ////maybe like this?
+                    // ask how to check for the last one
+                    if (oldWaypoints < newWaypoint)
+                    {
+                        print("smaller");
+                        
+                        if (oldDistance < newDistance)
+                        {
+                            print("complete");
+                            oldWaypoints = newWaypoint;
+                            oldDistance = newDistance;
+                        }
+                    }
                 }
-                
-
             }
         }
     }

@@ -122,14 +122,16 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemies: []
-  towerTransform: {fileID: 0}
+  towerTransform: {fileID: 8598444626985080827}
   indexterst: 0
   enemiesInRange: []
   target: {fileID: 0}
   towerDistance: 0
   i: 0
-  games: 
-  games2: []
+  newWaypoint: 0
+  oldWaypoints: 0
+  newDistance: 0
+  oldDistance: 0
 --- !u!1001 &4191216892230188448
 PrefabInstance:
   m_ObjectHideFlags: 0

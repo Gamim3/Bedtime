@@ -48,8 +48,28 @@ public class NewBuildSystem : MonoBehaviour
     public LayerMask towerMask;
 
     public bool nonplace;
+
+    public bool[] getTower;
+    public bool towerAbleToPlace;
+    //de 2 bools hierboven zijn een test
     void Update()
     {
+        getTower = GameObject.Find("ShopTest").GetComponent<Shop>().getTower;
+        //voor nu bestaat de array getTower uit 3 boolians.
+
+        if (getTower[2] == true)
+        {
+            tower = GameObject.Find("Tower");
+            towerAbleToPlace = true;
+            //getTower is een array die elke verschillende tower checkt of ze geplaatst mogen worden na aankoop, het gameobject "tower"
+            //wordt bepaald door welk object is gekocht.
+        }
+
+        if (getTower[1] == true)
+        {
+            //tower = andere toren dan whee.
+            //towerPlace = true;
+        }
 
         towerReGetTime += Time.deltaTime;
 
@@ -59,7 +79,7 @@ public class NewBuildSystem : MonoBehaviour
             hasTower = true;
         }
 
-        if (hasTower)
+        if (hasTower && towerAbleToPlace)
         {
             GetTowerInfo();
         }
@@ -163,12 +183,14 @@ public class NewBuildSystem : MonoBehaviour
                 arrowRenderer.material.color = Color.black;
             }
 
-            if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false)
+            if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false && towerAbleToPlace)
             {
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
                     Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
                     hasTower = false;
+                    towerAbleToPlace = false;
+                    //aka geen tower meer.
                 }
             }
 

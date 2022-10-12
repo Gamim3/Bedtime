@@ -77,8 +77,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 56f5ba186537cf04698564f41a4481d3, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  stats: {fileID: 11400000, guid: fb8100e249f7dfe44863502c3162baf6, type: 2}
+  stats: {fileID: 11400000, guid: 21563b3a37200ea46bbab6d636d11d12, type: 2}
   enemyTranform: {fileID: 1349083878757752413}
+  enemyHealth: 0
   Wpoints: {fileID: 0}
   waypointIndex: 0
   damageTimer: 0

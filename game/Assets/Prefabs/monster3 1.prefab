@@ -243,7 +243,7 @@ SkinnedMeshRenderer:
   m_RenderingLayerMask: 1
   m_RendererPriority: 0
   m_Materials:
-  - {fileID: -6478536213147159724, guid: 566d86c6ab61f0a4f9780690dd729a36, type: 3}
+  - {fileID: 2100000, guid: 5bfed3ae43d956d4c90634c0b0ff8cdf, type: 2}
   m_StaticBatchInfo:
     firstSubMesh: 0
     subMeshCount: 0
@@ -414,6 +414,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: fb8100e249f7dfe44863502c3162baf6, type: 2}
   enemyTranform: {fileID: 1349083878757752413}
+  enemyHealth: 0
   Wpoints: {fileID: 0}
   waypointIndex: 0
   damageTimer: 0

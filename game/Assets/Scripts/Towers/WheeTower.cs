@@ -16,11 +16,25 @@ public class WheeTower : TowerBase
     public float towerDistance;
     public int i;
 
+    [Header("enemy targeting statistics")]
+    #region
     public int newWaypoint;
     public int oldWaypoints;
+
     public float newDistance;
     public float oldDistance;
 
+    public int newEnemyDamage;
+    public int oldEnemyDamage;
+
+    public int newEnemyHealth;
+    public int oldEnemyHealth;
+
+    public float newE_DistanceTo_T;
+    public float oldE_DistanceTo_T;
+
+    public float t_distanceTo_T;
+    #endregion
     public TargetType targetType;
 
     // Start is called before the first frame update
@@ -76,12 +90,31 @@ public class WheeTower : TowerBase
         {
             if (enemiesInRange[i].CompareTag("enemy"))
             {
-                newDistance = enemiesInRange[i].GetComponent<Enemy>().distance;
                 newWaypoint = enemiesInRange[i].GetComponent<Enemy>().waypointIndex;
+
+                newDistance = enemiesInRange[i].GetComponent<Enemy>().distance;
+
+                newEnemyDamage = enemiesInRange[i].GetComponent<Enemy>().stats.damage;
+
+                newEnemyHealth = enemiesInRange[i].GetComponent<Enemy>().enemyHealth;
+
+                newE_DistanceTo_T = Vector3.Distance(towerTransform.position, enemiesInRange[i].GetComponent<Enemy>().enemyTranform.position);
             }
+
+            Targeting();
+
         }
 
-        Targeting();
+        if (target != null)
+        {
+            t_distanceTo_T = Vector3.Distance(towerTransform.position, target.position);
+
+            if (t_distanceTo_T > range)
+            {
+                target = null;
+                Targeting();
+            }
+        }
     }
 
     public void Targeting()
@@ -91,7 +124,6 @@ public class WheeTower : TowerBase
             case TargetType.First:
                 if (newWaypoint > oldWaypoints)
                 {
-                    // IF the new enemy's distance to waypoint is lower than the old enemy's distance to waypoint then
                     if (newDistance < oldDistance)
                     {
                         // IF enemy is closest to end of the path
@@ -99,23 +131,32 @@ public class WheeTower : TowerBase
                         oldWaypoints = newWaypoint;
                         oldDistance = newDistance;
 
-                        target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+
+                        //TARGET = FURTHEST ON PATH AND IN TOWER RANGE
                     }
                 }
                 break;
             case TargetType.Close:
-                //if (newTowerDistance < oldTowerDistance)
+                if (newE_DistanceTo_T < oldE_DistanceTo_T)
+                {
+                    oldE_DistanceTo_T = newE_DistanceTo_T;
+                }
                 break;
             case TargetType.Strong:
-                //if (newEnemyDamage > oldenEnemyDamage)
+                if (newEnemyDamage > oldEnemyDamage)
+                {
+                    oldEnemyDamage = newEnemyDamage;
+                }
                 break;
             case TargetType.Weak:
-                //if (newEnemyHealth < oldEnemyHealth)
+                if (newEnemyHealth < oldEnemyHealth)
+                {
+                    oldEnemyHealth = newEnemyHealth;
+                }
                 break;
             case TargetType.Last:
                 if (newWaypoint < oldWaypoints)
                 {
-                    // IF the new enemy's distance to waypoint is higer than the old enemy's distance to waypoint then
                     if (newDistance > oldDistance)
                     {
                         // IF enemy is closest to begin of the path
@@ -123,7 +164,8 @@ public class WheeTower : TowerBase
                         oldWaypoints = newWaypoint;
                         oldDistance = newDistance;
 
-                        target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+
+                        //TARGET = EARLIEST ON PATH AND IN TOWER RANGE
                     }
                 }
                 break;

@@ -8,7 +8,7 @@ public class Enemy : MonoBehaviour
     public EnemyStats stats;
     public Transform enemyTranform;
     private float enemySpeed;
-    private float enemyHealth;
+    public int enemyHealth;
 
     public Waypoints Wpoints;
     public int waypointIndex;
@@ -73,7 +73,7 @@ public class Enemy : MonoBehaviour
     }
 
     //meer iets als dit
-    public void Damage(float damage)
+    public void Damage(int damage)
     {
         print(damage);
         

@@ -257,6 +257,13 @@ MonoBehaviour:
   oldWaypoints: 0
   newDistance: 0
   oldDistance: 0
+  newEnemyDamage: 0
+  oldEnemyDamage: 0
+  newEnemyHealth: 0
+  oldEnemyHealth: 0
+  newE_DistanceTo_T: 0
+  oldE_DistanceTo_T: 0
+  t_distanceTo_T: 0
   targetType: 0
 --- !u!1 &1070195296
 GameObject:
@@ -736,6 +743,10 @@ PrefabInstance:
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: placeRange
       value: 5
+      objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: towerAbleToPlace
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: towerMask.m_Bits

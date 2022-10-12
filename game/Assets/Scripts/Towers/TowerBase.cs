@@ -7,7 +7,7 @@ public class TowerBase : MonoBehaviour
     public TowerSO towerData;
 
     public float range;
-    public float damage;
+    public int damage;
     public float fireRate;
     public float cost;
     public float size;

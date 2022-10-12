@@ -5,7 +5,7 @@ using UnityEngine;
 public class TowerSO : ScriptableObject
 {
     public float range;
-    public float damage;
+    public int damage;
     public float fireSpeed;
     public float cost;
     public float size;

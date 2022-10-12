@@ -10,6 +10,7 @@ public class LegoTrap : TowerBase
 
     public GameObject enemyToAttack;
 
+    public float waittime;
     private void Start()
     {
         range = towerData.range;
@@ -18,5 +19,20 @@ public class LegoTrap : TowerBase
         cost = towerData.cost;
         size = towerData.size;
         placeTag = towerData.placeTag;
+    }
+
+
+    private void OnCollisionEnter(Collision collision)
+    {
+        if (collision.collider.CompareTag("enemy"))
+        {
+            waittime += Time.deltaTime;
+
+            if (waittime > 3)
+            {
+                collision.transform.GetComponent<Enemy>().Damage(damage);
+                waittime = 0;
+            }
+        }
     }
 }

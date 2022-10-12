@@ -66,6 +66,7 @@ public class WheeTower : TowerBase
         Weak,
         Last
     }
+
     // Update is called once per frame
     private void Update()
     {
@@ -79,6 +80,8 @@ public class WheeTower : TowerBase
                 newWaypoint = enemiesInRange[i].GetComponent<Enemy>().waypointIndex;
             }
         }
+
+        Targeting();
     }
 
     public void Targeting()
@@ -96,15 +99,18 @@ public class WheeTower : TowerBase
                         oldWaypoints = newWaypoint;
                         oldDistance = newDistance;
 
-
+                        target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
                     }
                 }
                 break;
             case TargetType.Close:
+                //if (newTowerDistance < oldTowerDistance)
                 break;
             case TargetType.Strong:
+                //if (newEnemyDamage > oldenEnemyDamage)
                 break;
             case TargetType.Weak:
+                //if (newEnemyHealth < oldEnemyHealth)
                 break;
             case TargetType.Last:
                 if (newWaypoint < oldWaypoints)
@@ -117,7 +123,7 @@ public class WheeTower : TowerBase
                         oldWaypoints = newWaypoint;
                         oldDistance = newDistance;
 
-
+                        target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
                     }
                 }
                 break;

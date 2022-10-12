@@ -13,6 +13,4 @@ public class TowerBase : MonoBehaviour
     public float size;
     public string placeTag;
     public LayerMask enemiesLayer;
-
-    public string targeting;
 }

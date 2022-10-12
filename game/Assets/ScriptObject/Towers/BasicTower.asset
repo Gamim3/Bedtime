@@ -18,5 +18,5 @@ MonoBehaviour:
   cost: 0
   size: 0.4
   health: 0
-  targetType: 
+  targetType: 0
   placeTag: placeableGround

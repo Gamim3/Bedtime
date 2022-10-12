@@ -1421,6 +1421,8 @@ MonoBehaviour:
   - 0
   - 0
   distance: 0
+  turnSpeed: 2
+  enemyRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!54 &5079764974480625356
 Rigidbody:
   m_ObjectHideFlags: 0

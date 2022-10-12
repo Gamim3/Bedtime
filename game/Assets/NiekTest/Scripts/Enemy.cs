@@ -21,6 +21,9 @@ public class Enemy : MonoBehaviour
     private Animator animator;
     public float distance;
 
+    public float turnSpeed;
+    public Quaternion enemyRotation;
+
     void Update()
     {
         speed();
@@ -57,11 +60,12 @@ public class Enemy : MonoBehaviour
         if (Vector3.Distance(transform.position, Wpoints.waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;
+            enemyRotation = Quaternion.LookRotation(Wpoints.waypoints[waypointIndex].transform.position - transform.position);
         }
         transform.position = Vector3.MoveTowards(transform.position, Wpoints.waypoints[waypointIndex].position, enemySpeed * Time.deltaTime);
-        transform.LookAt(Wpoints.waypoints[waypointIndex].position);
+        transform.rotation = Quaternion.Lerp(transform.rotation, enemyRotation, Time.deltaTime * turnSpeed);
     }
-
+    
     
     void OnTriggerStay(Collider other)
     {

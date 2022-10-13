@@ -425,7 +425,7 @@ MonoBehaviour:
   - 0
   - 0
   distance: 0
-  turnSpeed: 1
+  turnSpeed: 4
   enemyRotation: {x: 0, y: 0, z: 0, w: 0}
 --- !u!95 &1701003186767862305
 Animator:

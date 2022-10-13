@@ -20,34 +20,13 @@ public class Shop : MonoBehaviour
     
     public TMP_Text towerText;
 
-    public void LoadItem1()
+    public void BuyItem(int buttonint)
     {
-        if (shopCurrency > 19)
+        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1)
         {
-            currency = -20;
+            currency = -towers[buttonint].GetComponent<TowerBase>().towerData.cost;
+            tower = towers[buttonint];
             buttonPressed = true;
-            tower = towers[0];
-        }
-
-    }
-    public void LoadItem2()
-    {
-        if (shopCurrency > 39)
-        {
-            currency = -40;
-            buttonPressed = true;
-            tower = towers[1];
-        }
-    }
-
-    public void LoadItem3()
-    {
-        if (shopCurrency > 59)
-        {
-            currency = -60;
-            buttonPressed = true;
-            tower = towers[2];
-
         }
     }
 

@@ -9400,7 +9400,11 @@ MonoBehaviour:
   shopCurrency: 0
   shopUI: {fileID: 750578780}
   inMenu: 0
-  getTower: 000000
+  towers:
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 5785321850180901201, guid: d13bfd516ad45924db85999c93249142, type: 3}
+  tower: {fileID: 0}
   towerText: {fileID: 362281984}
 --- !u!65 &2015544675
 BoxCollider:

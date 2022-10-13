@@ -14,9 +14,10 @@ public class Shop : MonoBehaviour
     public RaycastHit hit;
     public GameObject shopUI;
     public bool inMenu;
-    public bool[] getTower;
+    public GameObject[] towers;
     private bool towerAbleToPlace;
-
+    public GameObject tower;
+    
     public TMP_Text towerText;
 
     public void LoadItem1()
@@ -25,7 +26,7 @@ public class Shop : MonoBehaviour
         {
             currency = -20;
             buttonPressed = true;
-            getTower[0] = true;
+            tower = towers[0];
         }
 
     }
@@ -35,7 +36,7 @@ public class Shop : MonoBehaviour
         {
             currency = -40;
             buttonPressed = true;
-            getTower[1] = true;
+            tower = towers[1];
         }
     }
 
@@ -45,27 +46,23 @@ public class Shop : MonoBehaviour
         {
             currency = -60;
             buttonPressed = true;
-            getTower[2] = true;
+            tower = towers[2];
 
         }
     }
 
     public void Update()
     {
-        
         towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
         if(towerAbleToPlace)
         {
             towerText.text = ("hasTower");
-            for (int i = 0; i < getTower.Length; i++)
-            {
-                getTower[i] = false;
-            }
         }
 
         else
         {
             towerText.text = ("noTower");
+            tower = null;
         }
 
         if (currencyReset == true)

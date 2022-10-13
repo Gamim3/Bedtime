@@ -49,26 +49,14 @@ public class NewBuildSystem : MonoBehaviour
 
     public bool nonplace;
 
-    public bool[] getTower;
     public bool towerAbleToPlace;
     //de 2 bools hierboven zijn een test
     void Update()
     {
-        getTower = GameObject.Find("ShopTest").GetComponent<Shop>().getTower;
-        //voor nu bestaat de array getTower uit 3 boolians.
-
-        if (getTower[2] == true)
+        tower = GameObject.Find("ShopTest").GetComponent<Shop>().tower;
+        if (tower != null)
         {
-            tower = GameObject.Find("Tower");
             towerAbleToPlace = true;
-            //getTower is een array die elke verschillende tower checkt of ze geplaatst mogen worden na aankoop, het gameobject "tower"
-            //wordt bepaald door welk object is gekocht.
-        }
-
-        if (getTower[1] == true)
-        {
-            //tower = andere toren dan whee.
-            //towerPlace = true;
         }
 
         towerReGetTime += Time.deltaTime;

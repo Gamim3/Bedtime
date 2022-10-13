@@ -13,12 +13,14 @@ public class LegoTrap : TowerBase
     public float waittime;
     private void Start()
     {
+        #region
         range = towerData.range;
         damage = towerData.damage;
         fireRate = towerData.fireSpeed;
         cost = towerData.cost;
         size = towerData.size;
         placeTag = towerData.placeTag;
+        #endregion
     }
 
 

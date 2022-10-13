@@ -44,7 +44,7 @@ public class Spawning : MonoBehaviour
             if (randomIndex == 0 && counter[0] > 0)
             {
                 spawnTime = 0;
-                GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, Quaternion.identity) as GameObject;
+                GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[0] -= 1;
             }
@@ -52,7 +52,7 @@ public class Spawning : MonoBehaviour
             if (randomIndex == 1 && counter[1] > 0)
             {
                 spawnTime = 0;
-                GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, Quaternion.identity) as GameObject;
+                GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[1] -= 1;
             }
@@ -60,7 +60,7 @@ public class Spawning : MonoBehaviour
             if (randomIndex == 2 && counter[2] > 0)
             {
                 spawnTime = 0;
-                GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, Quaternion.identity) as GameObject;
+                GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[2] -= 1;
             }
@@ -68,7 +68,7 @@ public class Spawning : MonoBehaviour
             if (randomIndex == 3 && counter[3] > 0)
             {
                 spawnTime = 0;
-                GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, Quaternion.identity) as GameObject;
+                GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
                 counter[3] -= 1;
             }    

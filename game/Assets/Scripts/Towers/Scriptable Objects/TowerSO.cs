@@ -13,4 +13,3 @@ public class TowerSO : ScriptableObject
     public int targetType;
     public string placeTag;
 }
-

@@ -7,7 +7,7 @@ public class Enemy : MonoBehaviour
 {
     public EnemyStats stats;
     public Transform enemyTranform;
-    private float enemySpeed;
+    public float enemySpeed;
     public int enemyHealth;
 
     public Waypoints Wpoints;

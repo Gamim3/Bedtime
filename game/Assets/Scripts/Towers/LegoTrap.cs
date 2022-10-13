@@ -28,7 +28,7 @@ public class LegoTrap : TowerBase
         {
             waittime += Time.deltaTime;
 
-            if (waittime > 3)
+            if (waittime > fireRate)
             {
                 collision.transform.GetComponent<Enemy>().Damage(damage);
                 waittime = 0;

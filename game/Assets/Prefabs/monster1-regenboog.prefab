@@ -1410,6 +1410,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   stats: {fileID: 11400000, guid: b197eef0c0484a34a9c09311adfc12bc, type: 2}
   enemyTranform: {fileID: 9133862388798341115}
+  enemySpeed: 0
   enemyHealth: 0
   Wpoints: {fileID: 0}
   waypointIndex: 0

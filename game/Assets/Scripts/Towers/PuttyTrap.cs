@@ -21,26 +21,25 @@ public class PuttyTrap : TowerBase
         placeTag = towerData.placeTag;
     }
 
-
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("enemy"))
+        if (other.CompareTag("enemy"))
         {
             waittime += Time.deltaTime;
 
             if (waittime > fireRate)
             {
-                collision.collider.GetComponent<Enemy>().enemySpeed -= 1;
-                collision.transform.GetComponent<Enemy>().Damage(damage);
+                other.GetComponent<Enemy>().enemySpeed -= 1;
+                other.GetComponent<Enemy>().Damage(damage);
                 waittime = 0;
             }
         }
     }
-    private void OnCollisionExit(Collision collision)
+    private void OnTriggerExit(Collider other)
     {
-        if (collision.collider.CompareTag("enemy"))
+        if (other.GetComponent<Collider>().CompareTag("enemy"))
         {
-            collision.collider.GetComponent<Enemy>().enemySpeed += 1;
+            other.GetComponent<Collider>().GetComponent<Enemy>().enemySpeed += 1;
         }
     }
 }

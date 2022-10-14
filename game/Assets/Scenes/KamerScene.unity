@@ -8877,8 +8877,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   playerTransform: {fileID: 1848289117}
   playerRigidbody: {fileID: 0}
-  maxWalkSpeed: 3
-  walkSpeed: 3
+  maxWalkSpeed: 1.5
+  walkSpeed: 1.5
   move: {x: 0, y: 0, z: 0}
   walkInput: {x: 0, y: 0}
   placeInput: 0

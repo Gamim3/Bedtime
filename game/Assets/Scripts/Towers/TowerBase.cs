@@ -4,6 +4,7 @@ using UnityEngine;
 
 public class TowerBase : MonoBehaviour
 {
+    public bool isntInBed;
     public TowerSO towerData;
 
     public float range;

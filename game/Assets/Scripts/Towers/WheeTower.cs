@@ -5,10 +5,18 @@ using UnityEngine;
 
 public class WheeTower : TowerBase
 {
-
     private void Update()
     {
-        GetEnemies();
-        Targeting();
+        if (isntInBed)
+        {
+            GetEnemies();
+            Targeting();
+            DoDamage();
+        }
     }
-}
+
+    public void DoDamage()
+    {
+        print("IM DEAD");
+    }
+}   

@@ -9,12 +9,7 @@ ModelImporter:
   - first:
       74: 2588490587570389060
     second: WheeRig|wheeIdle
-  externalObjects:
-  - first:
-      type: UnityEngine:Material
-      assembly: UnityEngine.CoreModule
-      name: Material.012
-    second: {fileID: 2100000, guid: e998d479f92652141afe948defe56a2c, type: 2}
+  externalObjects: {}
   materials:
     materialImportMode: 2
     materialName: 0

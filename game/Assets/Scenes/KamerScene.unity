@@ -8866,7 +8866,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemies: []
-  towerTransform: {fileID: 1848289117}
+  towerTransform: {fileID: 0}
   indexterst: 0
   enemiesInRange: []
   target: {fileID: 0}

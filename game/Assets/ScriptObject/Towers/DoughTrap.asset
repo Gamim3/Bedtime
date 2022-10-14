@@ -10,13 +10,13 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: b98511de66a530b4786290e91f1f9339, type: 3}
-  m_Name: BasicTrap
+  m_Name: DoughTrap
   m_EditorClassIdentifier: 
   range: 1
   damage: 1
   fireSpeed: 1
-  cost: 1
+  cost: 20
   size: 1
   health: 1
-  targetType: 
+  targetType: 0
   placeTag: path

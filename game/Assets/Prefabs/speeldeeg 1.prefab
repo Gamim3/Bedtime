@@ -181,7 +181,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 83ac9800bee80764e8e8ea652dd20136, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  towerData: {fileID: 11400000, guid: 6230125c14ebab2439374974e9722b68, type: 2}
+  towerData: {fileID: 11400000, guid: 8ba4da20b95651443a08e692cb84be2b, type: 2}
   range: 0
   damage: 0
   fireRate: 0

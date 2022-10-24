@@ -25,6 +25,7 @@ TagManager:
   - wall
   - nonPlaceable
   - Shop
+  - bed
   layers:
   - Default
   - TransparentFX

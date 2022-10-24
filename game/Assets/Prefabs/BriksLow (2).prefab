@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 886304618621268083}
   - component: {fileID: 3145832592010740921}
   - component: {fileID: 4117415726002698728}
+  - component: {fileID: 5168246977922868794}
   m_Layer: 0
   m_Name: BriksLow (2)
   m_TagString: Untagged
@@ -96,6 +97,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eeeb763dcb6489349932b2c87f7d6887, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isntInBed: 0
   towerData: {fileID: 11400000, guid: 6230125c14ebab2439374974e9722b68, type: 2}
   range: 0
   damage: 0
@@ -106,6 +108,38 @@ MonoBehaviour:
   enemiesLayer:
     serializedVersion: 2
     m_Bits: 128
+  enemies: []
+  towerTransform: {fileID: 0}
+  indexterst: 0
+  enemiesInRange: []
+  target: {fileID: 0}
+  towerDistance: 0
+  i: 0
+  newWaypoint: 0
+  oldWaypoints: 0
+  newDistance: 0
+  oldDistance: 0
+  newEnemyDamage: 0
+  oldEnemyDamage: 0
+  newEnemyHealth: 0
+  oldEnemyHealth: 0
+  newE_DistanceTo_T: 0
+  oldE_DistanceTo_T: 0
+  t_distanceTo_T: 0
+  targetType: 0
   health: 0
   enemyToAttack: {fileID: 0}
   waittime: 0
+--- !u!65 &5168246977922868794
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3506266040617805164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.3, z: 0.5}
+  m_Center: {x: 0.0411375, y: 0.15, z: 0.012833662}

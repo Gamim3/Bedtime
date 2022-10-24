@@ -24,15 +24,17 @@ public class LegoTrap : TowerBase
     }
 
 
-    private void OnCollisionEnter(Collision collision)
+    private void OnTriggerEnter(Collider other)
     {
-        if (collision.collider.CompareTag("enemy"))
+        print("haialo");
+        if (other.CompareTag("enemy"))
         {
+            print("lore");
             waittime += Time.deltaTime;
 
             if (waittime > fireRate)
             {
-                collision.transform.GetComponent<Enemy>().Damage(damage);
+                other.GetComponent<Enemy>().Damage(damage);
                 waittime = 0;
             }
         }

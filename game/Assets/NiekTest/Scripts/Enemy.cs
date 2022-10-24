@@ -25,11 +25,16 @@ public class Enemy : MonoBehaviour
     public Quaternion enemyRotation;
 
     public float waitTime;
+    private bool damage;
 
     void Update()
     {
         speed();
         animator = gameObject.GetComponent<Animator>();
+        if (damage)
+        {
+            doingDamage();
+        }
     }
 
     void Start()
@@ -39,8 +44,9 @@ public class Enemy : MonoBehaviour
         enemyHealth = stats.health;
     }
 
-    void damage()
+    void doingDamage()
     {
+        slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
         animator.SetBool("attack", true);
         enemySpeed = 0;
         damageTimer += Time.deltaTime;
@@ -73,8 +79,7 @@ public class Enemy : MonoBehaviour
     {
         if(other.gameObject.tag == "baseDoor" && gameObject.transform != null)
         {
-            slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
-            damage();
+            damage = true;
         }
     }
 

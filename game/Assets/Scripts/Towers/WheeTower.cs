@@ -11,11 +11,12 @@ public class WheeTower : TowerBase
         {
             GetEnemies();
             Targeting();
-            DoDamage();
         }
     }
-    public void DoDamage()
+
+    private void OnDrawGizmosSelected()
     {
-        print("IM DEAD");
+        Gizmos.DrawSphere(transform.position, range);
     }
 }
+

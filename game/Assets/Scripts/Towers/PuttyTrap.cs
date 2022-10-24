@@ -37,6 +37,7 @@ public class PuttyTrap : TowerBase
 
         for (int i = 0; i < enemiesInRange.Length; i++)
         {
+
             waittime += Time.deltaTime;
 
             if (waittime > fireRate)

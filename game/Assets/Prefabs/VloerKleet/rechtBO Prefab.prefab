@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: afbe604000d825f42a6da521a2f1408a, type: 2}
     - target: {fileID: 919132149155446097, guid: 20f7a9a6c72a6f84199f4b14adf91e83, type: 3}
       propertyPath: m_Name
-      value: rechtBO
+      value: rechtBO Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 20f7a9a6c72a6f84199f4b14adf91e83, type: 3}
       propertyPath: m_TagString
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: abe61ff90f9ab3248b7fa3aad346b019, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: abe61ff90f9ab3248b7fa3aad346b019, type: 3}
       propertyPath: m_LocalPosition.z

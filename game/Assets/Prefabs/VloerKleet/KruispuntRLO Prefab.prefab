@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: afbe604000d825f42a6da521a2f1408a, type: 2}
     - target: {fileID: 919132149155446097, guid: 215d04c902862154eb37928531cbc56a, type: 3}
       propertyPath: m_Name
-      value: KruispuntRLO
+      value: KruispuntRLO Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 215d04c902862154eb37928531cbc56a, type: 3}
       propertyPath: m_TagString
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d0a53534571499540bb3e3593925c42a, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: d0a53534571499540bb3e3593925c42a, type: 3}
       propertyPath: m_LocalPosition.z

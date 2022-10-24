@@ -193,7 +193,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemies: []
-  towerTransform: {fileID: 0}
+  towerTransform: {fileID: 2696755172425319827}
   indexterst: 0
   enemiesInRange: []
   target: {fileID: 0}
@@ -214,6 +214,7 @@ MonoBehaviour:
   health: 0
   enemyToAttack: {fileID: 0}
   waittime: 0
+  trapTarget: []
 --- !u!1 &8902310810822415941
 GameObject:
   m_ObjectHideFlags: 0

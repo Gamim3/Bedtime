@@ -116,21 +116,15 @@ public class Enemy : MonoBehaviour
             }
             Destroy(this.gameObject);
         }
-
-        
     }
-
     public void SlowDownEnemy(float damage)
     {
         enemySpeed -= damage;
-        
-        waitTime += Time.deltaTime;
-
-        if (waitTime > 5)
+        if (enemySpeed < 1)
         {
-            waitTime = 0;
-            enemySpeed += damage;
+            enemySpeed = 0.1f;
         }
+
 
     }
 }

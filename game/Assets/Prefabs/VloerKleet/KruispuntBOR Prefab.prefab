@@ -17,7 +17,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 009a53625c41d0940abd1fbc6fa0cb1f, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 009a53625c41d0940abd1fbc6fa0cb1f, type: 3}
       propertyPath: m_LocalPosition.z
@@ -141,7 +141,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: afbe604000d825f42a6da521a2f1408a, type: 2}
     - target: {fileID: 919132149155446097, guid: 645d44dbe15431d4799ef007bdddb823, type: 3}
       propertyPath: m_Name
-      value: KruispuntBOR
+      value: KruispuntBOR Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 645d44dbe15431d4799ef007bdddb823, type: 3}
       propertyPath: m_TagString

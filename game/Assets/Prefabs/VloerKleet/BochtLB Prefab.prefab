@@ -57,7 +57,7 @@ PrefabInstance:
       objectReference: {fileID: 2100000, guid: afbe604000d825f42a6da521a2f1408a, type: 2}
     - target: {fileID: 919132149155446097, guid: 5caa58ab2bbd6e3468e8261b6c476b7e, type: 3}
       propertyPath: m_Name
-      value: BochtLB
+      value: BochtLB Prefab
       objectReference: {fileID: 0}
     - target: {fileID: 919132149155446097, guid: 5caa58ab2bbd6e3468e8261b6c476b7e, type: 3}
       propertyPath: m_TagString
@@ -105,7 +105,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68d37ad6f267ccb459bec6d4ff3e8846, type: 3}
       propertyPath: m_LocalPosition.y
-      value: 0
+      value: -0.02
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 68d37ad6f267ccb459bec6d4ff3e8846, type: 3}
       propertyPath: m_LocalPosition.z

@@ -5,6 +5,10 @@ using UnityEngine;
 
 public class WheeTower : TowerBase
 {
+    private void Start()
+    {
+        isntInBed = true;
+    }
     private void Update()
     {
         if (isntInBed)

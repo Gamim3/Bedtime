@@ -16,20 +16,28 @@ public class Spawning : MonoBehaviour
     public float[] counter;
     private float[] enemyAmount;
     private float waveMultiplier;
+    private bool spawning;
+    public GameObject waveGameObject;
 
     public GameObject Waypoints;
     void Update()
     {
-        wave2check = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().wave2check;
+        wave2check = waveGameObject.GetComponent<WaveCounter>().wave2check;
+
+        if(Input.GetKeyDown(KeyCode.E) && spawning == false)
+        {
+            spawning = true;
+        }
 
         if (wave2check == true)
         {
-            enemyAmount = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().enemyAmount;
-            waveMultiplier = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().waveMultiplier;
+            enemyAmount = waveGameObject.GetComponent<WaveCounter>().enemyAmount;
+            waveMultiplier = waveGameObject.GetComponent<WaveCounter>().waveMultiplier;
             for (int i = 0; i < counter.Length; i ++)
             {
                 counter[i] = enemyAmount[i] * waveMultiplier;
             }
+            spawning = false;
             //counter[0] = enemyAmount[0] * waveMultiplier;
             //counter[1] = enemyAmount[1] * waveMultiplier;
             //counter[2] = enemyAmount[2] * waveMultiplier;
@@ -39,8 +47,9 @@ public class Spawning : MonoBehaviour
 
         int randomIndex = Random.Range(0, 4);
         spawnTime += Time.deltaTime;
-        if(spawnTime > 1)
+        if(spawnTime > 1 && spawning)
         {
+            
             if (randomIndex == 0 && counter[0] > 0)
             {
                 spawnTime = 0;

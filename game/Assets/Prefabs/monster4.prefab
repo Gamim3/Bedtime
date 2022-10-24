@@ -289,10 +289,15 @@ MonoBehaviour:
   waypointIndex: 0
   damageTimer: 0
   currency: 0
-  enemyCounter: []
+  enemyCounter:
+  - 0
+  - 0
+  - 0
+  - 0
   distance: 0
   turnSpeed: 4
   enemyRotation: {x: 0, y: 0, z: 0, w: 0}
+  waitTime: 0
 --- !u!65 &-566776102696352636
 BoxCollider:
   m_ObjectHideFlags: 0

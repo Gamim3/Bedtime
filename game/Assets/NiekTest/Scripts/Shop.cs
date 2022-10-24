@@ -22,7 +22,7 @@ public class Shop : MonoBehaviour
 
     public void BuyItem(int buttonint)
     {
-        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1)
+        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && towerAbleToPlace == false)
         {
             currency = -towers[buttonint].GetComponent<TowerBase>().towerData.cost;
             tower = towers[buttonint];

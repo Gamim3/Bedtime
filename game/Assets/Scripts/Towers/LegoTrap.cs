@@ -11,6 +11,8 @@ public class LegoTrap : TowerBase
     public GameObject enemyToAttack;
 
     public float waittime;
+
+    public Collider[] trapTarget;
     private void Start()
     {
         #region
@@ -20,22 +22,30 @@ public class LegoTrap : TowerBase
         cost = towerData.cost;
         size = towerData.size;
         placeTag = towerData.placeTag;
+        health = towerData.health;
         #endregion
     }
 
-
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        print("haialo");
-        if (other.CompareTag("enemy"))
+        if (health <= 0)
         {
-            print("lore");
-            waittime += Time.deltaTime;
+            Destroy(this.gameObject);
+        }
+
+        GetEnemies();
+        
+        for (int i = 0; i < enemiesInRange.Length; i++)
+        {
+             waittime += Time.deltaTime;
 
             if (waittime > fireRate)
             {
-                other.GetComponent<Enemy>().Damage(damage);
                 waittime = 0;
+
+                enemiesInRange[i].GetComponent<Enemy>().Damage(damage);
+
+                health -= 1;
             }
         }
     }

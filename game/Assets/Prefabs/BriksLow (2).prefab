@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 886304618621268083}
   - component: {fileID: 3145832592010740921}
   - component: {fileID: 4117415726002698728}
-  - component: {fileID: 5168246977922868794}
   m_Layer: 0
   m_Name: BriksLow (2)
   m_TagString: Untagged
@@ -109,7 +108,7 @@ MonoBehaviour:
     serializedVersion: 2
     m_Bits: 128
   enemies: []
-  towerTransform: {fileID: 0}
+  towerTransform: {fileID: 4315313550730624982}
   indexterst: 0
   enemiesInRange: []
   target: {fileID: 0}
@@ -130,16 +129,4 @@ MonoBehaviour:
   health: 0
   enemyToAttack: {fileID: 0}
   waittime: 0
---- !u!65 &5168246977922868794
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3506266040617805164}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 0.5, y: 0.3, z: 0.5}
-  m_Center: {x: 0.0411375, y: 0.15, z: 0.012833662}
+  trapTarget: []

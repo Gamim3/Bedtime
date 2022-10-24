@@ -24,6 +24,8 @@ public class Enemy : MonoBehaviour
     public float turnSpeed;
     public Quaternion enemyRotation;
 
+    public float waitTime;
+
     void Update()
     {
         speed();
@@ -116,5 +118,19 @@ public class Enemy : MonoBehaviour
         }
 
         
+    }
+
+    public void SlowDownEnemy(float damage)
+    {
+        enemySpeed -= damage;
+        
+        waitTime += Time.deltaTime;
+
+        if (waitTime > 5)
+        {
+            waitTime = 0;
+            enemySpeed += damage;
+        }
+
     }
 }

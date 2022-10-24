@@ -92,6 +92,8 @@ public class TowerBase : MonoBehaviour
     {
         enemiesInRange = Physics.OverlapSphere(towerTransform.position, range, enemiesLayer);
 
+        print("trapping");
+
         for (i = 0; i < enemiesInRange.Length; i++)
         {
             if (enemiesInRange[i].CompareTag("enemy"))
@@ -107,7 +109,7 @@ public class TowerBase : MonoBehaviour
                 newE_DistanceTo_T = Vector3.Distance(towerTransform.position, enemiesInRange[i].GetComponent<Enemy>().enemyTranform.position);
             }
 
-            Targeting();
+            //Targeting();
 
         }
 

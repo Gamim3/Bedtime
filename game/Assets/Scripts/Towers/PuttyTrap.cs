@@ -11,35 +11,42 @@ public class PuttyTrap : TowerBase
     public GameObject enemyToAttack;
 
     public float waittime;
+
+    public Collider[] trapTarget;
     private void Start()
     {
+        #region
         range = towerData.range;
         damage = towerData.damage;
         fireRate = towerData.fireSpeed;
         cost = towerData.cost;
         size = towerData.size;
         placeTag = towerData.placeTag;
+        health = towerData.health;
+        #endregion
     }
 
-    private void OnTriggerEnter(Collider other)
+    private void Update()
     {
-        if (other.CompareTag("enemy"))
+        if (health <= 0)
+        {
+            Destroy(this.gameObject);
+        }
+
+        GetEnemies();
+
+        for (int i = 0; i < enemiesInRange.Length; i++)
         {
             waittime += Time.deltaTime;
 
             if (waittime > fireRate)
             {
-                other.GetComponent<Enemy>().enemySpeed -= 1;
-                other.GetComponent<Enemy>().Damage(damage);
                 waittime = 0;
+
+                enemiesInRange[i].GetComponent<Enemy>().SlowDownEnemy(damage);
+
+                health -= 1;
             }
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.GetComponent<Collider>().CompareTag("enemy"))
-        {
-            other.GetComponent<Collider>().GetComponent<Enemy>().enemySpeed += 1;
         }
     }
 }

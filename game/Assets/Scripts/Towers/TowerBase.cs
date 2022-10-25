@@ -92,37 +92,35 @@ public class TowerBase : MonoBehaviour
     {
         enemiesInRange = Physics.OverlapSphere(towerTransform.position, range, enemiesLayer);
 
-        print("trapping");
+        //for (i = 0; i < enemiesInRange.Length; i++)
+        //{
+        //    if (enemiesInRange[i].CompareTag("enemy"))
+        //    {
+        //        newWaypoint = enemiesInRange[i].GetComponent<Enemy>().waypointIndex;
 
-        for (i = 0; i < enemiesInRange.Length; i++)
-        {
-            if (enemiesInRange[i].CompareTag("enemy"))
-            {
-                newWaypoint = enemiesInRange[i].GetComponent<Enemy>().waypointIndex;
+        //        newDistance = enemiesInRange[i].GetComponent<Enemy>().distance;
 
-                newDistance = enemiesInRange[i].GetComponent<Enemy>().distance;
+        //        newEnemyDamage = enemiesInRange[i].GetComponent<Enemy>().stats.damage;
 
-                newEnemyDamage = enemiesInRange[i].GetComponent<Enemy>().stats.damage;
+        //        newEnemyHealth = enemiesInRange[i].GetComponent<Enemy>().enemyHealth;
 
-                newEnemyHealth = enemiesInRange[i].GetComponent<Enemy>().enemyHealth;
+        //        newE_DistanceTo_T = Vector3.Distance(towerTransform.position, enemiesInRange[i].GetComponent<Enemy>().enemyTranform.position);
+        //    }
 
-                newE_DistanceTo_T = Vector3.Distance(towerTransform.position, enemiesInRange[i].GetComponent<Enemy>().enemyTranform.position);
-            }
+        //    //Targeting();
 
-            //Targeting();
+        //}
 
-        }
+        //if (target != null)
+        //{
+        //    t_distanceTo_T = Vector3.Distance(towerTransform.position, target.position);
 
-        if (target != null)
-        {
-            t_distanceTo_T = Vector3.Distance(towerTransform.position, target.position);
-
-            if (t_distanceTo_T > range)
-            {
-                target = null;
-                Targeting();
-            }
-        }
+        //    if (t_distanceTo_T > range)
+        //    {
+        //        target = null;
+        //        Targeting();
+        //    }
+        //}
     }
     public void Targeting()
     {

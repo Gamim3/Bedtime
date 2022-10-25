@@ -124,11 +124,7 @@ public class Enemy : MonoBehaviour
     }
     public void SlowDownEnemy(float damage)
     {
-        enemySpeed -= damage;
-        if (enemySpeed < 1)
-        {
-            enemySpeed = 0.1f;
-        }
+        enemySpeed += damage;
 
 
     }

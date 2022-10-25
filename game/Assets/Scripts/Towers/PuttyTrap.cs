@@ -25,7 +25,6 @@ public class PuttyTrap : TowerBase
         health = towerData.health;
         #endregion
     }
-
     private void Update()
     {
         if (health <= 0)

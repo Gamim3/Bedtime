@@ -124,8 +124,14 @@ public class Enemy : MonoBehaviour
     }
     public void SlowDownEnemy(float damage)
     {
-        enemySpeed += damage;
+        enemySpeed -= 0.5f;
 
+        StartCoroutine(RefastEnemy(3f));
+    }
+    public IEnumerator RefastEnemy(float time)
+    {
+        yield return new WaitForSeconds(time);
 
+        enemySpeed = stats.speed;
     }
 }

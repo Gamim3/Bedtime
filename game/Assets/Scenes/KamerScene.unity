@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.69347495, g: 0.7443918, b: 0.8035298, a: 1}
+  m_IndirectSpecularColor: {r: 0.6276005, g: 0.6470974, b: 0.658135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -3039,9 +3039,9 @@ MonoBehaviour:
   wave2check: 0
   counter:
   - 10
-  - 8
-  - 6
-  - 4
+  - 0
+  - 0
+  - 0
   waveGameObject: {fileID: 1958966485}
   Waypoints: {fileID: 2070545819}
 --- !u!1 &570733525

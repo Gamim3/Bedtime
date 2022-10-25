@@ -1,13 +1,14 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using TMPro;
 
 public class Bed : MonoBehaviour
 {
     public bool ableToGoInBed;
     public GameObject bedCam;
     public bool inBed;
-
+    public GameObject message;
     // Start is called before the first frame update
     void Start()
     {
@@ -35,6 +36,8 @@ public class Bed : MonoBehaviour
         if(other.gameObject.tag == "player")
         {
             ableToGoInBed = true;
+            message.SetActive(true);
+            
         }
     }
 
@@ -43,6 +46,7 @@ public class Bed : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             ableToGoInBed = false;
+            message.SetActive(false);
         }
     }
 }

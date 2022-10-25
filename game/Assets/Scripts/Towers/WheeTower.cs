@@ -1,26 +1,32 @@
 using System.Collections;
 using System.Collections.Generic;
-using Unity.Collections;
 using UnityEngine;
 
 public class WheeTower : TowerBase
 {
-    private void Start()
+    
+    void Start()
     {
+        range = towerData.range;
+        damage = towerData.damage;
+        fireRate = towerData.fireSpeed;
+        cost = towerData.cost;
+        size = towerData.size;
+
         isntInBed = true;
     }
-    private void Update()
+
+    // Update is called once per frame
+    void Update()
     {
         if (isntInBed)
         {
             GetEnemies();
-            Targeting();
         }
     }
 
     private void OnDrawGizmosSelected()
     {
-        Gizmos.DrawSphere(transform.position, range);
+        Gizmos.DrawSphere(towerTransform.position, range);
     }
 }
-

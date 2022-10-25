@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 886304618621268083}
   - component: {fileID: 3145832592010740921}
   - component: {fileID: 4117415726002698728}
+  - component: {fileID: -6615488989414000531}
   m_Layer: 0
   m_Name: BriksLow (2)
   m_TagString: Untagged
@@ -130,3 +131,16 @@ MonoBehaviour:
   enemyToAttack: {fileID: 0}
   waittime: 0
   trapTarget: []
+--- !u!65 &-6615488989414000531
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 3506266040617805164}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42475942, y: 0.09610927, z: 0.3468833}
+  m_Center: {x: 0.0411375, y: 0.048054636, z: 0.012833662}

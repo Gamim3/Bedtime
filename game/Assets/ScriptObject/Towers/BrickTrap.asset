@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: BrickTrap
   m_EditorClassIdentifier: 
   range: 0.1
-  damage: 200
+  damage: 1
   fireSpeed: 1
   cost: 40
   size: 1

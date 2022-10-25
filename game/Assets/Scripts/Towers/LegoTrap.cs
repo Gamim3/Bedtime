@@ -33,20 +33,13 @@ public class LegoTrap : TowerBase
             Destroy(this.gameObject);
         }
 
-        GetEnemies();
-        
-        for (int i = 0; i < enemiesInRange.Length; i++)
+
+    }
+    public void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy"))
         {
-             waittime += Time.deltaTime;
-
-            if (waittime > fireRate)
-            {
-                waittime = 0;
-
-                enemiesInRange[i].GetComponent<Enemy>().Damage(damage);
-
-                health -= 1;
-            }
+            other.GetComponent<Enemy>().Damage(damage);
         }
     }
 }

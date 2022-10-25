@@ -86,10 +86,8 @@ public class Enemy : MonoBehaviour
     //meer iets als dit
     public void Damage(int damage)
     {
-        print(damage);
-        
         enemyHealth -= damage;
-        print(enemyHealth);
+
         if (enemyHealth <= 0)
         {
             currency = currency + stats.value;
@@ -119,7 +117,9 @@ public class Enemy : MonoBehaviour
             {
                 GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[i] -= enemyCounter[i];
             }
+
             Destroy(this.gameObject);
+
         }
     }
     public void SlowDownEnemy(float damage)

@@ -20,3 +20,4 @@ MonoBehaviour:
   health: 5
   targetType: 0
   placeTag: path
+  towerBluePrint: {fileID: 5448267056184091245, guid: 836753d215484c7458b7cd91a5b4a9cd, type: 3}

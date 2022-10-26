@@ -3027,23 +3027,58 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa55daf318dc944e8832262e5821aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0
-  wave: 1
-  waveCounter: {fileID: 1354475498}
   myObjects:
   - {fileID: 8469634686682948929, guid: feeb57f759fcc724985d310ac5f7749f, type: 3}
   - {fileID: 633956730379239432, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
   - {fileID: 1869899908694115559, guid: bca67429152074a48851d67f037fe671, type: 3}
   - {fileID: 1126724187484640922, guid: 4a51377e641713c44b75f2e0bdb76bf1, type: 3}
-  spawn: 00000000
-  wave2check: 0
-  counter:
-  - 10
-  - 0
-  - 0
-  - 0
-  waveGameObject: {fileID: 1958966485}
   Waypoints: {fileID: 2070545819}
+  spawn: 00000000
+  counter:
+  - 6
+  - 1
+  - 0
+  - 0
+  currency: 0
+  spawnCounter:
+  - 6
+  - 1
+  - 0
+  - 0
+  spawnTime: 0
+  wave: 1
+  wave1counter:
+  - 6
+  - 1
+  - 0
+  - 0
+  wave2counter:
+  - 10
+  - 4
+  - 1
+  - 0
+  wave3counter:
+  - 12
+  - 8
+  - 3
+  - 0
+  wave4counter:
+  - 5
+  - 2
+  - 0
+  - 1
+  wave5counter:
+  - 15
+  - 11
+  - 6
+  - 2
+  enemyText:
+  - {fileID: 1271831884}
+  - {fileID: 224680749}
+  - {fileID: 1462950488}
+  - {fileID: 747040008}
+  waveCounter: {fileID: 1354475498}
+  currencyUI: {fileID: 1571874718}
 --- !u!1 &570733525
 GameObject:
   m_ObjectHideFlags: 0
@@ -11555,25 +11590,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f599293bc24e4aa40823941a8878d2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter:
-  - 10
-  - 8
-  - 6
-  - 4
-  currency: 140
-  currencyUI: {fileID: 1571874718}
-  wave2check: 0
-  enemyAmount:
-  - 10
-  - 8
-  - 6
-  - 4
-  waveMultiplier: 1
-  enemyText:
-  - {fileID: 1271831884}
-  - {fileID: 224680749}
-  - {fileID: 1462950488}
-  - {fileID: 747040008}
 --- !u!1001 &1963004719
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -357,9 +357,10 @@ GameObject:
   - component: {fileID: 5959117502459557945}
   - component: {fileID: 8258409024080453611}
   - component: {fileID: 8921466241813562438}
+  - component: {fileID: 7647352575374487499}
   m_Layer: 0
   m_Name: WheeBase
-  m_TagString: Untagged
+  m_TagString: tower
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
@@ -467,18 +468,6 @@ MonoBehaviour:
   target: {fileID: 0}
   towerDistance: 0
   i: 0
-  newWaypoint: 0
-  oldWaypoints: 0
-  newDistance: 0
-  oldDistance: 0
-  newEnemyDamage: 0
-  oldEnemyDamage: 0
-  newEnemyHealth: 0
-  oldEnemyHealth: 0
-  newE_DistanceTo_T: 0
-  oldE_DistanceTo_T: 0
-  t_distanceTo_T: 0
-  targetType: 0
 --- !u!111 &8921466241813562438
 Animation:
   m_ObjectHideFlags: 0
@@ -495,3 +484,16 @@ Animation:
   m_PlayAutomatically: 1
   m_AnimatePhysics: 0
   m_CullingType: 0
+--- !u!65 &7647352575374487499
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8820957443811944938}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.5, y: 0.5, z: 0.5}
+  m_Center: {x: 0, y: 0, z: 0}

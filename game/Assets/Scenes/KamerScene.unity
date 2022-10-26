@@ -8393,6 +8393,10 @@ PrefabInstance:
       value: 2
       objectReference: {fileID: 0}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: moneyToGiveTo
+      value: 
+      objectReference: {fileID: 1958966485}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: raycastOrigin.y
       value: 1
       objectReference: {fileID: 0}

@@ -11,6 +11,8 @@ public class NewBuildSystem : MonoBehaviour
     public Renderer arrowRenderer;
     public GameObject cam;
 
+    public GameObject moneyToGiveTo;
+
     public RaycastHit playerHit;
     public RaycastHit arrowHit;
     public RaycastHit[] sphereHit;
@@ -192,6 +194,10 @@ public class NewBuildSystem : MonoBehaviour
                     if (waitTimeForDelete > timeToDestroy)
                     {
                         waitTimeForDelete = 0;
+
+                        float moneytogiveback = arrowHit.transform.GetComponent<TowerBase>().towerData.cost / 2;
+
+                        moneyToGiveTo.GetComponent<WaveCounter>().currency += moneytogiveback;
 
                         objectToDestroy = arrowHit.transform.gameObject;
                         Destroy(objectToDestroy);

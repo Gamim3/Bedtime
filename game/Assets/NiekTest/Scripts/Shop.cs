@@ -20,12 +20,14 @@ public class Shop : MonoBehaviour
     
     public TMP_Text towerText;
 
+    public GameObject buildingsystem;
+
     public void BuyItem(int buttonint)
     {
-        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && towerAbleToPlace == false)
+        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
         {
             currency = -towers[buttonint].GetComponent<TowerBase>().towerData.cost;
-            tower = towers[buttonint];
+            buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
             buttonPressed = true;
         }
     }
@@ -33,6 +35,7 @@ public class Shop : MonoBehaviour
     public void Update()
     {
         towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
+
         if(towerAbleToPlace)
         {
             towerText.text = ("hasTower");

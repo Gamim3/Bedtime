@@ -11,6 +11,8 @@ public class NewBuildSystem : MonoBehaviour
     public Renderer arrowRenderer;
     public GameObject cam;
 
+    public GameObject placeBluePrint;
+
     public GameObject moneyToGiveTo;
 
     public RaycastHit playerHit;
@@ -55,17 +57,19 @@ public class NewBuildSystem : MonoBehaviour
     //de 2 bools hierboven zijn een test
     void Update()
     {
+
         if (tower != null)
         {
             towerAbleToPlace = true;
-        }
 
-        towerReGetTime += Time.deltaTime;
-
-        if (towerReGetTime < towerregret)
-        {
-            towerReGetTime = 0f;
             hasTower = true;
+
+            towerData = tower.GetComponent<TowerBase>().towerData;
+
+            if (placeBluePrint == null)
+            {
+                placeBluePrint = Instantiate(towerData.towerBluePrint, arrowHit.point, arrowHit.transform.rotation);
+            }
         }
 
         if (hasTower && towerAbleToPlace)
@@ -74,6 +78,17 @@ public class NewBuildSystem : MonoBehaviour
         }
 
         arrowPlacer.transform.position = new Vector3(posX, posY, posZ);
+        if (placeBluePrint != null)
+        {
+            placeBluePrint.transform.position = arrowPlacer.transform.position;
+            placeBluePrint.transform.rotation = arrowPlacer.transform.rotation;
+
+            arrowRenderer.enabled = false;
+        }
+        else
+        {
+            arrowRenderer.enabled = true;
+        }
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
 
         if (distanceToArrow < placeRange)
@@ -177,6 +192,8 @@ public class NewBuildSystem : MonoBehaviour
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
                     Instantiate<GameObject>(tower, arrowHit.point, arrowPlacer.transform.rotation);
+                    Destroy(placeBluePrint);
+                    tower = null;
                     hasTower = false;
                     towerAbleToPlace = false;
                     //aka geen tower meer.
@@ -216,9 +233,13 @@ public class NewBuildSystem : MonoBehaviour
             }
         }
     }
+    
     public void GetTowerInfo()
     {
-        towerSize = tower.GetComponent<TowerBase>().towerData.size;
-        placeTag = tower.GetComponent<TowerBase>().towerData.placeTag;
+        if (tower != null)
+        {
+            towerSize = tower.GetComponent<TowerBase>().towerData.size;
+            placeTag = tower.GetComponent<TowerBase>().towerData.placeTag;
+        }
     }
 }

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.69178903, g: 0.74518204, b: 0.8077961, a: 1}
+  m_IndirectSpecularColor: {r: 0.69347495, g: 0.7443918, b: 0.8035298, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5888,6 +5888,11 @@ MonoBehaviour:
           m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
+--- !u!1 &938899674 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 7234626583663877120, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+  m_PrefabInstance: {fileID: 1373531572}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &941880964
 GameObject:
   m_ObjectHideFlags: 0
@@ -11751,8 +11756,9 @@ MonoBehaviour:
   - {fileID: 3325657799507812137, guid: c0cf5f223d80dca4c909cc84ffda92c5, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}
   - {fileID: 8820957443811944938, guid: c9411c539daa35c4f9b05d9f852c146b, type: 3}
-  tower: {fileID: 0}
+  tower: {fileID: 938899674}
   towerText: {fileID: 362281984}
+  buildingsystem: {fileID: 938899674}
 --- !u!65 &2015544675
 BoxCollider:
   m_ObjectHideFlags: 0

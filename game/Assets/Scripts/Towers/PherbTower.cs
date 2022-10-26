@@ -4,7 +4,8 @@ using UnityEngine;
 
 public class PherbTower : TowerBase
 {
-
+    public float waitTime;
+    public bool canDamage;
     void Start()
     {
         range = towerData.range;
@@ -16,23 +17,48 @@ public class PherbTower : TowerBase
         isntInBed = true;
     }
 
-    public void Update()
+    // Update is called once per frame
+    void Update()
     {
-        GetEnemies();
+        if (isntInBed)
+        {
+            GetEnemies();
 
-        
+            waitTime += Time.deltaTime;
+
+            if (waitTime < fireRate)
+            {
+                canDamage = false;
+            }
+            if (waitTime > fireRate)
+            {
+                print("hai");
+                canDamage = true;
+                waitTime = 0;
+            }
+            if (canDamage)
+            {
+                DoDamageOverTime();
+            }
+        }
     }
 
-    public IEnumerator DoDamageOverTime()
+    public void DoDamageOverTime()
     {
-        yield return new WaitForSeconds(1);
-
         for (int i = 0; i < enemiesInRange.Length; i++)
         {
             enemiesInRange[i].GetComponent<Enemy>().Damage(damage);
         }
+        return;
     }
 
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy"))
+        {
+            other.GetComponent<Enemy>().Stun();
+        }
+    }
     private void OnDrawGizmosSelected()
     {
         Gizmos.DrawSphere(towerTransform.position, range);

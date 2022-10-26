@@ -134,4 +134,11 @@ public class Enemy : MonoBehaviour
 
         enemySpeed = stats.speed;
     }
+
+    public void Stun()
+    {
+        enemySpeed = 0;
+
+        StartCoroutine(RefastEnemy(1f));
+    }
 }

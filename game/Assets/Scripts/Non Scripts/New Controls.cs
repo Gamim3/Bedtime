@@ -116,6 +116,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": true
+                },
+                {
+                    ""name"": ""Rotating"",
+                    ""type"": ""Button"",
+                    ""id"": ""3382a2b1-3d54-4a35-b26a-e022b08bbac7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -140,6 +149,17 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""action"": ""Interacting"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""a12ab3bd-f00d-4b97-93ab-d07b5e8319bc"",
+                    ""path"": ""<Keyboard>/r"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": ""Keyboard And Mouse"",
+                    ""action"": ""Rotating"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         }
@@ -159,6 +179,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
         m_Building_Placement = m_Building.FindAction("Placement", throwIfNotFound: true);
         m_Building_Interacting = m_Building.FindAction("Interacting", throwIfNotFound: true);
+        m_Building_Rotating = m_Building.FindAction("Rotating", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -253,12 +274,14 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private IBuildingActions m_BuildingActionsCallbackInterface;
     private readonly InputAction m_Building_Placement;
     private readonly InputAction m_Building_Interacting;
+    private readonly InputAction m_Building_Rotating;
     public struct BuildingActions
     {
         private @NewControls m_Wrapper;
         public BuildingActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Placement => m_Wrapper.m_Building_Placement;
         public InputAction @Interacting => m_Wrapper.m_Building_Interacting;
+        public InputAction @Rotating => m_Wrapper.m_Building_Rotating;
         public InputActionMap Get() { return m_Wrapper.m_Building; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -274,6 +297,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Interacting.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
                 @Interacting.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
                 @Interacting.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
+                @Rotating.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
+                @Rotating.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
+                @Rotating.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
             }
             m_Wrapper.m_BuildingActionsCallbackInterface = instance;
             if (instance != null)
@@ -284,6 +310,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Interacting.started += instance.OnInteracting;
                 @Interacting.performed += instance.OnInteracting;
                 @Interacting.canceled += instance.OnInteracting;
+                @Rotating.started += instance.OnRotating;
+                @Rotating.performed += instance.OnRotating;
+                @Rotating.canceled += instance.OnRotating;
             }
         }
     }
@@ -305,5 +334,6 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     {
         void OnPlacement(InputAction.CallbackContext context);
         void OnInteracting(InputAction.CallbackContext context);
+        void OnRotating(InputAction.CallbackContext context);
     }
 }

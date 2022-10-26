@@ -23,13 +23,9 @@ public class PlayerInputs : MonoBehaviour
     public Vector2 walkInput;
     public bool placeInput;
     public bool interactInput;
+    public bool rotateInput;
     #endregion
-    
 
-    private void Awake()
-    {
-
-    }
     private void OnEnable()
     {
         if (newControls == null)
@@ -44,19 +40,16 @@ public class PlayerInputs : MonoBehaviour
 
             newControls.Building.Interacting.performed += es => interactInput = true;
             newControls.Building.Interacting.canceled += ef => interactInput = false;
+
+            newControls.Building.Rotating.performed += er => rotateInput = true;
+            newControls.Building.Rotating.canceled += ex => rotateInput = false;
         }
         newControls.Enable();
     }
-    
-
 
     private void FixedUpdate()
     {
         Movement();
-    }
-    private void Update()
-    {
-
     }
     private void Movement()
     {

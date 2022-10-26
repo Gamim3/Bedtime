@@ -175,7 +175,7 @@ public class NewBuildSystem : MonoBehaviour
             {
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
-                    Instantiate<GameObject>(tower, arrowHit.point, Quaternion.identity);
+                    Instantiate<GameObject>(tower, arrowHit.point, arrowPlacer.transform.rotation);
                     hasTower = false;
                     towerAbleToPlace = false;
                     //aka geen tower meer.
@@ -203,6 +203,11 @@ public class NewBuildSystem : MonoBehaviour
                 {
                     waitTimeForDelete = 0;
                 }
+            }
+
+            if (player.GetComponent<PlayerInputs>().rotateInput)
+            {
+                transform.Rotate(0f, arrowPlacer.transform.position.y + 10 * Time.deltaTime, 0f, Space.Self);
             }
         }
     }

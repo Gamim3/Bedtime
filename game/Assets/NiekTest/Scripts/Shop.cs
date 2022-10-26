@@ -47,7 +47,7 @@ public class Shop : MonoBehaviour
             tower = null;
         }
 
-        if (currencyReset == true)
+        if (currencyReset)
         {
             currencyReset = false;
         }
@@ -62,7 +62,7 @@ public class Shop : MonoBehaviour
             currency = 0;
         }
 
-        shopCurrency = GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency;
+        shopCurrency = GameObject.Find("Spawnpoint").GetComponent<Spawning>().currency;
         GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
     }

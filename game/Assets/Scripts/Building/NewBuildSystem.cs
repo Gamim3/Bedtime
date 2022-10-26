@@ -55,7 +55,6 @@ public class NewBuildSystem : MonoBehaviour
     //de 2 bools hierboven zijn een test
     void Update()
     {
-        tower = GameObject.Find("ShopTest").GetComponent<Shop>().tower;
         if (tower != null)
         {
             towerAbleToPlace = true;
@@ -108,7 +107,7 @@ public class NewBuildSystem : MonoBehaviour
                 {
                     inTower = true;
                     canDestroy = true;
-                    arrowRenderer.material.color = Color.blue;
+                    arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
                 }
                 else
                 {
@@ -189,7 +188,7 @@ public class NewBuildSystem : MonoBehaviour
                 if (player.GetComponent<PlayerInputs>().interactInput)
                 {
                     waitTimeForDelete += Time.deltaTime;
-                    arrowRenderer.material.color = Color.magenta;
+                    arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
 
                     if (waitTimeForDelete > timeToDestroy)
                     {

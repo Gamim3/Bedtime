@@ -94,28 +94,28 @@ public class Enemy : MonoBehaviour
 
             if (stats.enemyType == 1)
             {
-                enemyCounter[0] += 1;
+                enemyCounter[0] ++;
             }
 
             if (stats.enemyType == 2)
             {
-                enemyCounter[1] += 1;
+                enemyCounter[1] ++;
             }
 
             if (stats.enemyType == 3)
             {
-                enemyCounter[2] += 1;
+                enemyCounter[2] ++;
             }
 
             if (stats.enemyType == 4)
             {
-                enemyCounter[3] += 1;
+                enemyCounter[3] ++;
             }
 
-            GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().currency += currency;
+            GameObject.Find("Spawnpoint").GetComponent<Spawning>().currency += currency;
             for (int i = 0; i < enemyCounter.Length; i++)
             {
-                GameObject.Find("WaveCounterManager").GetComponent<WaveCounter>().counter[i] -= enemyCounter[i];
+                GameObject.Find("Spawnpoint").GetComponent<Spawning>().counter[i] -= enemyCounter[i];
             }
 
             Destroy(this.gameObject);

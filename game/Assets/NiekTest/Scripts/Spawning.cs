@@ -6,43 +6,47 @@ using TMPro;
 
 public class Spawning : MonoBehaviour
 {
+   
+    //gameobjects
+    public List<GameObject> myObjects;
+    public GameObject Waypoints;
+
+    //bools
+    public bool[] spawn;
+    private bool buttonPressed;
+    private bool spawning;
+    
+    //floats
+    public float[] counter;
+    public float currency;
+    public float[] spawnCounter;
     public float spawnTime;
     public float wave;
+
+    public float[] wave1counter;
+    public float[] wave2counter;
+    public float[] wave3counter;
+    public float[] wave4counter;
+    public float[] wave5counter;
+
+    //text
+    public TMP_Text[] enemyText;
     public TMP_Text waveCounter;
-    public List<GameObject> myObjects;
+    public TMP_Text currencyUI;
 
-    public bool[] spawn;
-    public bool wave2check;
-    public float[] counter;
-    private float[] enemyAmount;
-    private float waveMultiplier;
-    private bool spawning;
-    public GameObject waveGameObject;
 
-    public GameObject Waypoints;
+
+    void Start()
+    {
+        
+    }
+
     void Update()
     {
-        wave2check = waveGameObject.GetComponent<WaveCounter>().wave2check;
 
         if(Input.GetKeyDown(KeyCode.E) && spawning == false)
         {
             spawning = true;
-        }
-
-        if (wave2check == true)
-        {
-            enemyAmount = waveGameObject.GetComponent<WaveCounter>().enemyAmount;
-            waveMultiplier = waveGameObject.GetComponent<WaveCounter>().waveMultiplier;
-            for (int i = 0; i < counter.Length; i ++)
-            {
-                counter[i] = enemyAmount[i] * waveMultiplier;
-            }
-            spawning = false;
-            //counter[0] = enemyAmount[0] * waveMultiplier;
-            //counter[1] = enemyAmount[1] * waveMultiplier;
-            //counter[2] = enemyAmount[2] * waveMultiplier;
-            //counter[3] = enemyAmount[3] * waveMultiplier;
-            //kijken of het werkt zonder dit als de grid weer werkt
         }
 
         int randomIndex = Random.Range(0, 4);
@@ -50,47 +54,84 @@ public class Spawning : MonoBehaviour
         if(spawnTime > 1 && spawning)
         {
             
-            if (randomIndex == 0 && counter[0] > 0)
+            if (randomIndex == 0 && spawnCounter[0] > 0)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[0], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
-                counter[0] -= 1;
+                spawnCounter[0] -= 1;
             }
 
-            if (randomIndex == 1 && counter[1] > 0)
+            if (randomIndex == 1 && spawnCounter[1] > 0)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[1], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
-                counter[1] -= 1;
+                spawnCounter[1] -= 1;
             }
 
-            if (randomIndex == 2 && counter[2] > 0)
+            if (randomIndex == 2 && spawnCounter[2] > 0)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[2], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
-                counter[2] -= 1;
+                spawnCounter[2] -= 1;
             }
 
-            if (randomIndex == 3 && counter[3] > 0)
+            if (randomIndex == 3 && spawnCounter[3] > 0)
             {
                 spawnTime = 0;
                 GameObject instantiatedObject = Instantiate(myObjects[3], transform.position, transform.rotation) as GameObject;
                 instantiatedObject.GetComponent<Enemy>().Wpoints = Waypoints.GetComponent<Waypoints>();
-                counter[3] -= 1;
+                spawnCounter[3] -= 1;
             }    
         }
 
-        //for(int i = 20; i > enemy1; i--)
-        //{  
-        //}
-       
-        if(wave2check == true)
+        for (int i = 0; i < counter.Length; i++)
         {
-            wave += 1;
+            enemyText[i].text = counter[i].ToString();
+        }
+        currencyUI.text = currency.ToString();
+
+        if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1)
+        {
             waveCounter.text = wave.ToString();
+            wave++;
+            spawning = false;
+            for (int i = 0; i < counter.Length; i++)
+            {
+                if (wave == 2)
+                {
+                    counter[i] = wave2counter[i];
+                    spawnCounter[i] = wave2counter[i];
+                }
+
+                if (wave == 3)
+                {
+                    counter[i] = wave3counter[i];
+                    spawnCounter[i] = wave3counter[i];
+                }
+
+                if (wave == 4)
+                {
+                    counter[i] = wave4counter[i];
+                    spawnCounter[i] = wave4counter[i];
+                }
+
+                if (wave == 5)
+                {
+                    counter[i] = wave5counter[i];
+                    spawnCounter[i] = wave5counter[i];
+                }
+            }
+ 
+        }
+
+        buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
+        if (buttonPressed == true)
+        {
+            currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
+            buttonPressed = false;
         }
     }
 }

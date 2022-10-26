@@ -34,8 +34,6 @@ public class Spawning : MonoBehaviour
     public TMP_Text waveCounter;
     public TMP_Text currencyUI;
 
-
-
     void Start()
     {
         
@@ -128,7 +126,7 @@ public class Spawning : MonoBehaviour
         }
 
         buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
-        if (buttonPressed == true)
+        if (buttonPressed)
         {
             currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
             buttonPressed = false;

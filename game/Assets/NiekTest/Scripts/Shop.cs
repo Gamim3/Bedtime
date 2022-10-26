@@ -11,7 +11,6 @@ public class Shop : MonoBehaviour
     public bool buttonPressed;
     public bool currencyReset;
     public float shopCurrency;
-    public RaycastHit hit;
     public GameObject shopUI;
     public bool inMenu;
     public GameObject[] towers;
@@ -30,6 +29,12 @@ public class Shop : MonoBehaviour
             buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
             buttonPressed = true;
         }
+    }
+
+    public void ExitButton()
+    {
+        shopUI.SetActive(false);
+        inMenu = false;
     }
 
     public void Update()

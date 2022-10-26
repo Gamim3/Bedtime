@@ -24,7 +24,6 @@ public class Enemy : MonoBehaviour
     public float turnSpeed;
     public Quaternion enemyRotation;
 
-    public float waitTime;
     private bool damage;
 
     void Update()
@@ -83,7 +82,6 @@ public class Enemy : MonoBehaviour
         }
     }
 
-    //meer iets als dit
     public void Damage(int damage)
     {
         enemyHealth -= damage;

@@ -93,8 +93,8 @@ public class Spawning : MonoBehaviour
 
         if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1)
         {
-            waveCounter.text = wave.ToString();
             wave++;
+            waveCounter.text = wave.ToString();
             spawning = false;
             for (int i = 0; i < counter.Length; i++)
             {

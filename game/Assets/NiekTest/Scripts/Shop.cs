@@ -12,13 +12,19 @@ public class Shop : MonoBehaviour
     public bool inMenu;
     public GameObject[] towers;
     private bool towerAbleToPlace;
-    
+    public float[] counter;
+
     public TMP_Text towerText;
     public TMP_Text currencyUI;
 
     public GameObject buildingsystem;
     public GameObject tower;
     public GameObject spawn;
+
+    public GameObject toolMenu;
+    public GameObject spawningScript;
+    public GameObject shopScript;
+    
 
     public void BuyItem(int buttonint)
     {
@@ -40,7 +46,7 @@ public class Shop : MonoBehaviour
         currencyUI.text = currency.ToString();
         towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
 
-        if(towerAbleToPlace)
+        if (towerAbleToPlace)
         {
             towerText.text = ("hasTower");
         }
@@ -51,9 +57,13 @@ public class Shop : MonoBehaviour
             tower = null;
         }
 
-
         GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
+        if (Input.GetKeyDown(KeyCode.T))
+        {
+            toolMenu.SetActive(true);
+            inMenu = true;
+        }
     }
 
     void OnTriggerEnter(Collider other)
@@ -72,5 +82,33 @@ public class Shop : MonoBehaviour
             shopUI.SetActive(false);
             inMenu = false;
         }
+    }
+
+    public void SkipWave()
+    {
+        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+        foreach (GameObject enemy in enemies)
+        {
+            GameObject.Destroy(enemy);
+        }
+
+        spawningScript.GetComponent<Spawning>().counter = counter;
+        for (int i = 0; i < counter.Length; i++)
+        {
+            counter[i] = 0;
+        }
+
+    }
+
+    public void GetMoney()
+    {
+        currency += 100;
+
+    }
+
+    public void Exit()
+    {
+        inMenu = false;
+        toolMenu.SetActive(false);
     }
 }

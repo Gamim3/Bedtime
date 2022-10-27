@@ -11876,6 +11876,87 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: 4ef7f80d3f325544e9f9a05d8e28abb0, type: 3}
+--- !u!1 &1999252414
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 1999252416}
+  - component: {fileID: 1999252415}
+  - component: {fileID: 1999252417}
+  m_Layer: 0
+  m_Name: phonewaypoints
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &1999252415
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999252414}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: d5ffca9c552ea8f44a5b38d505f5b0db, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inputs: {fileID: 1848289113}
+  damage: 0
+  speed: 2
+  phoneyOBJ: {fileID: 7681076349193961969, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
+  phoneyClone: {fileID: 0}
+  phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
+  phoneTransform: {fileID: 7049112612686797643, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
+  waypoints:
+  - {fileID: 1832336527}
+  - {fileID: 1867614264}
+  - {fileID: 69678529}
+  - {fileID: 1001925520}
+  - {fileID: 1866445627}
+  - {fileID: 206347995}
+  - {fileID: 838345639}
+  - {fileID: 1273401926}
+  - {fileID: 1506954849}
+  - {fileID: 822129103}
+  - {fileID: 1091912028}
+  - {fileID: 1050580871}
+  - {fileID: 2070545820}
+  waypointIndex: 0
+  turnSpeed: 809000000
+--- !u!4 &1999252416
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999252414}
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: -2.271, y: 0, z: 6.299}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 22
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!65 &1999252417
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1999252414}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 0
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008823631
 PrefabInstance:
   m_ObjectHideFlags: 0

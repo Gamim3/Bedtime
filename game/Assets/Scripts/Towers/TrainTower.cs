@@ -32,7 +32,6 @@ public class TrainTower : TowerBase
             waypointIndex++;
             trainRotation.rotation = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - trainTransform.position);
         }
-
         
         trainTransform.position = Vector3.MoveTowards(trainTransform.position, waypoints[waypointIndex].position, fireRate * Time.deltaTime);
         trainTransform.rotation = Quaternion.Lerp(transform.rotation, trainRotation.rotation, Time.deltaTime * turnSpeed);

@@ -38,13 +38,14 @@ public class Phoney : MonoBehaviour
 
     public void PhoneMovement()
     {
-        if (Vector3.Distance(phoneTransform.position, waypoints[waypointIndex].position) < 0.1f)
+        //distance = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
+        if (Vector3.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;
             phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
         }
-        phoneTransform.position = Vector3.MoveTowards(phoneTransform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
-        phoneTransform.rotation = Quaternion.Lerp(phoneTransform.rotation, phoneRotationQ, Time.deltaTime * turnSpeed);
+        transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
+        transform.rotation = Quaternion.Lerp(transform.rotation, phoneRotationQ, Time.deltaTime * turnSpeed);
     }
 
     private void OnTriggerEnter(Collider other)

@@ -13,7 +13,7 @@ public class Spawning : MonoBehaviour
 
     //bools
     public bool[] spawn;
-    private bool buttonPressed;
+    
     private bool spawning;
     
     //floats
@@ -125,10 +125,5 @@ public class Spawning : MonoBehaviour
  
         }
 
-        buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
-        if (buttonPressed)
-        {
-            buttonPressed = false;
-        }
     }
 }

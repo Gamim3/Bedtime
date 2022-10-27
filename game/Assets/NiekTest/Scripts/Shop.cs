@@ -8,8 +8,6 @@ using TMPro;
 public class Shop : MonoBehaviour
 {
     public float currency;
-    public bool buttonPressed;
-    public bool currencyReset;
     public GameObject shopUI;
     public bool inMenu;
     public GameObject[] towers;
@@ -28,7 +26,6 @@ public class Shop : MonoBehaviour
         {
             currency -= towers[buttonint].GetComponent<TowerBase>().towerData.cost;
             buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
-            buttonPressed = true;
         }
     }
 

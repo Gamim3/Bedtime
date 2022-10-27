@@ -11937,13 +11937,8 @@ MonoBehaviour:
   inputs: {fileID: 1848289113}
   phoneyOBJ: {fileID: 7681076349193961969, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
   phoneyClone: {fileID: 0}
-<<<<<<< Updated upstream
-  phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
-  waypoints:
-=======
   spawnPoint: {fileID: 829386908}
   wPoints:
->>>>>>> Stashed changes
   - {fileID: 1832336527}
   - {fileID: 1867614264}
   - {fileID: 69678529}

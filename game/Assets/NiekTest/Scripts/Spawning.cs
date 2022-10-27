@@ -18,7 +18,7 @@ public class Spawning : MonoBehaviour
     
     //floats
     public float[] counter;
-    public float currency;
+    
     public float[] spawnCounter;
     public float spawnTime;
     public float wave;
@@ -32,7 +32,7 @@ public class Spawning : MonoBehaviour
     //text
     public TMP_Text[] enemyText;
     public TMP_Text waveCounter;
-    public TMP_Text currencyUI;
+    
 
     void Start()
     {
@@ -89,7 +89,7 @@ public class Spawning : MonoBehaviour
         {
             enemyText[i].text = counter[i].ToString();
         }
-        currencyUI.text = currency.ToString();
+
 
         if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1)
         {
@@ -128,7 +128,6 @@ public class Spawning : MonoBehaviour
         buttonPressed = Object.FindObjectOfType<Shop>().GetComponent<Shop>().buttonPressed;
         if (buttonPressed)
         {
-            currency = currency + Object.FindObjectOfType<Shop>().GetComponent<Shop>().currency;
             buttonPressed = false;
         }
     }

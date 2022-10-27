@@ -10,22 +10,23 @@ public class Shop : MonoBehaviour
     public float currency;
     public bool buttonPressed;
     public bool currencyReset;
-    public float shopCurrency;
     public GameObject shopUI;
     public bool inMenu;
     public GameObject[] towers;
     private bool towerAbleToPlace;
-    public GameObject tower;
     
     public TMP_Text towerText;
+    public TMP_Text currencyUI;
 
     public GameObject buildingsystem;
+    public GameObject tower;
+    public GameObject spawn;
 
     public void BuyItem(int buttonint)
     {
-        if(shopCurrency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
+        if(currency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
         {
-            currency = -towers[buttonint].GetComponent<TowerBase>().towerData.cost;
+            currency -= towers[buttonint].GetComponent<TowerBase>().towerData.cost;
             buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
             buttonPressed = true;
         }
@@ -39,6 +40,7 @@ public class Shop : MonoBehaviour
 
     public void Update()
     {
+        currencyUI.text = currency.ToString();
         towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
 
         if(towerAbleToPlace)
@@ -52,22 +54,7 @@ public class Shop : MonoBehaviour
             tower = null;
         }
 
-        if (currencyReset)
-        {
-            currencyReset = false;
-        }
 
-        else
-        {
-            buttonPressed = false;
-        }
-
-        if (buttonPressed == false)
-        {
-            currency = 0;
-        }
-
-        shopCurrency = GameObject.Find("Spawnpoint").GetComponent<Spawning>().currency;
         GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
     }

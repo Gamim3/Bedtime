@@ -3174,7 +3174,6 @@ MonoBehaviour:
   - 1
   - 0
   - 0
-  currency: 0
   spawnCounter:
   - 6
   - 1
@@ -3213,7 +3212,6 @@ MonoBehaviour:
   - {fileID: 1462950488}
   - {fileID: 747040008}
   waveCounter: {fileID: 1354475498}
-  currencyUI: {fileID: 1571874718}
 --- !u!1 &570733525
 GameObject:
   m_ObjectHideFlags: 0
@@ -11912,7 +11910,6 @@ MonoBehaviour:
   phoneyOBJ: {fileID: 7681076349193961969, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
   phoneyClone: {fileID: 0}
   phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
-  phoneTransform: {fileID: 7049112612686797643, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
   waypoints:
   - {fileID: 1832336527}
   - {fileID: 1867614264}
@@ -12071,16 +12068,17 @@ MonoBehaviour:
   currency: 0
   buttonPressed: 0
   currencyReset: 0
-  shopCurrency: 0
   shopUI: {fileID: 750578780}
   inMenu: 0
   towers:
   - {fileID: 7337338637377345293, guid: 2ad258745eb9c1a46829680d8be9d085, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}
   - {fileID: 8820957443811944938, guid: c9411c539daa35c4f9b05d9f852c146b, type: 3}
-  tower: {fileID: 938899674}
   towerText: {fileID: 362281984}
+  currencyUI: {fileID: 1571874718}
   buildingsystem: {fileID: 938899674}
+  tower: {fileID: 938899674}
+  spawn: {fileID: 563242427}
 --- !u!65 &2015544675
 BoxCollider:
   m_ObjectHideFlags: 0

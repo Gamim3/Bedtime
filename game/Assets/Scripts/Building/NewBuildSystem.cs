@@ -213,7 +213,7 @@ public class NewBuildSystem : MonoBehaviour
 
                         float moneytogiveback = arrowHit.transform.GetComponent<TowerBase>().towerData.cost / 2;
 
-                        moneyToGiveTo.GetComponent<Spawning>().currency += moneytogiveback;
+                        moneyToGiveTo.GetComponent<Shop>().currency += moneytogiveback;
 
                         objectToDestroy = arrowHit.transform.gameObject;
                         Destroy(objectToDestroy);

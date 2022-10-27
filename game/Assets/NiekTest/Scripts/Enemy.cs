@@ -110,7 +110,7 @@ public class Enemy : MonoBehaviour
                 enemyCounter[3] ++;
             }
 
-            GameObject.Find("Spawnpoint").GetComponent<Spawning>().currency += currency;
+            GameObject.Find("ShopTest").GetComponent<Shop>().currency += currency;
             for (int i = 0; i < enemyCounter.Length; i++)
             {
                 GameObject.Find("Spawnpoint").GetComponent<Spawning>().counter[i] -= enemyCounter[i];

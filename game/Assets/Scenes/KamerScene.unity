@@ -925,7 +925,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 927d9f7c887616d46aa41dbc3bde37ff, type: 3}
       propertyPath: m_RootOrder
-      value: 2
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 927d9f7c887616d46aa41dbc3bde37ff, type: 3}
       propertyPath: m_LocalPosition.x
@@ -2885,7 +2885,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: -8679921383154817045, guid: 6a1aeb23d29c34547b91c5032de3fe2f, type: 3}
       propertyPath: m_RootOrder
-      value: 4
+      value: 3
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 6a1aeb23d29c34547b91c5032de3fe2f, type: 3}
       propertyPath: m_LocalScale.x
@@ -13188,6 +13188,8 @@ MonoBehaviour:
   - {fileID: 7337338637377345293, guid: 2ad258745eb9c1a46829680d8be9d085, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}
   - {fileID: 8820957443811944938, guid: c9411c539daa35c4f9b05d9f852c146b, type: 3}
+  - {fileID: 1047880660151580841, guid: 71048acfda9c5bc45ba89d3c85bf5d4f, type: 3}
+  - {fileID: 2827018491804461401, guid: b2e59dac6ae559347b5ca940c593a613, type: 3}
   towerText: {fileID: 362281984}
   currencyUI: {fileID: 1571874718}
   buildingsystem: {fileID: 938899674}
@@ -14817,7 +14819,7 @@ Transform:
   - {fileID: 8879528567602667811}
   - {fileID: 5951265925077554343}
   m_Father: {fileID: 0}
-  m_RootOrder: 1
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!4 &632911582163431044
 Transform:
@@ -14913,7 +14915,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &1790183945925185036
 GameObject:

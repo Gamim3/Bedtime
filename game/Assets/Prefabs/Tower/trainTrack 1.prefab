@@ -267,6 +267,19 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: d0df5acf237041f408d266dde6caccfd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  isntInBed: 0
+  towerData: {fileID: 11400000, guid: 7936e281a143a0b4899796cec8a4d6dd, type: 2}
+  range: 0
+  damage: 0
+  fireRate: 0
+  cost: 0
+  size: 0
+  placeTag: 
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  towerTransform: {fileID: 3202137381256262627}
+  enemiesInRange: []
   trainTower: {fileID: 189174466411092206, guid: b5c564fb8553f0a43b960326d259f56b, type: 3}
   wpoints:
   - {fileID: 3263209909998163072}

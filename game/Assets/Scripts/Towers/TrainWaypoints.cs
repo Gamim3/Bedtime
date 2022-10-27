@@ -2,7 +2,7 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class TrainWaypoints : MonoBehaviour
+public class TrainWaypoints : TowerBase
 {
     public GameObject trainTower;
 

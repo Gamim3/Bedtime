@@ -5074,6 +5074,37 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 822129102}
   m_Mesh: {fileID: 10202, guid: 0000000000000000e000000000000000, type: 0}
+--- !u!1 &829386907
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 829386908}
+  m_Layer: 0
+  m_Name: PhoneySpawn
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &829386908
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 829386907}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: -2.271, y: 0, z: 6.567}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 23
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &830113126
 GameObject:
   m_ObjectHideFlags: 0
@@ -11884,7 +11915,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1999252416}
   - component: {fileID: 1999252415}
-  - component: {fileID: 1999252417}
   m_Layer: 0
   m_Name: phonewaypoints
   m_TagString: Untagged
@@ -11905,12 +11935,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inputs: {fileID: 1848289113}
-  damage: 0
-  speed: 2
   phoneyOBJ: {fileID: 7681076349193961969, guid: 8e4a625bd615af94d84f131cc09e2648, type: 3}
   phoneyClone: {fileID: 0}
+<<<<<<< Updated upstream
   phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
   waypoints:
+=======
+  spawnPoint: {fileID: 829386908}
+  wPoints:
+>>>>>>> Stashed changes
   - {fileID: 1832336527}
   - {fileID: 1867614264}
   - {fileID: 69678529}
@@ -11924,8 +11957,6 @@ MonoBehaviour:
   - {fileID: 1091912028}
   - {fileID: 1050580871}
   - {fileID: 2070545820}
-  waypointIndex: 0
-  turnSpeed: 8
 --- !u!4 &1999252416
 Transform:
   m_ObjectHideFlags: 0
@@ -11941,19 +11972,6 @@ Transform:
   m_Father: {fileID: 0}
   m_RootOrder: 22
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!65 &1999252417
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1999252414}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 0
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1001 &2008823631
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -11,6 +11,8 @@ GameObject:
   - component: {fileID: 7049112612686797643}
   - component: {fileID: 6232033038140904686}
   - component: {fileID: 8185387217379909668}
+  - component: {fileID: -4270249848233205036}
+  - component: {fileID: 9042325572367946799}
   m_Layer: 0
   m_Name: Phone 1
   m_TagString: Untagged
@@ -83,3 +85,49 @@ MeshRenderer:
   m_SortingLayer: 0
   m_SortingOrder: 0
   m_AdditionalVertexStreams: {fileID: 0}
+--- !u!114 &-4270249848233205036
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681076349193961969}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 17eea75c3422b1e41a8937778fc873a6, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isntInBed: 0
+  towerData: {fileID: 11400000, guid: 7c54b8859afb4f741ac52bcc8b90be5b, type: 2}
+  range: 0
+  damage: 0
+  fireRate: 0
+  cost: 0
+  size: 0
+  placeTag: 
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 128
+  towerTransform: {fileID: 7049112612686797643}
+  enemiesInRange: []
+  phoney: {fileID: 0}
+  canDamage: 0
+  waypoints:
+  - {fileID: 0}
+  waypointIndex: 0
+  phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
+  speed: 0
+  turnSpeed: 8
+--- !u!65 &9042325572367946799
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 7681076349193961969}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.42525557, y: 0.2627348, z: 0.40000087}
+  m_Center: {x: 0, y: 0.1313674, z: -0.044860713}

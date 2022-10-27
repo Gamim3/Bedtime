@@ -13,18 +13,12 @@ public class TowerBase : MonoBehaviour
     public float cost;
     public float size;
     public string placeTag;
+
     public LayerMask enemiesLayer;
 
-    public GameObject[] enemies;
-    public RaycastHit[] enemyDetectionHit;
     public Transform towerTransform;
-    public int indexterst;
 
     public Collider[] enemiesInRange;
-
-    public Transform target;
-    public float towerDistance;
-    public int i;
 
     void Start()
     {

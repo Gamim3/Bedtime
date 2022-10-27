@@ -12,6 +12,9 @@ public class TrainTower : TowerBase
     private void Start()
     {
         isntInBed = true;
+
+        damage = towerData.damage;
+        fireRate = towerData.fireSpeed;
     }
     private void Update()
     {

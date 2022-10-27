@@ -13,8 +13,8 @@ MonoBehaviour:
   m_Name: TrainTower
   m_EditorClassIdentifier: 
   range: 0
-  damage: 3
-  fireSpeed: 1
+  damage: 5
+  fireSpeed: 4
   cost: 80
   size: 1
   health: 0

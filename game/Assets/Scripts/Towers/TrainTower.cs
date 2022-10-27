@@ -22,7 +22,7 @@ public class TrainTower : TowerBase
     }
     public void trainMovement()
     {
-        if (waypointIndex == 4)
+        if (waypointIndex == waypoints.Length)
         {
             waypointIndex = 0;
         }

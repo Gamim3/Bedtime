@@ -5,6 +5,7 @@ using UnityEngine;
 public class Phoney : MonoBehaviour
 {
     public GameObject inputs;
+
     public int damage;
     public float speed;
 
@@ -13,7 +14,6 @@ public class Phoney : MonoBehaviour
 
     public Quaternion phoneRotationQ;
 
-    public Transform phoneTransform;
     public Transform[] waypoints;
     public int waypointIndex;
 
@@ -26,7 +26,6 @@ public class Phoney : MonoBehaviour
             if (phoneyClone == null)
             {
                 phoneyClone = Instantiate(phoneyOBJ, this.transform);
-                phoneTransform = phoneyClone.transform;
             }
         }
         
@@ -38,12 +37,17 @@ public class Phoney : MonoBehaviour
 
     public void PhoneMovement()
     {
+        if (waypointIndex == 0)
+        {
+            phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
+        }
         //distance = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
         if (Vector3.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;
             phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
         }
+
         transform.position = Vector3.MoveTowards(transform.position, waypoints[waypointIndex].position, speed * Time.deltaTime);
         transform.rotation = Quaternion.Lerp(transform.rotation, phoneRotationQ, Time.deltaTime * turnSpeed);
     }

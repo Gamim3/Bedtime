@@ -12,6 +12,7 @@ GameObject:
   - component: {fileID: 4486744204776476145}
   - component: {fileID: 1846732432622909755}
   - component: {fileID: 8352112156207626978}
+  - component: {fileID: 3682378398223518999}
   m_Layer: 0
   m_Name: trainblend
   m_TagString: Untagged
@@ -99,7 +100,7 @@ MonoBehaviour:
   isntInBed: 0
   towerData: {fileID: 11400000, guid: 7936e281a143a0b4899796cec8a4d6dd, type: 2}
   range: 0
-  damage: 0
+  damage: 5
   fireRate: 3
   cost: 0
   size: 0
@@ -119,6 +120,27 @@ MonoBehaviour:
   - {fileID: 0}
   - {fileID: 0}
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointIndex: 0
   trainRotation: {fileID: 714882120986755668}
   turnSpeed: 8
+--- !u!65 &3682378398223518999
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 189174466411092206}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 0.033947494, y: 0.06663909, z: 0.1250009}
+  m_Center: {x: 0, y: 0.03334896, z: -0.028552944}

@@ -10,8 +10,15 @@ public class OuderSystem : MonoBehaviour
     public bool candotimer;
 
     public GameObject bed;
+
+    public Transform player;
+    public Transform ouder;
+
+    public RaycastHit hit;
+
     private void Update()
     {
+        Debug.DrawRay(ouder.position, player.position - ouder.position);
         if (candotimer)
         {
             exposed += Time.deltaTime;
@@ -24,7 +31,7 @@ public class OuderSystem : MonoBehaviour
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("player"))
+        if (Physics.Raycast(ouder.position, player.position - ouder.position, out hit, 800) && hit.transform.CompareTag("player"))
         {
             candotimer = true;
         }

@@ -20,4 +20,4 @@ MonoBehaviour:
   health: 0
   targetType: 2
   placeTag: placeableGround
-  towerBluePrint: {fileID: 4331167203709327248, guid: 29f577f4f70b89d4baba0333e5b4d187, type: 3}
+  towerBluePrint: {fileID: 3544923817951887850, guid: c253c5867c1c0e042a4836146584a051, type: 3}

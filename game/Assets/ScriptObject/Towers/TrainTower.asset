@@ -14,7 +14,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   range: 0
   damage: 5
-  fireSpeed: 4
+  fireSpeed: 3
   cost: 80
   size: 1
   health: 0

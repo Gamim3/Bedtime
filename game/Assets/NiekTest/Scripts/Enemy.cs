@@ -137,6 +137,6 @@ public class Enemy : MonoBehaviour
     {
         enemySpeed = 0;
 
-        StartCoroutine(RefastEnemy(1f));
+        StartCoroutine(RefastEnemy(0.5f));
     }
 }

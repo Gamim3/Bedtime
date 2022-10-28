@@ -160,7 +160,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a73bb228-54d7-4a26-a9cc-7d4d32689732"",
-                    ""path"": ""<Keyboard>/e"",
+                    ""path"": ""<Keyboard>/space"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",

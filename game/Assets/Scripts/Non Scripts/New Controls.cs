@@ -134,6 +134,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""StartWave"",
+                    ""type"": ""Button"",
+                    ""id"": ""5f9681c3-c6d3-4c32-8bd0-2dc5b3b2081b"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -162,7 +171,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 {
                     ""name"": """",
                     ""id"": ""a12ab3bd-f00d-4b97-93ab-d07b5e8319bc"",
-                    ""path"": ""<Keyboard>/r"",
+                    ""path"": ""<Keyboard>/e"",
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",
@@ -178,6 +187,17 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""groups"": """",
                     ""action"": ""RotatingL"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aa752c44-e6ff-48f9-9e92-1bafb20e1646"",
+                    ""path"": ""<Keyboard>/enter"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""StartWave"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -201,6 +221,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_Building_Interacting = m_Building.FindAction("Interacting", throwIfNotFound: true);
         m_Building_RotatingR = m_Building.FindAction("RotatingR", throwIfNotFound: true);
         m_Building_RotatingL = m_Building.FindAction("RotatingL", throwIfNotFound: true);
+        m_Building_StartWave = m_Building.FindAction("StartWave", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -297,6 +318,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private readonly InputAction m_Building_Interacting;
     private readonly InputAction m_Building_RotatingR;
     private readonly InputAction m_Building_RotatingL;
+    private readonly InputAction m_Building_StartWave;
     public struct BuildingActions
     {
         private @NewControls m_Wrapper;
@@ -305,6 +327,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         public InputAction @Interacting => m_Wrapper.m_Building_Interacting;
         public InputAction @RotatingR => m_Wrapper.m_Building_RotatingR;
         public InputAction @RotatingL => m_Wrapper.m_Building_RotatingL;
+        public InputAction @StartWave => m_Wrapper.m_Building_StartWave;
         public InputActionMap Get() { return m_Wrapper.m_Building; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -326,6 +349,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @RotatingL.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
                 @RotatingL.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
                 @RotatingL.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
+                @StartWave.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnStartWave;
+                @StartWave.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnStartWave;
+                @StartWave.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnStartWave;
             }
             m_Wrapper.m_BuildingActionsCallbackInterface = instance;
             if (instance != null)
@@ -342,6 +368,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @RotatingL.started += instance.OnRotatingL;
                 @RotatingL.performed += instance.OnRotatingL;
                 @RotatingL.canceled += instance.OnRotatingL;
+                @StartWave.started += instance.OnStartWave;
+                @StartWave.performed += instance.OnStartWave;
+                @StartWave.canceled += instance.OnStartWave;
             }
         }
     }
@@ -365,5 +394,6 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         void OnInteracting(InputAction.CallbackContext context);
         void OnRotatingR(InputAction.CallbackContext context);
         void OnRotatingL(InputAction.CallbackContext context);
+        void OnStartWave(InputAction.CallbackContext context);
     }
 }

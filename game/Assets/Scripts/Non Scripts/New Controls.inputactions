@@ -112,6 +112,15 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": false
+                },
+                {
+                    "name": "StartWave",
+                    "type": "Button",
+                    "id": "5f9681c3-c6d3-4c32-8bd0-2dc5b3b2081b",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -140,7 +149,7 @@
                 {
                     "name": "",
                     "id": "a12ab3bd-f00d-4b97-93ab-d07b5e8319bc",
-                    "path": "<Keyboard>/r",
+                    "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard And Mouse",
@@ -156,6 +165,17 @@
                     "processors": "",
                     "groups": "",
                     "action": "RotatingL",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aa752c44-e6ff-48f9-9e92-1bafb20e1646",
+                    "path": "<Keyboard>/enter",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartWave",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

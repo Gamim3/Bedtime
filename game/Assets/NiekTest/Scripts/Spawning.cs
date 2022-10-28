@@ -6,7 +6,8 @@ using TMPro;
 
 public class Spawning : MonoBehaviour
 {
-   
+    public GameObject playerinputs;
+
     //gameobjects
     public List<GameObject> myObjects;
     public GameObject Waypoints;
@@ -42,7 +43,7 @@ public class Spawning : MonoBehaviour
     void Update()
     {
 
-        if(Input.GetKeyDown(KeyCode.E) && spawning == false)
+        if(playerinputs.GetComponent<PlayerInputs>().startwaveInput)
         {
             spawning = true;
         }

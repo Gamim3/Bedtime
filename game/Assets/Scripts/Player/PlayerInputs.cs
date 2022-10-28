@@ -25,6 +25,7 @@ public class PlayerInputs : MonoBehaviour
     public bool interactInput;
     public bool rotateInputR;
     public bool rotateInputL;
+    public bool startwaveInput;
 
     #endregion
 
@@ -48,6 +49,9 @@ public class PlayerInputs : MonoBehaviour
 
             newControls.Building.RotatingL.performed += ers => rotateInputL = true;
             newControls.Building.RotatingL.canceled += erx => rotateInputL = false;
+
+            newControls.Building.StartWave.performed += aj => startwaveInput = true;
+            newControls.Building.StartWave.canceled += ajs => startwaveInput = false;
         }
         newControls.Enable();
     }

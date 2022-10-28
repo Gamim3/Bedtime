@@ -34,4 +34,9 @@ public class TowerBase : MonoBehaviour
     {
         enemiesInRange = Physics.OverlapSphere(towerTransform.position, range, enemiesLayer);
     }
+
+    public void isInBed(bool YesOrNo)
+    {
+        isntInBed = YesOrNo;
+    }
 }

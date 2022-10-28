@@ -44,18 +44,19 @@ public class Shop : MonoBehaviour
     public void Update()
     {
         currencyUI.text = currency.ToString();
-        towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
 
-        if (towerAbleToPlace)
-        {
-            towerText.text = ("hasTower");
-        }
+        //towerAbleToPlace = GameObject.Find("GameObject").GetComponent<NewBuildSystem>().towerAbleToPlace;
 
-        else
-        {
-            towerText.text = ("noTower");
-            tower = null;
-        }
+        //if (towerAbleToPlace)
+        //{
+        //    towerText.text = ("hasTower");
+        //}
+
+        //else
+        //{
+        //    towerText.text = ("noTower");
+        //    tower = null;
+        //}
 
         GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
 
@@ -106,7 +107,6 @@ public class Shop : MonoBehaviour
     public void GetMoney()
     {
         currency += 100;
-
     }
 
     public void Exit()

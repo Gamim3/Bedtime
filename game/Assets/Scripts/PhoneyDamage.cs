@@ -37,7 +37,6 @@ public class PhoneyDamage : TowerBase
             phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
         }
 
-        //distance = Vector3.Distance(transform.position, waypoints[waypointIndex].position);
         if (Vector3.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;

@@ -6795,6 +6795,69 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!1 &965494552
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 965494555}
+  - component: {fileID: 965494554}
+  - component: {fileID: 965494553}
+  m_Layer: 0
+  m_Name: GameObject
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &965494553
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965494552}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: c78c56b7c3d5b574daffbd99a9204632, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  range: 0
+  exposed: 0
+  maxexposed: 3
+  candotimer: 0
+  bed: {fileID: 1348562289}
+--- !u!65 &965494554
+BoxCollider:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965494552}
+  m_Material: {fileID: 0}
+  m_IsTrigger: 1
+  m_Enabled: 1
+  serializedVersion: 2
+  m_Size: {x: 1, y: 1, z: 1}
+  m_Center: {x: 0, y: 0, z: 0}
+--- !u!4 &965494555
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 965494552}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
+  m_LocalPosition: {x: 0.41, y: 0.556, z: 3.618}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_RootOrder: 25
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &981365060
 GameObject:
   m_ObjectHideFlags: 0
@@ -9765,7 +9828,6 @@ GameObject:
   m_Component:
   - component: {fileID: 1348562290}
   - component: {fileID: 1348562293}
-  - component: {fileID: 1348562292}
   - component: {fileID: 1348562291}
   m_Layer: 0
   m_Name: Bed
@@ -9801,23 +9863,14 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5201563b02ccf0249b88544455947c7b, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  ableToGoInBed: 0
   bedCam: {fileID: 2039447916}
   inBed: 0
-  message: {fileID: 1408827541}
---- !u!65 &1348562292
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1348562289}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  ouders: {fileID: 965494552}
+  time: 0
+  waittime: 3
+  player: {fileID: 1848289113}
+  build: {fileID: 938899674}
+  towers: []
 --- !u!33 &1348562293
 MeshFilter:
   m_ObjectHideFlags: 0
@@ -10071,6 +10124,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: GameObject
       objectReference: {fileID: 0}
+    - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
+      propertyPath: bed
+      value: 
+      objectReference: {fileID: 1348562289}
     - target: {fileID: 7234626583663877126, guid: 9e359c085dfd9d8459d00dd5022429dc, type: 3}
       propertyPath: cam
       value: 

@@ -11,8 +11,6 @@ public class TrainTower : TowerBase
     public float turnSpeed;
     private void Start()
     {
-        isntInBed = true;
-
         damage = towerData.damage;
         fireRate = towerData.fireSpeed;
     }
@@ -41,9 +39,12 @@ public class TrainTower : TowerBase
     }
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("enemy"))
+        if (isntInBed)
         {
-            other.GetComponent<Enemy>().Damage(damage);
+            if (other.CompareTag("enemy"))
+            {
+                other.GetComponent<Enemy>().Damage(damage);
+            }
         }
     }
 }

@@ -5,48 +5,51 @@ using TMPro;
 
 public class Bed : MonoBehaviour
 {
-    public bool ableToGoInBed;
     public GameObject bedCam;
     public bool inBed;
-    public GameObject message;
-    // Start is called before the first frame update
-    void Start()
+    public GameObject ouders;
+
+    public float time;
+    public float waittime;
+
+    public GameObject player;
+
+    public GameObject build;
+
+    public List<GameObject> towers = new List<GameObject>();
+
+    private void Update()
     {
-
-    }
-
-    void Update()
-    {
-        if (inBed && Input.GetButtonDown("Jump"))
-        {
-            bedCam.SetActive(false);
-            inBed = false;
-        }
-
-        if (Input.GetButtonDown("Jump") && ableToGoInBed)
+        if (inBed)
         {
             bedCam.SetActive(true);
-            inBed = true;
-            ableToGoInBed = false;
-        }
-    }
 
-    void OnTriggerEnter(Collider other)
-    {
-        if(other.gameObject.tag == "player")
-        {
-            ableToGoInBed = true;
-            message.SetActive(true);
-            
-        }
-    }
+            time += Time.deltaTime;
 
-    void OnTriggerExit(Collider other)
-    {
-        if (other.gameObject.tag == "player")
-        {
-            ableToGoInBed = false;
-            message.SetActive(false);
+            player.SetActive(false);
+
+            for (int i = 0; i < build.GetComponent<NewBuildSystem>().totalTowerIndex; i++)
+            {
+                if (towers != null)
+                {
+                    towers[i].GetComponent<TowerBase>().isInBed(false);
+                }
+            }
+
+            if (time > waittime)
+            {
+                ouders.GetComponent<OuderSystem>().exposed = 0;
+                bedCam.SetActive(false);
+                time = 0;
+                player.SetActive(true);
+
+                for (int i = 0; i < build.GetComponent<NewBuildSystem>().totalTowerIndex; i++)
+                {
+                    towers[i].GetComponent<TowerBase>().isInBed(true);
+                }
+
+                inBed = false;
+            }
         }
     }
 }

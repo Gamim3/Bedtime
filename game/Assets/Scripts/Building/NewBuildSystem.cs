@@ -55,6 +55,10 @@ public class NewBuildSystem : MonoBehaviour
     public bool nonplace;
 
     public bool towerAbleToPlace;
+
+    public GameObject bed;
+
+    public int totalTowerIndex;
     //de 2 bools hierboven zijn een test
     void Update()
     {
@@ -204,7 +208,9 @@ public class NewBuildSystem : MonoBehaviour
             {
                 if (player.GetComponent<PlayerInputs>().placeInput)
                 {
-                    Instantiate<GameObject>(tower, arrowHit.point, arrowPlacer.transform.rotation);
+                    bed.GetComponent<Bed>().towers.Add(Instantiate<GameObject>(tower, arrowHit.point, arrowPlacer.transform.rotation));
+                    totalTowerIndex++;
+
                     Destroy(placeBluePrint);
                     tower = null;
                     hasTower = false;
@@ -223,6 +229,9 @@ public class NewBuildSystem : MonoBehaviour
                     if (waitTimeForDelete > timeToDestroy)
                     {
                         waitTimeForDelete = 0;
+
+                        bed.GetComponent<Bed>().towers.Remove(arrowHit.transform.gameObject);
+                        totalTowerIndex--;
 
                         float moneytogiveback = arrowHit.transform.GetComponent<TowerBase>().towerData.cost / 2;
 

@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.69178903, g: 0.74518204, b: 0.8077961, a: 1}
+  m_IndirectSpecularColor: {r: 0.6276005, g: 0.6470974, b: 0.658135, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -5244,23 +5244,28 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5aa55daf318dc944e8832262e5821aed, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  spawnTime: 0
-  wave: 1
-  waveCounter: {fileID: 1354475498}
   myObjects:
   - {fileID: 8469634686682948929, guid: feeb57f759fcc724985d310ac5f7749f, type: 3}
   - {fileID: 633956730379239432, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
   - {fileID: 1869899908694115559, guid: bca67429152074a48851d67f037fe671, type: 3}
   - {fileID: 1126724187484640922, guid: 4a51377e641713c44b75f2e0bdb76bf1, type: 3}
+  Waypoints: {fileID: 2070545819}
   spawn: 00000000
-  wave2check: 0
   counter:
   - 10
   - 0
   - 0
   - 0
-  waveGameObject: {fileID: 1958966485}
-  Waypoints: {fileID: 2070545819}
+  spawnCounter: []
+  spawnTime: 0
+  wave: 1
+  wave1counter: []
+  wave2counter: []
+  wave3counter: []
+  wave4counter: []
+  wave5counter: []
+  enemyText: []
+  waveCounter: {fileID: 1354475498}
 --- !u!1 &570733525
 GameObject:
   m_ObjectHideFlags: 0
@@ -17643,25 +17648,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f599293bc24e4aa40823941a8878d2cd, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  counter:
-  - 10
-  - 8
-  - 6
-  - 4
-  currency: 140
-  currencyUI: {fileID: 1571874718}
-  wave2check: 0
-  enemyAmount:
-  - 10
-  - 8
-  - 6
-  - 4
-  waveMultiplier: 1
-  enemyText:
-  - {fileID: 1271831884}
-  - {fileID: 224680749}
-  - {fileID: 1462950488}
-  - {fileID: 747040008}
 --- !u!1001 &1976383064
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -17766,17 +17752,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
-  buttonPressed: 0
-  currencyReset: 0
-  shopCurrency: 0
   shopUI: {fileID: 750578780}
   inMenu: 0
   towers:
   - {fileID: 3325657799507812137, guid: c0cf5f223d80dca4c909cc84ffda92c5, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}
   - {fileID: 8820957443811944938, guid: c9411c539daa35c4f9b05d9f852c146b, type: 3}
-  tower: {fileID: 0}
+  counter: []
   towerText: {fileID: 362281984}
+  currencyUI: {fileID: 0}
+  buildingsystem: {fileID: 0}
+  tower: {fileID: 0}
+  spawn: {fileID: 0}
+  toolMenu: {fileID: 0}
+  spawningScript: {fileID: 0}
+  shopScript: {fileID: 0}
 --- !u!65 &2015544675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -17797,7 +17787,7 @@ MeshRenderer:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 2015544673}
-  m_Enabled: 1
+  m_Enabled: 0
   m_CastShadows: 1
   m_ReceiveShadows: 1
   m_DynamicOccludee: 1

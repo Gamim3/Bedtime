@@ -91,7 +91,7 @@ public class Spawning : MonoBehaviour
         }
 
 
-        if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1)
+        if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1 && wave < 5)
         {
             wave++;
             waveCounter.text = wave.ToString();

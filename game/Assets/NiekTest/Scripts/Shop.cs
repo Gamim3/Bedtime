@@ -86,16 +86,19 @@ public class Shop : MonoBehaviour
 
     public void SkipWave()
     {
-        GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
-        foreach (GameObject enemy in enemies)
+        if(spawningScript.GetComponent<Spawning>().wave < 5)
         {
-            GameObject.Destroy(enemy);
-        }
+            GameObject[] enemies = GameObject.FindGameObjectsWithTag("enemy");
+            foreach (GameObject enemy in enemies)
+            {
+                GameObject.Destroy(enemy);
+            }
 
-        spawningScript.GetComponent<Spawning>().counter = counter;
-        for (int i = 0; i < counter.Length; i++)
-        {
-            counter[i] = 0;
+            spawningScript.GetComponent<Spawning>().counter = counter;
+            for (int i = 0; i < counter.Length; i++)
+            {
+                counter[i] = 0;
+            }
         }
 
     }

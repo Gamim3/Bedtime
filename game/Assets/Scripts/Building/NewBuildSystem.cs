@@ -12,6 +12,7 @@ public class NewBuildSystem : MonoBehaviour
     public GameObject cam;
 
     public GameObject placeBluePrint;
+    public Renderer bluePrintRenderer;
 
     public GameObject moneyToGiveTo;
 
@@ -57,7 +58,6 @@ public class NewBuildSystem : MonoBehaviour
     //de 2 bools hierboven zijn een test
     void Update()
     {
-
         if (tower != null)
         {
             towerAbleToPlace = true;
@@ -69,6 +69,7 @@ public class NewBuildSystem : MonoBehaviour
             if (placeBluePrint == null)
             {
                 placeBluePrint = Instantiate(towerData.towerBluePrint, arrowHit.point, arrowHit.transform.rotation);
+                bluePrintRenderer = placeBluePrint.GetComponent<MeshRenderer>();
             }
         }
 
@@ -89,6 +90,7 @@ public class NewBuildSystem : MonoBehaviour
         {
             arrowRenderer.enabled = true;
         }
+
         distanceToArrow = Vector3.Distance(player.transform.position, arrowPlacer.transform.position);
 
         if (distanceToArrow < placeRange)
@@ -122,7 +124,6 @@ public class NewBuildSystem : MonoBehaviour
                 {
                     inTower = true;
                     canDestroy = true;
-                    arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
                 }
                 else
                 {
@@ -172,12 +173,20 @@ public class NewBuildSystem : MonoBehaviour
                         {
                             canPlace = true;
                             arrowRenderer.material.color = Color.green;
+                            if (placeBluePrint != null)
+                            {
+                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                            }
                         }
                     }
                     else
                     {
                         canPlace = false;
                         arrowRenderer.material.color = Color.red;
+                        if (placeBluePrint != null)
+                        {
+                            bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                        }
                     }
                 }
             }
@@ -185,6 +194,10 @@ public class NewBuildSystem : MonoBehaviour
             if (inWall)
             {
                 arrowRenderer.material.color = Color.black;
+                if (placeBluePrint != null)
+                {
+                    bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                }
             }
 
             if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false && towerAbleToPlace)
@@ -196,7 +209,6 @@ public class NewBuildSystem : MonoBehaviour
                     tower = null;
                     hasTower = false;
                     towerAbleToPlace = false;
-                    //aka geen tower meer.
                 }
             }
 
@@ -205,6 +217,7 @@ public class NewBuildSystem : MonoBehaviour
                 if (player.GetComponent<PlayerInputs>().interactInput)
                 {
                     waitTimeForDelete += Time.deltaTime;
+
                     arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
 
                     if (waitTimeForDelete > timeToDestroy)
@@ -223,6 +236,7 @@ public class NewBuildSystem : MonoBehaviour
                 }
                 else
                 {
+                    arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
                     waitTimeForDelete = 0;
                 }
             }

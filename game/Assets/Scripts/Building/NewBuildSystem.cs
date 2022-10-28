@@ -250,9 +250,14 @@ public class NewBuildSystem : MonoBehaviour
                 }
             }
 
-            if (player.GetComponent<PlayerInputs>().rotateInput)
+            if (player.GetComponent<PlayerInputs>().rotateInputR)
             {
-                transform.Rotate(0f, arrowPlacer.transform.position.y + 10 * Time.deltaTime, 0f, Space.Self);
+                transform.Rotate(0f, arrowPlacer.transform.position.y + 50 * Time.deltaTime, 0f, Space.Self);
+            }
+
+            if (player.GetComponent<PlayerInputs>().rotateInputL)
+            {
+                transform.Rotate(0f, arrowPlacer.transform.position.y - 100 * Time.deltaTime, 0f, Space.Self);
             }
         }
     }

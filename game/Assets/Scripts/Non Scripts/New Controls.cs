@@ -118,9 +118,18 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""initialStateCheck"": true
                 },
                 {
-                    ""name"": ""Rotating"",
+                    ""name"": ""RotatingR"",
                     ""type"": ""Button"",
                     ""id"": ""3382a2b1-3d54-4a35-b26a-e022b08bbac7"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""RotatingL"",
+                    ""type"": ""Button"",
+                    ""id"": ""1fba8d35-10e1-4e8a-8f9c-d3fff6682520"",
                     ""expectedControlType"": ""Button"",
                     ""processors"": """",
                     ""interactions"": """",
@@ -157,7 +166,18 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""interactions"": """",
                     ""processors"": """",
                     ""groups"": ""Keyboard And Mouse"",
-                    ""action"": ""Rotating"",
+                    ""action"": ""RotatingR"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""aec6e4f3-7276-46dd-bb9f-4b0febcb98b8"",
+                    ""path"": ""<Keyboard>/q"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""RotatingL"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": false
                 }
@@ -179,7 +199,8 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
         m_Building_Placement = m_Building.FindAction("Placement", throwIfNotFound: true);
         m_Building_Interacting = m_Building.FindAction("Interacting", throwIfNotFound: true);
-        m_Building_Rotating = m_Building.FindAction("Rotating", throwIfNotFound: true);
+        m_Building_RotatingR = m_Building.FindAction("RotatingR", throwIfNotFound: true);
+        m_Building_RotatingL = m_Building.FindAction("RotatingL", throwIfNotFound: true);
     }
 
     public void Dispose()
@@ -274,14 +295,16 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private IBuildingActions m_BuildingActionsCallbackInterface;
     private readonly InputAction m_Building_Placement;
     private readonly InputAction m_Building_Interacting;
-    private readonly InputAction m_Building_Rotating;
+    private readonly InputAction m_Building_RotatingR;
+    private readonly InputAction m_Building_RotatingL;
     public struct BuildingActions
     {
         private @NewControls m_Wrapper;
         public BuildingActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Placement => m_Wrapper.m_Building_Placement;
         public InputAction @Interacting => m_Wrapper.m_Building_Interacting;
-        public InputAction @Rotating => m_Wrapper.m_Building_Rotating;
+        public InputAction @RotatingR => m_Wrapper.m_Building_RotatingR;
+        public InputAction @RotatingL => m_Wrapper.m_Building_RotatingL;
         public InputActionMap Get() { return m_Wrapper.m_Building; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -297,9 +320,12 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Interacting.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
                 @Interacting.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
                 @Interacting.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnInteracting;
-                @Rotating.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
-                @Rotating.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
-                @Rotating.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotating;
+                @RotatingR.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingR;
+                @RotatingR.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingR;
+                @RotatingR.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingR;
+                @RotatingL.started -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
+                @RotatingL.performed -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
+                @RotatingL.canceled -= m_Wrapper.m_BuildingActionsCallbackInterface.OnRotatingL;
             }
             m_Wrapper.m_BuildingActionsCallbackInterface = instance;
             if (instance != null)
@@ -310,9 +336,12 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Interacting.started += instance.OnInteracting;
                 @Interacting.performed += instance.OnInteracting;
                 @Interacting.canceled += instance.OnInteracting;
-                @Rotating.started += instance.OnRotating;
-                @Rotating.performed += instance.OnRotating;
-                @Rotating.canceled += instance.OnRotating;
+                @RotatingR.started += instance.OnRotatingR;
+                @RotatingR.performed += instance.OnRotatingR;
+                @RotatingR.canceled += instance.OnRotatingR;
+                @RotatingL.started += instance.OnRotatingL;
+                @RotatingL.performed += instance.OnRotatingL;
+                @RotatingL.canceled += instance.OnRotatingL;
             }
         }
     }
@@ -334,6 +363,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     {
         void OnPlacement(InputAction.CallbackContext context);
         void OnInteracting(InputAction.CallbackContext context);
-        void OnRotating(InputAction.CallbackContext context);
+        void OnRotatingR(InputAction.CallbackContext context);
+        void OnRotatingL(InputAction.CallbackContext context);
     }
 }

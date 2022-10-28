@@ -96,9 +96,18 @@
                     "initialStateCheck": true
                 },
                 {
-                    "name": "Rotating",
+                    "name": "RotatingR",
                     "type": "Button",
                     "id": "3382a2b1-3d54-4a35-b26a-e022b08bbac7",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "RotatingL",
+                    "type": "Button",
+                    "id": "1fba8d35-10e1-4e8a-8f9c-d3fff6682520",
                     "expectedControlType": "Button",
                     "processors": "",
                     "interactions": "",
@@ -135,7 +144,18 @@
                     "interactions": "",
                     "processors": "",
                     "groups": "Keyboard And Mouse",
-                    "action": "Rotating",
+                    "action": "RotatingR",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "aec6e4f3-7276-46dd-bb9f-4b0febcb98b8",
+                    "path": "<Keyboard>/q",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "RotatingL",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }

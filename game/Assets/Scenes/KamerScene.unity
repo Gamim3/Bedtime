@@ -6835,7 +6835,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 965494555}
-  - component: {fileID: 965494554}
   - component: {fileID: 965494553}
   m_Layer: 0
   m_Name: GameObject
@@ -6856,26 +6855,12 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: c78c56b7c3d5b574daffbd99a9204632, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  range: 0
   exposed: 0
   maxexposed: 3
   candotimer: 0
   bed: {fileID: 1348562289}
   player: {fileID: 1848289117}
   ouder: {fileID: 665502461}
---- !u!65 &965494554
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 965494552}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!4 &965494555
 Transform:
   m_ObjectHideFlags: 0
@@ -13077,7 +13062,8 @@ MonoBehaviour:
   walkInput: {x: 0, y: 0}
   placeInput: 0
   interactInput: 0
-  rotateInput: 0
+  rotateInputR: 0
+  rotateInputL: 0
 --- !u!54 &1848289119
 Rigidbody:
   m_ObjectHideFlags: 0

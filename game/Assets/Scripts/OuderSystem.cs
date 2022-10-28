@@ -4,7 +4,6 @@ using UnityEngine;
 
 public class OuderSystem : MonoBehaviour
 {
-    public float range;
     public float exposed;
     public float maxexposed;
     public bool candotimer;

@@ -54,9 +54,12 @@ public class PherbTower : TowerBase
 
     private void OnTriggerEnter(Collider other)
     {
-        if (other.CompareTag("enemy"))
+        if (isntInBed)
         {
-            other.GetComponent<Enemy>().Stun();
+            if (other.CompareTag("enemy"))
+            {
+                other.GetComponent<Enemy>().Stun();
+            }
         }
     }
     private void OnDrawGizmosSelected()

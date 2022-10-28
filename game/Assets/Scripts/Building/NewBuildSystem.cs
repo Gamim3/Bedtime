@@ -12,6 +12,7 @@ public class NewBuildSystem : MonoBehaviour
     public GameObject cam;
 
     public GameObject placeBluePrint;
+    public Renderer bluePrintRenderer;
 
     public GameObject moneyToGiveTo;
 
@@ -68,6 +69,7 @@ public class NewBuildSystem : MonoBehaviour
             if (placeBluePrint == null)
             {
                 placeBluePrint = Instantiate(towerData.towerBluePrint, arrowHit.point, arrowHit.transform.rotation);
+                bluePrintRenderer = placeBluePrint.GetComponent<MeshRenderer>();
             }
         }
 
@@ -171,14 +173,20 @@ public class NewBuildSystem : MonoBehaviour
                         {
                             canPlace = true;
                             arrowRenderer.material.color = Color.green;
-                            arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                            if (placeBluePrint != null)
+                            {
+                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                            }
                         }
                     }
                     else
                     {
                         canPlace = false;
                         arrowRenderer.material.color = Color.red;
-                        arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                        if (placeBluePrint != null)
+                        {
+                            bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                        }
                     }
                 }
             }
@@ -186,7 +194,10 @@ public class NewBuildSystem : MonoBehaviour
             if (inWall)
             {
                 arrowRenderer.material.color = Color.black;
-                arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                if (placeBluePrint != null)
+                {
+                    bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                }
             }
 
             if (canPlace && hasTower && inTower == false && inWall == false && nonplace == false && towerAbleToPlace)
@@ -225,7 +236,7 @@ public class NewBuildSystem : MonoBehaviour
                 }
                 else
                 {
-
+                    arrowRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
                     waitTimeForDelete = 0;
                 }
             }

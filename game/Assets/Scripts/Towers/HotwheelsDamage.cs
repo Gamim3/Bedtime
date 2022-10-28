@@ -2,10 +2,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 
-public class HotwheelsTower : TowerBase
+public class HotwheelsDamage : TowerBase
 {
-    public GameObject car;
-    public Transform spawnpoint;
     void Start()
     {
         range = towerData.range;
@@ -17,11 +15,11 @@ public class HotwheelsTower : TowerBase
         isntInBed = true;
     }
 
-    private void Update()
+    private void OnTriggerEnter(Collider other)
     {
-        if (isntInBed)
+        if (other.CompareTag("enemy"))
         {
-            Instantiate(car, spawnpoint);
+            other.GetComponent<Enemy>().Damage(damage);
         }
     }
 }

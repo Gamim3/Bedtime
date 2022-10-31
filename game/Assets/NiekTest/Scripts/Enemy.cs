@@ -88,7 +88,10 @@ public class Enemy : MonoBehaviour
 
         if (enemyHealth <= 0)
         {
+
             currency = currency + stats.value;
+            enemySpeed = 0;
+            animator.SetBool("noHP", true);
 
             if (stats.enemyType == 1)
             {
@@ -116,8 +119,6 @@ public class Enemy : MonoBehaviour
                 GameObject.Find("Spawnpoint").GetComponent<Spawning>().counter[i] -= enemyCounter[i];
             }
 
-            Destroy(this.gameObject);
-
         }
     }
     public void SlowDownEnemy(float damage)
@@ -139,4 +140,13 @@ public class Enemy : MonoBehaviour
 
         StartCoroutine(RefastEnemy(0.5f));
     }
+
+    public void PrintEvent(string animationEnd)
+    {
+        if(animationEnd.Equals("dead"))
+        {
+            Destroy(gameObject);
+        }
+    }
 }
+

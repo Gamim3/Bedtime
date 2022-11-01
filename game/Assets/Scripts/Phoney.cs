@@ -14,10 +14,10 @@ public class Phoney : MonoBehaviour
     public Transform[] wPoints;
     private void Update()
     {
-        if (phoneyClone == null)
-        {
-            phoneyClone = Instantiate(phoneyOBJ, this.transform);
-            phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
-        }
+        //if (phoneyClone == null)
+        //{
+        //    phoneyClone = Instantiate(phoneyOBJ, this.transform);
+        //    phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
+        //}
     }
 }

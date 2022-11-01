@@ -15,6 +15,9 @@ public class OuderSystem : MonoBehaviour
 
     public RaycastHit hit;
 
+    public int spawnint;
+
+    public Transform[] randomtransforms;
     private void Update()
     {
         Debug.DrawRay(ouder.position, player.position - ouder.position);
@@ -27,6 +30,15 @@ public class OuderSystem : MonoBehaviour
         {
             bed.GetComponent<Bed>().inBed = true;
         }
+    }
+
+    public void LookingPointSpawn()
+    {
+        spawnint = Random.Range(0, 3);
+
+        ouder = randomtransforms[spawnint];
+
+
     }
     private void OnTriggerEnter(Collider other)
     {

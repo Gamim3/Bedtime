@@ -32,16 +32,10 @@ public class WheeTower : TowerBase
     }
     public void Attack()
     {
-        if (target == null)
-        {
-            return;
-        }
-
         Vector3 dir = target.position - towerpivot.position;
         Quaternion lookrotation = Quaternion.LookRotation(dir);
         Vector3 rotation = Quaternion.Lerp(towerRotation.rotation, lookrotation, Time.deltaTime * rotateSpeed).eulerAngles;
-        towerRotation.rotation = Quaternion.Euler (0f, rotation.y, 0f);
-
+        towerRotation.rotation = Quaternion.Euler (-90f, rotation.y, 0f);
     }
     private void OnDrawGizmosSelected()
     {
@@ -51,13 +45,17 @@ public class WheeTower : TowerBase
     {
         for(int i = 0; i < enemiesInRange.Length; i++)
         {
-            if (target == null)
+            
+            if (i == 0)
             {
                 target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
             }
-            if (enemiesInRange[i].GetComponent<Enemy>().enemyHealth < enemiesInRange[i - 1].GetComponent<Enemy>().enemyHealth)
+            else
             {
-                target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+                if (enemiesInRange[i].GetComponent<Enemy>().enemyHealth < enemiesInRange[i - 1].GetComponent<Enemy>().enemyHealth)
+                {
+                    target = enemiesInRange[i].GetComponent<Enemy>().enemyTranform;
+                }
             }
         }
     }

@@ -12,12 +12,17 @@ public class Phoney : MonoBehaviour
     public Transform spawnPoint;
 
     public Transform[] wPoints;
-    private void Update()
+
+    public void Spawner(bool canSpawn)
     {
-        //if (phoneyClone == null)
-        //{
-        //    phoneyClone = Instantiate(phoneyOBJ, this.transform);
-        //    phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
-        //}
+        if (canSpawn)
+        {
+            if (phoneyClone == null)
+            {
+                phoneyClone = Instantiate(phoneyOBJ, this.transform);
+                phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
+            }
+            canSpawn = false;
+        }
     }
 }

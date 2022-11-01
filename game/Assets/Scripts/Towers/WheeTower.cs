@@ -9,6 +9,10 @@ public class WheeTower : TowerBase
     public Transform towerpivot;
 
     public float rotateSpeed;
+
+    public bool hasAttackedOnce;
+
+    public float waittime;
     void Start()
     {
         range = towerData.range;
@@ -26,16 +30,35 @@ public class WheeTower : TowerBase
         if (isntInBed)
         {
             GetEnemies();
+
             GetTarget();
+
             Attack();
         }
     }
     public void Attack()
     {
-        Vector3 dir = target.position - towerpivot.position;
-        Quaternion lookrotation = Quaternion.LookRotation(dir);
-        Vector3 rotation = Quaternion.Lerp(towerRotation.rotation, lookrotation, Time.deltaTime * rotateSpeed).eulerAngles;
-        towerRotation.rotation = Quaternion.Euler (-90f, rotation.y, 0f);
+        if (target != null)
+        {
+            Vector3 dir = target.position - towerpivot.position;
+            Quaternion lookrotation = Quaternion.LookRotation(dir);
+            Vector3 rotation = Quaternion.Lerp(towerRotation.rotation, lookrotation, Time.deltaTime * rotateSpeed).eulerAngles;
+            towerRotation.rotation = Quaternion.Euler(-90f, rotation.y, 0f);
+
+            hasAttackedOnce = true;
+
+            waittime += Time.deltaTime;
+
+            if (waittime > fireRate)
+            {
+                target.GetComponent<Enemy>().Damage(damage);
+
+                waittime = 0;
+
+                hasAttackedOnce = false;
+                GetTarget();
+            }
+        }
     }
     private void OnDrawGizmosSelected()
     {

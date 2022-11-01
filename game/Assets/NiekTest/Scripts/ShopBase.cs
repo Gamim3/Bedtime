@@ -7,7 +7,6 @@ public class ShopBase : MonoBehaviour
 {
     public bool inShopBase;
     public GameObject gameOverScene;
-    public GameObject gameUI;
     public Slider Slider;
     public GameObject inMenuScript;
 

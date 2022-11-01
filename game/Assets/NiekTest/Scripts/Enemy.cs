@@ -9,6 +9,7 @@ public class Enemy : MonoBehaviour
     public Transform enemyTranform;
     public float enemySpeed;
     public int enemyHealth;
+    private bool dead;
 
     public Waypoints Wpoints;
     public int waypointIndex;
@@ -81,9 +82,8 @@ public class Enemy : MonoBehaviour
     {
         enemyHealth -= damage;
 
-        if (enemyHealth <= 0)
+        if (enemyHealth <= 0 && dead == false)
         {
-
             currency = currency + stats.value;
             enemySpeed = 0;
             animator.SetBool("noHP", true);
@@ -91,21 +91,25 @@ public class Enemy : MonoBehaviour
             if (stats.enemyType == 1)
             {
                 enemyCounter[0] ++;
+                dead = true;
             }
 
             if (stats.enemyType == 2)
             {
                 enemyCounter[1] ++;
+                dead = true;
             }
 
             if (stats.enemyType == 3)
             {
                 enemyCounter[2] ++;
+                dead = true;
             }
 
             if (stats.enemyType == 4)
             {
                 enemyCounter[3] ++;
+                dead = true;
             }
 
             GameObject.Find("ShopTest").GetComponent<Shop>().currency += currency;

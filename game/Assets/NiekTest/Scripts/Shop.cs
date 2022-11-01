@@ -53,6 +53,7 @@ public class Shop : MonoBehaviour
     {
         shopUI.SetActive(false);
         inMenu = false;
+        toolMenu.SetActive(false);
     }
 
     public void Update()
@@ -132,11 +133,5 @@ public class Shop : MonoBehaviour
     public void GetMoney()
     {
         currency += 100;
-    }
-
-    public void Exit()
-    {
-        inMenu = false;
-        toolMenu.SetActive(false);
     }
 }

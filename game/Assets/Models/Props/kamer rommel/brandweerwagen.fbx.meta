@@ -1,17 +1,8 @@
 fileFormatVersion: 2
-guid: 9d69311ccd6ab4f4387018ee1a134c56
+guid: 4f62ff302d15e384782cb8498b5e9e2d
 ModelImporter:
   serializedVersion: 21202
-  internalIDToNameTable:
-  - first:
-      74: 2679732896138251314
-    second: Armature.002|Cought1
-  - first:
-      74: -152156108709224479
-    second: Armature.002|idle
-  - first:
-      74: -8883937714398619000
-    second: Armature.002|walkin 1
+  internalIDToNameTable: []
   externalObjects: {}
   materials:
     materialImportMode: 2

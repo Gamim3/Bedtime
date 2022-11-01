@@ -32,7 +32,7 @@ public class Spawning : MonoBehaviour
     public float[] wave5counter;
 
     //text
-    public TMP_Text[] enemyText;
+    public TMP_Text enemyText;
     public TMP_Text waveCounter;
     
     void Start()
@@ -86,10 +86,10 @@ public class Spawning : MonoBehaviour
             }    
         }
 
-        for (int i = 0; i < counter.Length; i++)
-        {
-            enemyText[i].text = counter[i].ToString();
-        }
+
+        float counters = counter[0] + counter[1] + counter[2] + counter[3];
+        enemyText.text = counters.ToString();
+        
 
 
         if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1 && wave < 5)

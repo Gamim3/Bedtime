@@ -54,11 +54,6 @@ public class Enemy : MonoBehaviour
             slider.value -= stats.damage;
             damageTimer = 0;
         }
-
-        if (slider.value == 0)
-        {
-            //gameOverScherm
-        }
     }
 
     void speed()

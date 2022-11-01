@@ -29,8 +29,7 @@ public class Shop : MonoBehaviour
 
     public GameObject inputs;
 
-    public GameObject phoneyOBJ;
-    public GameObject phoneyClone;
+    public GameObject phoney;
 
     public Transform spawnPoint;
 
@@ -38,17 +37,13 @@ public class Shop : MonoBehaviour
 
     public void BuyPhony()
     {
-        if (currency > towers[5].GetComponent<TowerBase>().towerData.cost - 1)
-        {
-            phoneyClone = Instantiate(phoneyOBJ, this.transform);
-            phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
-            currency -= towers[5].GetComponent<TowerBase>().towerData.cost;
-        }
+        phoney.GetComponent<Phoney>().Spawner(true);
     }
     public void BuyItem(int buttonint)
     {
         if(currency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
         {
+            
             currency -= towers[buttonint].GetComponent<TowerBase>().towerData.cost;
             buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
         }

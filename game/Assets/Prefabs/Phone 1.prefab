@@ -114,6 +114,19 @@ MonoBehaviour:
   canDamage: 0
   waypoints:
   - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
+  - {fileID: 0}
   waypointIndex: 0
   phoneRotationQ: {x: 0, y: 0, z: 0, w: 0}
   speed: 0

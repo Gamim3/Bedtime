@@ -4,7 +4,6 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 using TMPro;
-
 public class Shop : MonoBehaviour
 {
     public float currency;
@@ -13,6 +12,8 @@ public class Shop : MonoBehaviour
     public GameObject[] towers;
     private bool towerAbleToPlace;
     public float[] counter;
+    private bool inShopBase;
+    public bool ableToSpawn;
 
     public TMP_Text towerText;
     public TMP_Text currencyUI;
@@ -24,8 +25,26 @@ public class Shop : MonoBehaviour
     public GameObject toolMenu;
     public GameObject spawningScript;
     public GameObject shopScript;
-    
+    public GameObject shopBaseUI;
 
+    public GameObject inputs;
+
+    public GameObject phoneyOBJ;
+    public GameObject phoneyClone;
+
+    public Transform spawnPoint;
+
+    public Transform[] wPoints;
+
+    public void BuyPhony()
+    {
+        if (currency > towers[5].GetComponent<TowerBase>().towerData.cost - 1)
+        {
+            phoneyClone = Instantiate(phoneyOBJ, this.transform);
+            phoneyClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
+            currency -= towers[5].GetComponent<TowerBase>().towerData.cost;
+        }
+    }
     public void BuyItem(int buttonint)
     {
         if(currency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
@@ -64,6 +83,17 @@ public class Shop : MonoBehaviour
         {
             toolMenu.SetActive(true);
             inMenu = true;
+        }
+
+        inShopBase = GameObject.Find("BaseDoor").GetComponent<ShopBase>().inShopBase;
+        if(inShopBase)
+        {
+            shopBaseUI.SetActive(true);
+        }
+
+        if(inShopBase == false)
+        {
+            shopBaseUI.SetActive(false);
         }
     }
 

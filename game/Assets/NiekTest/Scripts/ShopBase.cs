@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.UI;
 
 public class ShopBase : MonoBehaviour
 {
@@ -12,7 +13,7 @@ public class ShopBase : MonoBehaviour
     }
 
  
-    void OnTriggerEnter(Collision other)
+    void OnTriggerEnter(Collider other)
     {
         if(other.gameObject.tag == "player")
         {
@@ -27,4 +28,5 @@ public class ShopBase : MonoBehaviour
             inShopBase = false;
         }
     }
+
 }

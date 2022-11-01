@@ -7,14 +7,15 @@ using TMPro;
 public class Spawning : MonoBehaviour
 {
     public GameObject playerinputs;
-
+    public GameObject inMenuScript;
     //gameobjects
     public List<GameObject> myObjects;
     public GameObject Waypoints;
-
+    public GameObject finish;
+    public GameObject gameUI;
     //bools
     public bool[] spawn;
-    
+    public bool endGame;
     private bool spawning;
     
     //floats
@@ -34,7 +35,6 @@ public class Spawning : MonoBehaviour
     public TMP_Text[] enemyText;
     public TMP_Text waveCounter;
     
-
     void Start()
     {
         
@@ -121,10 +121,17 @@ public class Spawning : MonoBehaviour
                 {
                     counter[i] = wave5counter[i];
                     spawnCounter[i] = wave5counter[i];
+                    endGame = true;
                 }
             }
  
         }
 
+        if (counter[0] < 1 && counter[1] < 1 && counter[2] < 1 && counter[3] < 1 && endGame)
+        {
+            finish.SetActive(true);
+            gameUI.SetActive(false);
+            inMenuScript.GetComponent<Cams>().inMenu = true;
+        }
     }
 }

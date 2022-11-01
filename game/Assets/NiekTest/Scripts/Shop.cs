@@ -10,30 +10,22 @@ public class Shop : MonoBehaviour
     public GameObject shopUI;
     public bool inMenu;
     public GameObject[] towers;
-    private bool towerAbleToPlace;
     public float[] counter;
     private bool inShopBase;
-    public bool ableToSpawn;
+    private bool inShopBaseCheck;
 
     public TMP_Text towerText;
     public TMP_Text currencyUI;
 
     public GameObject buildingsystem;
     public GameObject tower;
-    public GameObject spawn;
 
     public GameObject toolMenu;
     public GameObject spawningScript;
     public GameObject shopScript;
     public GameObject shopBaseUI;
-
     public GameObject inputs;
-
     public GameObject phoney;
-
-    public Transform spawnPoint;
-
-    public Transform[] wPoints;
 
     public void BuyPhony()
     {
@@ -85,11 +77,15 @@ public class Shop : MonoBehaviour
         if(inShopBase)
         {
             shopBaseUI.SetActive(true);
+            inMenu = true;
+            inShopBaseCheck = false;
         }
 
-        if(inShopBase == false)
+        if(inShopBase == false && inShopBaseCheck == false)
         {
             shopBaseUI.SetActive(false);
+            inMenu = false;
+            inShopBaseCheck = true;
         }
     }
 

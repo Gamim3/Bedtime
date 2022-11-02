@@ -176,25 +176,29 @@ public class NewBuildSystem : MonoBehaviour
 
                 if (inWall == false && inTower == false)
                 {
-                    if (arrowHit.transform.CompareTag(placeTag))
+                    if (arrowHit.transform != null)
                     {
-                        if (inWall == false)
+                        if (arrowHit.transform.CompareTag(placeTag))
                         {
-                            canPlace = true;
+                            if (inWall == false)
+                            {
+                                canPlace = true;
+                                if (placeBluePrint != null)
+                                {
+                                    bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            canPlace = false;
                             if (placeBluePrint != null)
                             {
-                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
                             }
                         }
                     }
-                    else
-                    {
-                        canPlace = false;
-                        if (placeBluePrint != null)
-                        {
-                            bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
-                        }
-                    }
+                    
                 }
             }
 

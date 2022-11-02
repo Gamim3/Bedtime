@@ -31,6 +31,10 @@ public class TrainTower : TowerBase
         if (Vector3.Distance(trainTransform.position, waypoints[waypointIndex].position) < 0.1f)
         {
             waypointIndex++;
+            if (waypointIndex == 15)
+            {
+                waypointIndex = 0;
+            }
             trainRotation.rotation = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - trainTransform.position);
         }
         

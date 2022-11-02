@@ -16,11 +16,13 @@ public class Bed : MonoBehaviour
 
     public GameObject build;
 
+    public GameObject inMenuScript;
+
     public List<GameObject> towers = new List<GameObject>();
 
     private void Update()
     {
-        if (inBed)
+        if (inBed && inMenuScript.GetComponent<Cams>().inMenu == false)
         {
             bedCam.SetActive(true);
 

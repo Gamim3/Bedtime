@@ -4,15 +4,58 @@ ModelImporter:
   serializedVersion: 21202
   internalIDToNameTable:
   - first:
-      74: -1892969834258738415
-    second: Armature|delivery
+      74: 2988645969165430011
+    second: WheeRig|Armature.003Action
   - first:
-      74: 6899188093000298811
-    second: Armature|wheeIdle
+      74: 4969253032500630890
+    second: WheeRig|boek1.001Action
   - first:
-      74: 4507338676145679758
-    second: Armature|wheeIdle (1)
-  externalObjects: {}
+      74: 9005968796881674644
+    second: WheeRig|boek1.001Action.002
+  - first:
+      74: -3364967692136648545
+    second: WheeRig|boek1.001Action.004
+  - first:
+      74: -6950273740499592871
+    second: WheeRig|boek1.001Action.006
+  - first:
+      74: 625643321448031900
+    second: WheeRig|boek1.001Action.008
+  - first:
+      74: 547905718657685006
+    second: WheeRig|boek1.001Action.010
+  - first:
+      74: -2483177975619916743
+    second: WheeRig|closed
+  - first:
+      74: 4672770909729730031
+    second: WheeRig|closeToOpen
+  - first:
+      74: -3387342887826082543
+    second: WheeRig|delivery
+  - first:
+      74: -62979667488081334
+    second: WheeRig|deurAction
+  - first:
+      74: -6810482224960931485
+    second: WheeRig|deurFrameAction.001
+  - first:
+      74: 4800699333926704908
+    second: WheeRig|open
+  - first:
+      74: 2588490587570389060
+    second: WheeRig|wheeIdle
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: platform
+    second: {fileID: 2100000, guid: e998d479f92652141afe948defe56a2c, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: whee
+    second: {fileID: 2100000, guid: 3ae16cac90a036942a61d5bc5f6287c7, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
@@ -42,8 +85,8 @@ ModelImporter:
     extraUserProperties: []
     clipAnimations:
     - serializedVersion: 16
-      name: Armature|delivery
-      takeName: Armature|delivery
+      name: WheeRig|delivery
+      takeName: WheeRig|delivery
       internalID: 0
       firstFrame: 0
       lastFrame: 69
@@ -71,8 +114,8 @@ ModelImporter:
       maskSource: {instanceID: 0}
       additiveReferencePoseFrame: 0
     - serializedVersion: 16
-      name: Armature|wheeIdle
-      takeName: Armature|wheeIdle
+      name: WheeRig|wheeIdle
+      takeName: WheeRig|wheeIdle
       internalID: 0
       firstFrame: 0
       lastFrame: 1

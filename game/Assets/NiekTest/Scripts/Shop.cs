@@ -28,9 +28,25 @@ public class Shop : MonoBehaviour
     public GameObject phoney;
     public GameObject camsObject;
 
+    public GameObject coldwheels;
+    public GameObject clonecoldWheels;
+    public Transform coldspawnpoint;
+
+    public int bulletAmount;
     public void BuyPhony()
     {
         phoney.GetComponent<Phoney>().Spawner(true);
+    }
+    public void BuyColdWHeels()
+    {
+        if (clonecoldWheels == null)
+        {
+            clonecoldWheels = Instantiate(coldwheels, coldspawnpoint);
+        }
+        else
+        {
+            clonecoldWheels.GetComponent<HotwheelsTower>().Spawner(bulletAmount);
+        }
     }
     public void BuyItem(int buttonint)
     {

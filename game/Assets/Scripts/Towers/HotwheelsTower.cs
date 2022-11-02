@@ -4,25 +4,22 @@ using UnityEngine;
 
 public class HotwheelsTower : TowerBase
 {
-    public GameObject car;
-    public Transform spawnpoint;
+    public GameObject carOBJ;
+    public GameObject carClone;
 
-    public GameObject carclone;
-    void Start()
+    public Transform spawnPoint;
+
+    public Transform[] wPoints;
+    public void Spawner(int spawnamount)
     {
-
-        isntInBed = true;
-    }
-
-    private void Update()
-    {
-        if (isntInBed)
+        if (spawnamount < 0)
         {
-            if (carclone == null)
+            if (carClone == null)
             {
-                carclone = Instantiate(car, spawnpoint);
-                print("null");
+                carClone = Instantiate(carOBJ, this.transform);
+                carClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
             }
+            spawnamount--;
         }
     }
 }

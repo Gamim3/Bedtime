@@ -30,6 +30,10 @@ public class OuderSystem : MonoBehaviour
     public bool cought;
 
     public float waitTime;
+    private void Start()
+    {
+        RandomTime();
+    }
     private void Update()
     {
         kock.SetBool("walkIn", walkIn);
@@ -62,8 +66,6 @@ public class OuderSystem : MonoBehaviour
     
     public void Walking()
     {
-        waitforkok = Random.Range(minimumwaittime, maximumwaittime);
-
         waitTime += Time.deltaTime;
 
         if (waitTime > waitforkok)

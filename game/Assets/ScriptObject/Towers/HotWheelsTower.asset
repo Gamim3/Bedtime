@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: HotWheelsTower
   m_EditorClassIdentifier: 
   range: 0
-  damage: 0
-  fireSpeed: 0
-  cost: 0
+  damage: 3
+  fireSpeed: 4
+  cost: 500
   size: 0
   health: 0
   targetType: 0

@@ -21,5 +21,16 @@ public class HotwheelsDamage : TowerBase
         {
             other.GetComponent<Enemy>().Damage(damage);
         }
+        else
+        {
+            if (other.CompareTag("tower") || other.CompareTag("player"))
+            {
+                return;
+            }
+            else
+            {
+                Destroy(this.gameObject);
+            }
+        }
     }
 }

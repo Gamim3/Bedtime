@@ -6,13 +6,10 @@ public class HotwheelsTower : TowerBase
 {
     public GameObject car;
     public Transform spawnpoint;
+
+    public GameObject carclone;
     void Start()
     {
-        range = towerData.range;
-        damage = towerData.damage;
-        fireRate = towerData.fireSpeed;
-        cost = towerData.cost;
-        size = towerData.size;
 
         isntInBed = true;
     }
@@ -21,7 +18,11 @@ public class HotwheelsTower : TowerBase
     {
         if (isntInBed)
         {
-            Instantiate(car, spawnpoint);
+            if (carclone == null)
+            {
+                carclone = Instantiate(car, spawnpoint);
+                print("null");
+            }
         }
     }
 }

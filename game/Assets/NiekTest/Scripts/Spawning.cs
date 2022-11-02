@@ -131,7 +131,10 @@ public class Spawning : MonoBehaviour
         {
             finish.SetActive(true);
             gameUI.SetActive(false);
-            inMenuScript.GetComponent<Cams>().inMenu = true;
+            if(inMenuScript.activeSelf == true)
+            {
+                inMenuScript.GetComponent<Cams>().inMenu = true;
+            }
         }
     }
 }

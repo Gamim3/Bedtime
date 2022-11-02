@@ -163,6 +163,11 @@ public class NewBuildSystem : MonoBehaviour
                 if (sphereHit[i].collider.CompareTag("tower"))
                 {
                     inTower = true;
+                    if (placeBluePrint != null)
+                    {
+                        bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                    }
+
                 }
                 if (!sphereHit[i].collider.CompareTag("wall"))
                 {
@@ -171,27 +176,29 @@ public class NewBuildSystem : MonoBehaviour
 
                 if (inWall == false && inTower == false)
                 {
-                    if (arrowHit.transform.CompareTag(placeTag))
+                    if (arrowHit.transform != null)
                     {
-                        if (inWall == false)
+                        if (arrowHit.transform.CompareTag(placeTag))
                         {
-                            canPlace = true;
-                            arrowRenderer.material.color = Color.green;
+                            if (inWall == false)
+                            {
+                                canPlace = true;
+                                if (placeBluePrint != null)
+                                {
+                                    bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                                }
+                            }
+                        }
+                        else
+                        {
+                            canPlace = false;
                             if (placeBluePrint != null)
                             {
-                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
+                                bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
                             }
                         }
                     }
-                    else
-                    {
-                        canPlace = false;
-                        arrowRenderer.material.color = Color.red;
-                        if (placeBluePrint != null)
-                        {
-                            bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
-                        }
-                    }
+                    
                 }
             }
 

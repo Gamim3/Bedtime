@@ -26,6 +26,7 @@ public class Shop : MonoBehaviour
     public GameObject shopBaseUI;
     public GameObject inputs;
     public GameObject phoney;
+    public GameObject camsObject;
 
     public void BuyPhony()
     {
@@ -65,8 +66,12 @@ public class Shop : MonoBehaviour
         //    tower = null;
         //}
 
-        GameObject.Find("Main Camera").GetComponent<Cams>().inMenu = inMenu;
-
+   
+        if(camsObject.activeSelf == true)
+        {
+            camsObject.GetComponent<Cams>().inMenu = inMenu;
+        }
+            
         if (Input.GetKeyDown(KeyCode.T))
         {
             toolMenu.SetActive(true);

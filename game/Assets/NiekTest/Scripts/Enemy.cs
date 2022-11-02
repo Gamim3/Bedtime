@@ -10,6 +10,7 @@ public class Enemy : MonoBehaviour
     public float enemySpeed;
     public int enemyHealth;
     private bool dead;
+    private bool enemy4BigBoom;
 
     public Waypoints Wpoints;
     public int waypointIndex;
@@ -34,6 +35,13 @@ public class Enemy : MonoBehaviour
         if (damage)
         {
             doingDamage();
+        }
+
+        if (enemy4BigBoom)
+        {
+            slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
+            slider.value -= 11;
+            enemy4BigBoom = false;
         }
     }
 
@@ -74,7 +82,15 @@ public class Enemy : MonoBehaviour
     {
         if(other.gameObject.tag == "baseDoor" && gameObject.transform != null)
         {
-            damage = true;
+            if(stats.enemyType == 4)
+            {
+                Damage(stats.health);
+            }
+
+            else
+            {
+                damage = true;
+            }
         }
     }
 
@@ -108,6 +124,7 @@ public class Enemy : MonoBehaviour
 
             if (stats.enemyType == 4)
             {
+                enemy4BigBoom = true;
                 enemyCounter[3] ++;
                 dead = true;
             }

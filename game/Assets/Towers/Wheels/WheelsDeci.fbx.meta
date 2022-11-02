@@ -7,20 +7,11 @@ ModelImporter:
       74: -3443826158828665550
     second: Armature|Armature.001|Armature.001|Klap In|Armature.001|Klap In
   - first:
-      74: 103055517024848301
-    second: Armature|Armature.001|Armature.001|Klap Uit|Armature.001|Klap Uit
-  - first:
       74: 4781951162920444690
     second: Armature|ArmatureAction
   - first:
       74: -1422011007694221501
     second: Armature|ArmatureAction.001
-  - first:
-      74: 6553510773629707330
-    second: Armature|Klap In
-  - first:
-      74: 7067510389106463740
-    second: Armature|Klap Uit
   externalObjects: {}
   materials:
     materialImportMode: 2

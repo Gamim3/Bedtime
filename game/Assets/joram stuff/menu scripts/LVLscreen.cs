@@ -25,9 +25,9 @@ public class LVLscreen : MonoBehaviour
     }
 
     //to toturial
-    public void Toturial()
+    public void Tutorial()
     {
-        SceneManager.LoadScene("ToturialScene");
+        SceneManager.LoadScene("TutorialScene");
     }
 
 }

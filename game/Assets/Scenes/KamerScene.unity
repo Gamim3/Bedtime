@@ -18499,6 +18499,7 @@ MonoBehaviour:
   shopBaseUI: {fileID: 443222496}
   inputs: {fileID: 1848289113}
   phoney: {fileID: 1999252414}
+  camsObject: {fileID: 754157506}
 --- !u!65 &2015544675
 BoxCollider:
   m_ObjectHideFlags: 0

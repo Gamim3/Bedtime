@@ -18,7 +18,7 @@ public class ShopBase : MonoBehaviour
 
     void Update()
     {
-        if(Slider.value == 0)
+        if(Slider.value == 0 && inMenuScript.activeSelf)
         {
             gameOverScene.SetActive(true);
             inMenuScript.GetComponent<Cams>().inMenu = true;

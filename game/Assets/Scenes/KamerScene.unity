@@ -11716,7 +11716,6 @@ MonoBehaviour:
   waittime: 15
   player: {fileID: 1848289113}
   build: {fileID: 938899674}
-  inMenuScript: {fileID: 754157506}
   towers: []
 --- !u!33 &1348562293
 MeshFilter:
@@ -12021,8 +12020,8 @@ MonoBehaviour:
   randomtransforms: []
   kock: {fileID: 1387863070}
   waitforkok: 0
-  minimumwaittime: 0
-  maximumwaittime: 0
+  minimumwaittime: 60
+  maximumwaittime: 300
   walkIn: 0
   cought: 0
   waitTime: 0
@@ -15632,6 +15631,7 @@ MonoBehaviour:
   rotateInputR: 0
   rotateInputL: 0
   startwaveInput: 0
+  escapeInput: 0
 --- !u!54 &1848289119
 Rigidbody:
   m_ObjectHideFlags: 0

@@ -36,17 +36,7 @@ public class Shop : MonoBehaviour
     public void BuyPhony()
     {
         phoney.GetComponent<Phoney>().Spawner(true);
-    }
-    public void BuyColdWHeels()
-    {
-        if (clonecoldWheels == null)
-        {
-            clonecoldWheels = Instantiate(coldwheels, coldspawnpoint);
-        }
-        else
-        {
-            clonecoldWheels.GetComponent<HotwheelsTower>().Spawner(bulletAmount);
-        }
+        currency -= 80;
     }
     public void BuyItem(int buttonint)
     {

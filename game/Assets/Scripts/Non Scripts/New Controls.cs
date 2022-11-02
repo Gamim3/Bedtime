@@ -35,6 +35,15 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""processors"": """",
                     ""interactions"": """",
                     ""initialStateCheck"": false
+                },
+                {
+                    ""name"": ""Escape"",
+                    ""type"": ""Button"",
+                    ""id"": ""1dff5650-4a8f-4b93-b171-89318fc23363"",
+                    ""expectedControlType"": ""Button"",
+                    ""processors"": """",
+                    ""interactions"": """",
+                    ""initialStateCheck"": false
                 }
             ],
             ""bindings"": [
@@ -92,6 +101,17 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                     ""action"": ""Walking"",
                     ""isComposite"": false,
                     ""isPartOfComposite"": true
+                },
+                {
+                    ""name"": """",
+                    ""id"": ""c6ba9f7d-c077-4c93-a7a3-895524b586ff"",
+                    ""path"": ""<Keyboard>/escape"",
+                    ""interactions"": """",
+                    ""processors"": """",
+                    ""groups"": """",
+                    ""action"": ""Escape"",
+                    ""isComposite"": false,
+                    ""isPartOfComposite"": false
                 }
             ]
         },
@@ -215,6 +235,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
         // Movement
         m_Movement = asset.FindActionMap("Movement", throwIfNotFound: true);
         m_Movement_Walking = m_Movement.FindAction("Walking", throwIfNotFound: true);
+        m_Movement_Escape = m_Movement.FindAction("Escape", throwIfNotFound: true);
         // Building
         m_Building = asset.FindActionMap("Building", throwIfNotFound: true);
         m_Building_Placement = m_Building.FindAction("Placement", throwIfNotFound: true);
@@ -282,11 +303,13 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     private readonly InputActionMap m_Movement;
     private IMovementActions m_MovementActionsCallbackInterface;
     private readonly InputAction m_Movement_Walking;
+    private readonly InputAction m_Movement_Escape;
     public struct MovementActions
     {
         private @NewControls m_Wrapper;
         public MovementActions(@NewControls wrapper) { m_Wrapper = wrapper; }
         public InputAction @Walking => m_Wrapper.m_Movement_Walking;
+        public InputAction @Escape => m_Wrapper.m_Movement_Escape;
         public InputActionMap Get() { return m_Wrapper.m_Movement; }
         public void Enable() { Get().Enable(); }
         public void Disable() { Get().Disable(); }
@@ -299,6 +322,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Walking.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnWalking;
                 @Walking.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnWalking;
                 @Walking.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnWalking;
+                @Escape.started -= m_Wrapper.m_MovementActionsCallbackInterface.OnEscape;
+                @Escape.performed -= m_Wrapper.m_MovementActionsCallbackInterface.OnEscape;
+                @Escape.canceled -= m_Wrapper.m_MovementActionsCallbackInterface.OnEscape;
             }
             m_Wrapper.m_MovementActionsCallbackInterface = instance;
             if (instance != null)
@@ -306,6 +332,9 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
                 @Walking.started += instance.OnWalking;
                 @Walking.performed += instance.OnWalking;
                 @Walking.canceled += instance.OnWalking;
+                @Escape.started += instance.OnEscape;
+                @Escape.performed += instance.OnEscape;
+                @Escape.canceled += instance.OnEscape;
             }
         }
     }
@@ -387,6 +416,7 @@ public partial class @NewControls : IInputActionCollection2, IDisposable
     public interface IMovementActions
     {
         void OnWalking(InputAction.CallbackContext context);
+        void OnEscape(InputAction.CallbackContext context);
     }
     public interface IBuildingActions
     {

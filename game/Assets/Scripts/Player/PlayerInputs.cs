@@ -26,6 +26,7 @@ public class PlayerInputs : MonoBehaviour
     public bool rotateInputR;
     public bool rotateInputL;
     public bool startwaveInput;
+    public bool escapeInput;
 
     #endregion
 
@@ -37,6 +38,9 @@ public class PlayerInputs : MonoBehaviour
 
             newControls.Movement.Walking.performed += w => walkInput = w.ReadValue<Vector2>();
             newControls.Movement.Walking.canceled += i => walkInput = new Vector2(0, 0);
+
+            newControls.Movement.Escape.performed += esc => escapeInput = true;
+            newControls.Movement.Escape.canceled += esc => escapeInput = false;
 
             newControls.Building.Placement.performed += e => placeInput = true;
             newControls.Building.Placement.canceled += f => placeInput = false;

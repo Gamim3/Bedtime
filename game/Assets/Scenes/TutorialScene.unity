@@ -5318,15 +5318,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   playerinputs: {fileID: 1848289113}
-  inMenuScript: {fileID: 0}
+  inMenuScript: {fileID: 754157506}
   myObjects:
   - {fileID: 8469634686682948929, guid: feeb57f759fcc724985d310ac5f7749f, type: 3}
   - {fileID: 633956730379239432, guid: 4bc58b77f8bfa6d4794fa44cc70df409, type: 3}
   - {fileID: 1869899908694115559, guid: bca67429152074a48851d67f037fe671, type: 3}
   - {fileID: 1126724187484640922, guid: 4a51377e641713c44b75f2e0bdb76bf1, type: 3}
   Waypoints: {fileID: 2070545819}
-  finish: {fileID: 0}
-  gameUI: {fileID: 0}
+  finish: {fileID: 1547991198}
+  gameUI: {fileID: 1223409926}
   spawn: 00000000
   endGame: 0
   counter:
@@ -5366,7 +5366,7 @@ MonoBehaviour:
   - 0
   - 0
   - 0
-  enemyText: {fileID: 0}
+  enemyText: {fileID: 1271831884}
   waveCounter: {fileID: 1354475498}
 --- !u!1 &567573869
 GameObject:
@@ -13902,8 +13902,9 @@ MonoBehaviour:
   ouders: {fileID: 0}
   time: 0
   waittime: 0
-  player: {fileID: 0}
+  player: {fileID: 1848289113}
   build: {fileID: 0}
+  inMenuScript: {fileID: 754157506}
   towers: []
 --- !u!65 &1348562292
 BoxCollider:
@@ -20199,7 +20200,11 @@ MonoBehaviour:
   shopBaseUI: {fileID: 1995966455}
   inputs: {fileID: 0}
   phoney: {fileID: 0}
-  camsObject: {fileID: 0}
+  camsObject: {fileID: 754157506}
+  coldwheels: {fileID: 0}
+  clonecoldWheels: {fileID: 0}
+  coldspawnpoint: {fileID: 0}
+  bulletAmount: 0
 --- !u!65 &2015544675
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -21485,7 +21490,7 @@ MonoBehaviour:
   inShopBase: 0
   gameOverScene: {fileID: 1319507973}
   Slider: {fileID: 1354733472}
-  inMenuScript: {fileID: 0}
+  inMenuScript: {fileID: 754157506}
 --- !u!1001 &2080506926
 PrefabInstance:
   m_ObjectHideFlags: 0

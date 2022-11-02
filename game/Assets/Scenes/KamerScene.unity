@@ -1211,7 +1211,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -841.9, y: 141.80002}
+  m_AnchoredPosition: {x: -281.90002, y: -71.5}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &118960208
@@ -1258,7 +1258,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -1576,7 +1576,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: -27}
+  m_AnchoredPosition: {x: -234, y: -98}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &186073365
@@ -2032,7 +2032,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: 474}
+  m_AnchoredPosition: {x: -9, y: 392}
   m_SizeDelta: {x: 450, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &214215683
@@ -2673,7 +2673,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -842, y: 211.3}
+  m_AnchoredPosition: {x: -282, y: -2}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &275487080
@@ -2720,7 +2720,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: SkipWave
         m_Mode: 1
@@ -3074,7 +3074,7 @@ RectTransform:
   - {fileID: 1612656007}
   - {fileID: 1392199555}
   m_Father: {fileID: 465424869}
-  m_RootOrder: 4
+  m_RootOrder: 3
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -3125,14 +3125,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 4
+          m_IntArgument: 3
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -4007,8 +4007,8 @@ RectTransform:
   - {fileID: 902138621}
   - {fileID: 1884013500}
   - {fileID: 1134345988}
-  - {fileID: 2067603423}
   - {fileID: 311154218}
+  - {fileID: 2067603423}
   m_Father: {fileID: 98207036}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
@@ -4625,7 +4625,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -842, y: 258}
+  m_AnchoredPosition: {x: -282, y: 44.69998}
   m_SizeDelta: {x: 200, y: 50}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &509500110
@@ -4850,8 +4850,8 @@ MonoBehaviour:
   - {fileID: 1869899908694115559, guid: bca67429152074a48851d67f037fe671, type: 3}
   - {fileID: 1126724187484640922, guid: 4a51377e641713c44b75f2e0bdb76bf1, type: 3}
   Waypoints: {fileID: 2070545819}
-  finish: {fileID: 0}
-  gameUI: {fileID: 0}
+  finish: {fileID: 1157978297}
+  gameUI: {fileID: 1169164913}
   spawn: 00000000
   endGame: 0
   counter:
@@ -4891,8 +4891,8 @@ MonoBehaviour:
   - 11
   - 6
   - 2
-  enemyText: {fileID: 0}
-  waveCounter: {fileID: 0}
+  enemyText: {fileID: 1088514700}
+  waveCounter: {fileID: 1932841353}
 --- !u!1 &579893118
 GameObject:
   m_ObjectHideFlags: 0
@@ -7154,7 +7154,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
@@ -8647,7 +8647,7 @@ RectTransform:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 1081929525}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
-  m_LocalPosition: {x: 0, y: 0, z: -0}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -8656,7 +8656,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -843.0002, y: 207.00006}
+  m_AnchoredPosition: {x: -283.00018, y: -6.2999573}
   m_SizeDelta: {x: 219.4, y: 171.6}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1081929527
@@ -9428,8 +9428,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'wave:'
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: f1b6b2410e2c45349b2354d6342332b3, type: 2}
-  m_sharedMaterial: {fileID: 866281326589726191, guid: f1b6b2410e2c45349b2354d6342332b3, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: fcc8c8b1a14909549b8c523e03b2e9b0, type: 2}
+  m_sharedMaterial: {fileID: -8751165291849421678, guid: fcc8c8b1a14909549b8c523e03b2e9b0, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -9453,10 +9453,10 @@ MonoBehaviour:
   m_faceColor:
     serializedVersion: 2
     rgba: 4294967295
-  m_fontSize: 100
+  m_fontSize: 43
   m_fontSizeBase: 100
   m_fontWeight: 400
-  m_enableAutoSizing: 0
+  m_enableAutoSizing: 1
   m_fontSizeMin: 18
   m_fontSizeMax: 72
   m_fontStyle: 0
@@ -9540,7 +9540,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -842, y: 176.3}
+  m_AnchoredPosition: {x: -282, y: -37.000015}
   m_SizeDelta: {x: 160, y: 30}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1118107981
@@ -9587,7 +9587,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: GetMoney
         m_Mode: 1
@@ -9966,7 +9966,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
@@ -10098,7 +10098,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1148865909}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 1671189663}
+        m_TargetAssemblyTypeName: deathscreen, Assembly-CSharp
+        m_MethodName: Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1148865909
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -11363,7 +11375,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1
@@ -14424,6 +14436,7 @@ GameObject:
   - component: {fileID: 1671189661}
   - component: {fileID: 1671189660}
   - component: {fileID: 1671189659}
+  - component: {fileID: 1671189663}
   m_Layer: 0
   m_Name: Canvas (1)
   m_TagString: Untagged
@@ -14516,6 +14529,18 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1671189663
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1671189658}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e144ff88a84f70340afec139d110113e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &1723815343
 GameObject:
   m_ObjectHideFlags: 0
@@ -16270,7 +16295,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
@@ -16554,7 +16579,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 1109002540}
-  m_RootOrder: 1
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -17319,7 +17344,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   currency: 0
-  shopUI: {fileID: 0}
+  shopUI: {fileID: 472239741}
   inMenu: 0
   towers:
   - {fileID: 7337338637377345293, guid: 2ad258745eb9c1a46829680d8be9d085, type: 3}
@@ -17334,13 +17359,13 @@ MonoBehaviour:
   - 0
   - 0
   towerText: {fileID: 0}
-  currencyUI: {fileID: 0}
+  currencyUI: {fileID: 1104727729}
   buildingsystem: {fileID: 938899674}
   tower: {fileID: 938899674}
-  toolMenu: {fileID: 0}
+  toolMenu: {fileID: 1586387974}
   spawningScript: {fileID: 563242427}
   shopScript: {fileID: 2015544673}
-  shopBaseUI: {fileID: 0}
+  shopBaseUI: {fileID: 1960991275}
   inputs: {fileID: 1848289113}
   phoney: {fileID: 1999252414}
   camsObject: {fileID: 754157506}
@@ -17664,7 +17689,7 @@ RectTransform:
   - {fileID: 1658289440}
   - {fileID: 1780015242}
   m_Father: {fileID: 465424869}
-  m_RootOrder: 3
+  m_RootOrder: 4
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 1}
   m_AnchorMax: {x: 0, y: 1}
@@ -17715,14 +17740,14 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyItem
         m_Mode: 3
         m_Arguments:
           m_ObjectArgument: {fileID: 0}
           m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
-          m_IntArgument: 3
+          m_IntArgument: 4
           m_FloatArgument: 0
           m_StringArgument: 
           m_BoolArgument: 0
@@ -18106,8 +18131,8 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   inShopBase: 0
-  gameOverScene: {fileID: 0}
-  Slider: {fileID: 0}
+  gameOverScene: {fileID: 825340894}
+  Slider: {fileID: 214215683}
   inMenuScript: {fileID: 754157506}
 --- !u!1 &2081371153
 GameObject:

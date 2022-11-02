@@ -23,4 +23,11 @@ public class LVLscreen : MonoBehaviour
     {
         SceneManager.LoadScene("infoscreen");
     }
+
+    //to toturial
+    public void Toturial()
+    {
+        SceneManager.LoadScene("ToturialScene");
+    }
+
 }

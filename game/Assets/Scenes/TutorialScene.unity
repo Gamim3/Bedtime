@@ -148,17 +148,18 @@ RectTransform:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5326739}
-  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 0.6885878, y: 0.84093, z: 0.84093}
+  m_LocalScale: {x: 0.68858784, y: 0.84093004, z: 0.84093004}
   m_ConstrainProportionsScale: 0
-  m_Children: []
-  m_Father: {fileID: 1571874717}
-  m_RootOrder: 0
+  m_Children:
+  - {fileID: 1571874717}
+  m_Father: {fileID: 1223409927}
+  m_RootOrder: 2
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -234, y: -27}
+  m_AnchoredPosition: {x: 631.0001, y: 395}
   m_SizeDelta: {x: 100, y: 100}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &5326741
@@ -2122,6 +2123,7 @@ GameObject:
   - component: {fileID: 279176611}
   - component: {fileID: 279176610}
   - component: {fileID: 279176609}
+  - component: {fileID: 279176612}
   m_Layer: 0
   m_Name: Canvas
   m_TagString: Untagged
@@ -2215,6 +2217,18 @@ Canvas:
   m_SortingLayerID: 0
   m_SortingOrder: 0
   m_TargetDisplay: 0
+--- !u!114 &279176612
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 279176607}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: e144ff88a84f70340afec139d110113e, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &282466635
 GameObject:
   m_ObjectHideFlags: 0
@@ -4543,7 +4557,7 @@ GameObject:
   - component: {fileID: 509462922}
   - component: {fileID: 509462921}
   m_Layer: 0
-  m_Name: play
+  m_Name: restart
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -4598,10 +4612,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: cb754f76ef0b8a946a9e2c29bffd543b, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: cb754f76ef0b8a946a9e2c29bffd543b, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: cb754f76ef0b8a946a9e2c29bffd543b, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 3680d5d959a99544aa2b35fa4debc5fd, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: e111270d8475c9245a0a63e163a4e1de, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: e111270d8475c9245a0a63e163a4e1de, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: e111270d8475c9245a0a63e163a4e1de, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: e111270d8475c9245a0a63e163a4e1de, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -4612,7 +4626,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 509462922}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 279176612}
+        m_TargetAssemblyTypeName: deathscreen, Assembly-CSharp
+        m_MethodName: Level
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &509462922
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4633,7 +4659,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 3680d5d959a99544aa2b35fa4debc5fd, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 807b3106bd2c1644491840b2bb22216c, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -6434,10 +6460,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 8f155078b9f04964880722bc61d6614d, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -6469,7 +6495,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f155078b9f04964880722bc61d6614d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 753e60b85d167664cbe4700a650bb310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1
@@ -12402,7 +12428,7 @@ RectTransform:
   m_Children:
   - {fileID: 295319492}
   - {fileID: 1271831883}
-  - {fileID: 1571874717}
+  - {fileID: 5326740}
   - {fileID: 2090958953}
   m_Father: {fileID: 279176608}
   m_RootOrder: 3
@@ -14194,7 +14220,7 @@ RectTransform:
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
-  m_AnchoredPosition: {x: -9, y: 474}
+  m_AnchoredPosition: {x: -9, y: 390}
   m_SizeDelta: {x: 450, y: 40}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1354733472
@@ -16401,17 +16427,16 @@ RectTransform:
   m_GameObject: {fileID: 1571874716}
   m_LocalRotation: {x: -0, y: -0, z: -0, w: 1}
   m_LocalPosition: {x: 0, y: 0, z: 0}
-  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_LocalScale: {x: 1.4522475, y: 1.1891596, z: 1.1891596}
   m_ConstrainProportionsScale: 0
-  m_Children:
-  - {fileID: 5326740}
-  m_Father: {fileID: 1223409927}
-  m_RootOrder: 2
+  m_Children: []
+  m_Father: {fileID: 5326740}
+  m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0, y: 0}
   m_AnchorMax: {x: 1, y: 1}
-  m_AnchoredPosition: {x: 797.5, y: 505}
-  m_SizeDelta: {x: -1585, y: -1030}
+  m_AnchoredPosition: {x: 237, y: 47.57753}
+  m_SizeDelta: {x: 117.5, y: -95.15506}
   m_Pivot: {x: 0.5, y: 0.5}
 --- !u!114 &1571874718
 MonoBehaviour:
@@ -16433,7 +16458,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 0
+  m_text: o
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: fcc8c8b1a14909549b8c523e03b2e9b0, type: 2}
   m_sharedMaterial: {fileID: -8751165291849421678, guid: fcc8c8b1a14909549b8c523e03b2e9b0, type: 2}
@@ -18891,6 +18916,7 @@ MonoBehaviour:
   rotateInputR: 0
   rotateInputL: 0
   startwaveInput: 0
+  escapeInput: 0
 --- !u!54 &1848289119
 Rigidbody:
   m_ObjectHideFlags: 0
@@ -19487,7 +19513,7 @@ GameObject:
   - component: {fileID: 1914819424}
   - component: {fileID: 1914819423}
   m_Layer: 0
-  m_Name: quit
+  m_Name: back
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -19542,10 +19568,10 @@ MonoBehaviour:
     m_ColorMultiplier: 1
     m_FadeDuration: 0.1
   m_SpriteState:
-    m_HighlightedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_PressedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_SelectedSprite: {fileID: 21300000, guid: b2051e8d2d0d6844689b5c4535082dd7, type: 3}
-    m_DisabledSprite: {fileID: 21300000, guid: 8f155078b9f04964880722bc61d6614d, type: 3}
+    m_HighlightedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_PressedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_SelectedSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
+    m_DisabledSprite: {fileID: 21300000, guid: a9758c3d10338e04eb59c0e09e6e576d, type: 3}
   m_AnimationTriggers:
     m_NormalTrigger: Normal
     m_HighlightedTrigger: Highlighted
@@ -19556,7 +19582,19 @@ MonoBehaviour:
   m_TargetGraphic: {fileID: 1914819424}
   m_OnClick:
     m_PersistentCalls:
-      m_Calls: []
+      m_Calls:
+      - m_Target: {fileID: 279176612}
+        m_TargetAssemblyTypeName: deathscreen, Assembly-CSharp
+        m_MethodName: LvlSelectScreen
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
+          m_BoolArgument: 0
+        m_CallState: 2
 --- !u!114 &1914819424
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -19577,7 +19615,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_Sprite: {fileID: 21300000, guid: 8f155078b9f04964880722bc61d6614d, type: 3}
+  m_Sprite: {fileID: 21300000, guid: 753e60b85d167664cbe4700a650bb310, type: 3}
   m_Type: 0
   m_PreserveAspect: 0
   m_FillCenter: 1

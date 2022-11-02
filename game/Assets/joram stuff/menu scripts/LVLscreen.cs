@@ -18,6 +18,7 @@ public class LVLscreen : MonoBehaviour
         SceneManager.LoadScene("KamerScene");
     }
 
+    //to infoscreen
     public void LvlSelect()
     {
         SceneManager.LoadScene("infoscreen");

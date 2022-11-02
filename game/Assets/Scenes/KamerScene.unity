@@ -10491,7 +10491,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: BuyPhony
         m_Mode: 1
@@ -14760,7 +14760,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 0}
+      - m_Target: {fileID: 2015544674}
         m_TargetAssemblyTypeName: Shop, Assembly-CSharp
         m_MethodName: ExitButton
         m_Mode: 1

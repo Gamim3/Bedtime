@@ -33,6 +33,7 @@ public class Bed : MonoBehaviour
                 if (towers != null)
                 {
                     towers[i].GetComponent<TowerBase>().isInBed(false);
+
                 }
             }
 
@@ -42,6 +43,8 @@ public class Bed : MonoBehaviour
                 bedCam.SetActive(false);
                 time = 0;
                 player.SetActive(true);
+                ouders.GetComponent<OuderSystem>().cought = false;
+                ouders.GetComponent<OuderSystem>().walkIn = false;
 
                 for (int i = 0; i < build.GetComponent<NewBuildSystem>().totalTowerIndex; i++)
                 {

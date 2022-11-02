@@ -36,8 +36,13 @@ public class PhoneyDamage : TowerBase
         {
             phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
         }
+        if (waypointIndex == waypoints.Length)
+        {
+            speed = 0;
+            DamageExplosion();
+        }
 
-        if (Vector3.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f)
+        if (Vector3.Distance(transform.position, waypoints[waypointIndex].position) < 0.1f && waypointIndex != 13)
         {
             waypointIndex++;
             phoneRotationQ = Quaternion.LookRotation(waypoints[waypointIndex].transform.position - transform.position);
@@ -53,17 +58,24 @@ public class PhoneyDamage : TowerBase
         {
             GetEnemies();
 
-            if (canDamage)
+            DamageExplosion();
+        }
+    }
+
+    public void DamageExplosion()
+    {
+        GetEnemies();
+
+        if (canDamage)
+        {
+            speed = 0;
+
+            for (int i = 0; i < enemiesInRange.Length; i++)
             {
-                speed = 0;
-
-                for (int i = 0; i < enemiesInRange.Length; i++)
-                {
-                    enemiesInRange[i].GetComponent<Enemy>().Damage(damage);
-                }
-
-                Destroy(gameObject);
+                enemiesInRange[i].GetComponent<Enemy>().Damage(damage);
             }
+
+            Destroy(gameObject);
         }
     }
 }

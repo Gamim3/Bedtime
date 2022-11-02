@@ -18,9 +18,36 @@ public class OuderSystem : MonoBehaviour
     public int spawnint;
 
     public Transform[] randomtransforms;
+
+    public Animator kock;
+
+    public float waitforkok;
+
+    public int minimumwaittime;
+    public int maximumwaittime;
+
+    public bool walkIn;
+    public bool cought;
+
+    public float waitTime;
     private void Update()
     {
+        kock.SetBool("walkIn", walkIn);
+        kock.SetBool("cought", cought);
+
         Debug.DrawRay(ouder.position, player.position - ouder.position);
+
+        Walking();
+
+        if (Physics.Raycast(ouder.position, player.position - ouder.position, out hit, Mathf.Infinity) && hit.transform.CompareTag("player"))
+        {
+            candotimer = true;
+        }
+        else
+        {
+            candotimer = false;
+        }
+
         if (candotimer)
         {
             exposed += Time.deltaTime;
@@ -28,31 +55,28 @@ public class OuderSystem : MonoBehaviour
 
         if (exposed >= maxexposed)
         {
+            cought = true;
             bed.GetComponent<Bed>().inBed = true;
         }
     }
-
-    public void LookingPointSpawn()
-    {
-        spawnint = Random.Range(0, 3);
-
-        ouder = randomtransforms[spawnint];
-
-
-    }
-    private void OnTriggerEnter(Collider other)
-    {
-        if (Physics.Raycast(ouder.position, player.position - ouder.position, out hit, 800) && hit.transform.CompareTag("player"))
-        {
-            candotimer = true;
-        }
-    }
-    private void OnTriggerExit(Collider other)
-    {
-        if (other.CompareTag("player"))
-        {
-            candotimer = false;
-        }
-    }
     
+    public void Walking()
+    {
+        waitforkok = Random.Range(minimumwaittime, maximumwaittime);
+
+        waitTime += Time.deltaTime;
+
+        if (waitTime > waitforkok)
+        {
+            walkIn = true;
+            waitTime = 0;
+
+            RandomTime();
+        }
+    }
+
+    public void RandomTime()
+    {
+        waitforkok = Random.Range(minimumwaittime, maximumwaittime);
+    }
 }

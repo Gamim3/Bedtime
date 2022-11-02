@@ -5440,9 +5440,9 @@ MonoBehaviour:
   - 0
   - 1
   wave5counter:
-  - 15
-  - 11
-  - 6
+  - 0
+  - 0
+  - 2
   - 2
   enemyText: {fileID: 1271831884}
   waveCounter: {fileID: 1354475498}

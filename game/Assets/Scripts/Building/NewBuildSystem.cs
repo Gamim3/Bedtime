@@ -163,6 +163,11 @@ public class NewBuildSystem : MonoBehaviour
                 if (sphereHit[i].collider.CompareTag("tower"))
                 {
                     inTower = true;
+                    if (placeBluePrint != null)
+                    {
+                        bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);
+                    }
+
                 }
                 if (!sphereHit[i].collider.CompareTag("wall"))
                 {
@@ -176,7 +181,6 @@ public class NewBuildSystem : MonoBehaviour
                         if (inWall == false)
                         {
                             canPlace = true;
-                            arrowRenderer.material.color = Color.green;
                             if (placeBluePrint != null)
                             {
                                 bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 1);
@@ -186,7 +190,6 @@ public class NewBuildSystem : MonoBehaviour
                     else
                     {
                         canPlace = false;
-                        arrowRenderer.material.color = Color.red;
                         if (placeBluePrint != null)
                         {
                             bluePrintRenderer.sharedMaterial.SetFloat("_Placefloat", 0);

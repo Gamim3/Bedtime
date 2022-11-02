@@ -38,7 +38,7 @@ Material:
     - _MaxAlpha: 0.616
     - _MinAlpha: 0.294
     - _Placeble: 0
-    - _Placefloat: 1
+    - _Placefloat: 0
     - _QueueControl: 0
     - _QueueOffset: 0
     - _linethickness: 10.01

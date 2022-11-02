@@ -11713,7 +11713,7 @@ MonoBehaviour:
   inBed: 0
   ouders: {fileID: 1387863068}
   time: 0
-  waittime: 3
+  waittime: 15
   player: {fileID: 1848289113}
   build: {fileID: 938899674}
   inMenuScript: {fileID: 754157506}

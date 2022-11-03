@@ -16,7 +16,7 @@ public class PauzeMenu : MonoBehaviour
 
     public void EscapeMenu()
     {
-        escapeMenu.SetActive(false);
+        escapeMenu.SetActive(true);
     }
 
     //go to lvl selectscreen

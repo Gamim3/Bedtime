@@ -11702,7 +11702,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 710cebf603f812f449fb65cfe15fc75f, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  escapeMenu: {fileID: 0}
+  escapeMenu: {fileID: 1175938896}
 --- !u!1001 &1180927617
 PrefabInstance:
   m_ObjectHideFlags: 0

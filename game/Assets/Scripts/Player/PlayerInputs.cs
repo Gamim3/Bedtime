@@ -84,19 +84,26 @@ public class PlayerInputs : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.Escape))
         {
-            escapeMenu.SetActive(wantPause);
-            canvas2.SetActive(!wantPause);
-            wantPause = !wantPause;
-            camsObject.GetComponent<Cams>().inMenu = true;
+            if (wantPause)
+            {
+                resume();
+            }
+            else
+            {
+                wantPause = true;
+                escapeMenu.SetActive(wantPause);
+                canvas2.SetActive(!wantPause);
+                camsObject.GetComponent<Cams>().inMenu = true;
+            }
         }
 
         if (!wantPause)
         {
-            Time.timeScale = 0;
+            Time.timeScale = 1;
 }
         else if (wantPause)
         {
-            Time.timeScale = 1;
+            Time.timeScale = 0;
         }
     }
 
@@ -110,6 +117,6 @@ public class PlayerInputs : MonoBehaviour
         escapeMenu.SetActive(false);
         camsObject.GetComponent<Cams>().inMenu = false;
         canvas2.SetActive(true);
-        wantPause = !wantPause;
+        wantPause = false;
     }
 }

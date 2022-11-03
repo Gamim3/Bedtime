@@ -13,9 +13,9 @@ MonoBehaviour:
   m_Name: Phoney
   m_EditorClassIdentifier: 
   range: 2
-  damage: 5
+  damage: 10
   fireSpeed: 3
-  cost: 80
+  cost: 120
   size: 0
   health: 0
   targetType: 0

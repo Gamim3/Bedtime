@@ -9,6 +9,7 @@ public class ShopBase : MonoBehaviour
     public GameObject gameOverScene;
     public Slider Slider;
     public GameObject inMenuScript;
+    public GameObject canvas;
 
     // Start is called before the first frame update
     void Start()
@@ -20,6 +21,7 @@ public class ShopBase : MonoBehaviour
     {
         if(Slider.value == 0 && inMenuScript.activeSelf)
         {
+            canvas.SetActive(false);
             gameOverScene.SetActive(true);
             inMenuScript.GetComponent<Cams>().inMenu = true;
         }

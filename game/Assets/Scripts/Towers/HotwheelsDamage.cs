@@ -14,9 +14,12 @@ public class HotwheelsDamage : TowerBase
     {
         if (other.CompareTag("enemy"))
         {
+            print(other.name);
             other.GetComponent<Enemy>().Damage(damage);
         }
-
-        Destroy(car, 5f);
+        if (other.CompareTag("placeableGround"))
+        {
+            Destroy(car);
+        }
     }
 }

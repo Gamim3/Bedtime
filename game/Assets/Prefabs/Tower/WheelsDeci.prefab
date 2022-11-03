@@ -40,8 +40,6 @@ GameObject:
   serializedVersion: 6
   m_Component:
   - component: {fileID: 116724059355876964}
-  - component: {fileID: 1010307958710183181}
-  - component: {fileID: 1590744963698897498}
   m_Layer: 0
   m_Name: Armature
   m_TagString: Untagged
@@ -65,45 +63,6 @@ Transform:
   m_Father: {fileID: 9020282047919152890}
   m_RootOrder: 0
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
---- !u!114 &1010307958710183181
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945948369575822382}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: cdfcebb17b059b541aa394ab03c825ee, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  isntInBed: 0
-  towerData: {fileID: 11400000, guid: 0c1f84d2a64344c4b9131426918a466b, type: 2}
-  range: 0
-  damage: 0
-  fireRate: 0
-  cost: 0
-  size: 0
-  placeTag: 
-  enemiesLayer:
-    serializedVersion: 2
-    m_Bits: 0
-  towerTransform: {fileID: 0}
-  enemiesInRange: []
-  car: {fileID: 8531412087883007040}
---- !u!65 &1590744963698897498
-BoxCollider:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1945948369575822382}
-  m_Material: {fileID: 0}
-  m_IsTrigger: 1
-  m_Enabled: 1
-  serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
 --- !u!1 &2698047952275076276
 GameObject:
   m_ObjectHideFlags: 0
@@ -114,6 +73,7 @@ GameObject:
   m_Component:
   - component: {fileID: 2448512526930095368}
   - component: {fileID: 256229296384959494}
+  - component: {fileID: 8572278154107656032}
   m_Layer: 0
   m_Name: Bone
   m_TagString: Untagged
@@ -150,6 +110,32 @@ BoxCollider:
   serializedVersion: 2
   m_Size: {x: 0.0002433996, y: 0.0011594021, z: 0.0005}
   m_Center: {x: 0.00009669981, y: 0.0005528847, z: -3.509669e-11}
+--- !u!114 &8572278154107656032
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2698047952275076276}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: cdfcebb17b059b541aa394ab03c825ee, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  isntInBed: 0
+  towerData: {fileID: 11400000, guid: 0c1f84d2a64344c4b9131426918a466b, type: 2}
+  range: 0
+  damage: 0
+  fireRate: 0
+  cost: 0
+  size: 0
+  placeTag: 
+  enemiesLayer:
+    serializedVersion: 2
+    m_Bits: 0
+  towerTransform: {fileID: 0}
+  enemiesInRange: []
+  car: {fileID: 8531412087883007040}
 --- !u!1 &7741734493562915779
 GameObject:
   m_ObjectHideFlags: 0
@@ -175,7 +161,7 @@ Transform:
   m_GameObject: {fileID: 7741734493562915779}
   m_LocalRotation: {x: -0.10845999, y: 0.10778734, z: 0.6994317, w: 0.69815016}
   m_LocalPosition: {x: -0.392966, y: 0.009179513, z: 0}
-  m_LocalScale: {x: 99.999985, y: 99.999985, z: 99.999985}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9020282047919152890}
@@ -207,7 +193,7 @@ Transform:
   m_GameObject: {fileID: 8153943366438128501}
   m_LocalRotation: {x: 0, y: 0.00000032584137, z: -0, w: 1}
   m_LocalPosition: {x: -0.4520515, y: 0.0044384105, z: 0.0000002628538}
-  m_LocalScale: {x: 0.022541806, y: 0.022541806, z: 0.022541806}
+  m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 9020282047919152890}

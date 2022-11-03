@@ -31,22 +31,13 @@ public class PuttyTrap : TowerBase
         {
             Destroy(this.gameObject);
         }
-
-        GetEnemies();
-
-        for (int i = 0; i < enemiesInRange.Length; i++)
+    }
+    private void OnTriggerEnter(Collider other)
+    {
+        if (other.CompareTag("enemy"))
         {
-
-            waittime += Time.deltaTime;
-
-            if (waittime > fireRate)
-            {
-                waittime = 0;
-
-                enemiesInRange[i].GetComponent<Enemy>().SlowDownEnemy(damage);
-
-                health -= 1;
-            }
+            other.GetComponent<Enemy>().SlowDownEnemy(damage);
+            health--;
         }
     }
 }

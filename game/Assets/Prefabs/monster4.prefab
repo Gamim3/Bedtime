@@ -297,7 +297,6 @@ MonoBehaviour:
   distance: 0
   turnSpeed: 4
   enemyRotation: {x: 0, y: 0, z: 0, w: 0}
-  waitTime: 0
 --- !u!65 &-566776102696352636
 BoxCollider:
   m_ObjectHideFlags: 0
@@ -309,8 +308,8 @@ BoxCollider:
   m_IsTrigger: 1
   m_Enabled: 1
   serializedVersion: 2
-  m_Size: {x: 1, y: 1, z: 1}
-  m_Center: {x: 0, y: 0, z: 0}
+  m_Size: {x: 0.4, y: 0.4, z: 0.2}
+  m_Center: {x: 0, y: 0.2, z: 0}
 --- !u!54 &-8117746059013227691
 Rigidbody:
   m_ObjectHideFlags: 0

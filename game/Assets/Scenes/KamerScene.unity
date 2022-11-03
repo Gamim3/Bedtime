@@ -17703,7 +17703,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 150
   shopUI: {fileID: 472239741}
-  inMenu: 0
   towers:
   - {fileID: 7337338637377345293, guid: 2ad258745eb9c1a46829680d8be9d085, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}

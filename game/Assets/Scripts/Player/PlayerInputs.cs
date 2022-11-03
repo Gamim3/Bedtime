@@ -8,6 +8,9 @@ public class PlayerInputs : MonoBehaviour
     public Transform playerTransform;
     public Rigidbody playerRigidbody;
 
+    public GameObject escapeMenu;
+    public GameObject cam;
+
     [Header("statistics")]
     #region
     [SerializeField]
@@ -27,6 +30,7 @@ public class PlayerInputs : MonoBehaviour
     public bool rotateInputL;
     public bool startwaveInput;
     public bool escapeInput;
+
 
     #endregion
 
@@ -70,5 +74,19 @@ public class PlayerInputs : MonoBehaviour
         move.z = walkInput.y;
 
         playerTransform.Translate(move * walkSpeed * Time.deltaTime);
+    }
+
+    public void EscapeMenu()
+    {
+        if (escapeInput)
+        {
+            escapeMenu.SetActive(true);
+            cam.GetComponent<Cams>().inMenu = true;
+        }
+    }
+
+    private void Update()
+    {
+        EscapeMenu();
     }
 }

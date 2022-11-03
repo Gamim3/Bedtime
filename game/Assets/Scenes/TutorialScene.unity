@@ -12632,7 +12632,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 0
+  m_IsActive: 1
 --- !u!224 &1223409927
 RectTransform:
   m_ObjectHideFlags: 0
@@ -14300,7 +14300,7 @@ RectTransform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 295319492}
-  m_RootOrder: 0
+  m_RootOrder: 1
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
   m_AnchorMin: {x: 0.5, y: 0.5}
   m_AnchorMax: {x: 0.5, y: 0.5}
@@ -14482,7 +14482,7 @@ MonoBehaviour:
     m_PressedTrigger: Pressed
     m_SelectedTrigger: Selected
     m_DisabledTrigger: Disabled
-  m_Interactable: 1
+  m_Interactable: 0
   m_TargetGraphic: {fileID: 0}
   m_FillRect: {fileID: 1894252686}
   m_HandleRect: {fileID: 0}
@@ -20747,7 +20747,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   currency: 100
   shopUI: {fileID: 1856023335}
-  inMenu: 0
   towers:
   - {fileID: 7337338637377345293, guid: 2ad258745eb9c1a46829680d8be9d085, type: 3}
   - {fileID: 3506266040617805164, guid: d3ddb3bb9ce5b184db33deadb274d850, type: 3}

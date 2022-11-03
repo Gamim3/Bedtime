@@ -72,8 +72,14 @@ public class NewBuildSystem : MonoBehaviour
 
             if (placeBluePrint == null)
             {
-                placeBluePrint = Instantiate(towerData.towerBluePrint, arrowHit.point, arrowHit.transform.rotation);
+                placeBluePrint = tower.GetComponent<TowerBase>().towerData.towerBluePrint;
                 bluePrintRenderer = placeBluePrint.GetComponent<MeshRenderer>();
+
+                placeBluePrint = Instantiate(towerData.towerBluePrint, arrowHit.point, arrowHit.transform.rotation);
+            }
+            else
+            {
+                arrowRenderer.enabled = true;
             }
         }
 

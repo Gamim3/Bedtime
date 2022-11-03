@@ -55,7 +55,6 @@ public class Shop : MonoBehaviour
     {
         if(currency > towers[buttonint].GetComponent<TowerBase>().towerData.cost - 1 && buildingsystem.GetComponent<NewBuildSystem>().tower == null)
         {
-            
             currency -= towers[buttonint].GetComponent<TowerBase>().towerData.cost;
             buildingsystem.GetComponent<NewBuildSystem>().tower = towers[buttonint];
         }

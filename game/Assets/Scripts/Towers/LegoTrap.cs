@@ -40,6 +40,7 @@ public class LegoTrap : TowerBase
         if (other.CompareTag("enemy"))
         {
             other.GetComponent<Enemy>().Damage(damage);
+            health--;
         }
     }
 }

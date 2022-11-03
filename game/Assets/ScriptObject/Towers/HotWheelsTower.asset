@@ -12,12 +12,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: b98511de66a530b4786290e91f1f9339, type: 3}
   m_Name: HotWheelsTower
   m_EditorClassIdentifier: 
-  range: 0
-  damage: 3
+  range: 1
+  damage: 4
   fireSpeed: 4
   cost: 500
   size: 0
   health: 0
-  targetType: 0
   placeTag: 
   towerBluePrint: {fileID: 0}

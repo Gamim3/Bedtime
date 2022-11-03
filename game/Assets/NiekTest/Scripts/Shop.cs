@@ -31,11 +31,15 @@ public class Shop : MonoBehaviour
     public GameObject coldwheels;
     public GameObject clonecoldWheels;
     public Transform coldspawnpoint;
-
-    public int bulletAmount;
     public void BuyPhony()
     {
         phoney.GetComponent<Phoney>().Spawner(true);
+        currency -= 80;
+    }
+    public void BuyColdwheels()
+    {
+        clonecoldWheels = Instantiate(coldwheels, coldspawnpoint);
+        clonecoldWheels.GetComponent<HotwheelsTower>().spawnamount = 5;
         currency -= 80;
     }
     public void BuyItem(int buttonint)

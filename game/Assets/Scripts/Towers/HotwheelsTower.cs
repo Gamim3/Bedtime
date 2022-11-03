@@ -9,17 +9,20 @@ public class HotwheelsTower : TowerBase
 
     public Transform spawnPoint;
 
-    public Transform[] wPoints;
-    public void Spawner(int spawnamount)
+    public int spawnamount;
+
+    private void Update()
     {
-        if (spawnamount < 0)
         {
-            if (carClone == null)
+            if (spawnamount > 0)
             {
-                carClone = Instantiate(carOBJ, this.transform);
-                carClone.GetComponent<PhoneyDamage>().waypoints = wPoints;
+                if (carClone == null)
+                {
+                    carClone = Instantiate(carOBJ, this.transform);
+
+                    spawnamount--;
+                }
             }
-            spawnamount--;
         }
     }
 }

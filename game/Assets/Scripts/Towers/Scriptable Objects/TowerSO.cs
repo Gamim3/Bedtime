@@ -10,7 +10,6 @@ public class TowerSO : ScriptableObject
     public float cost;
     public float size;
     public float health;
-    public int targetType;
     public string placeTag;
     public GameObject towerBluePrint;
 }

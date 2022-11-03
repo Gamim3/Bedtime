@@ -19,17 +19,6 @@ public class TowerBase : MonoBehaviour
     public Transform towerTransform;
 
     public Collider[] enemiesInRange;
-
-    void Start()
-    {
-        #region
-        range = towerData.range;
-        damage = towerData.damage;
-        fireRate = towerData.fireSpeed;
-        cost = towerData.cost;
-        size = towerData.size;
-        #endregion
-    }
     public void GetEnemies()
     {
         enemiesInRange = Physics.OverlapSphere(towerTransform.position, range, enemiesLayer);

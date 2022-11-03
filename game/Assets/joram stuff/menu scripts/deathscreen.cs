@@ -16,4 +16,10 @@ public class deathscreen : MonoBehaviour
     {
         SceneManager.LoadScene("KamerScene");
     }
+
+    //restart game for tutorial
+    public void tutorial2()
+    {
+        SceneManager.LoadScene("TutorialScene");
+    }
 }

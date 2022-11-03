@@ -1,6 +1,7 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
 
 public class PlayerInputs : MonoBehaviour
 {
@@ -9,7 +10,9 @@ public class PlayerInputs : MonoBehaviour
     public Rigidbody playerRigidbody;
 
     public GameObject escapeMenu;
-    public GameObject cam;
+    public GameObject canvas2;
+    public bool wantPause;
+    public GameObject camsObject;
 
     [Header("statistics")]
     #region
@@ -30,6 +33,7 @@ public class PlayerInputs : MonoBehaviour
     public bool rotateInputL;
     public bool startwaveInput;
     public bool escapeInput;
+    private object keycode;
 
 
     #endregion
@@ -78,15 +82,34 @@ public class PlayerInputs : MonoBehaviour
 
     public void EscapeMenu()
     {
-        if (escapeInput)
+        if (Input.GetKeyDown(KeyCode.Escape))
         {
-            escapeMenu.SetActive(true);
-            cam.GetComponent<Cams>().inMenu = true;
+            escapeMenu.SetActive(wantPause);
+            canvas2.SetActive(!wantPause);
+            wantPause = !wantPause;
+            camsObject.GetComponent<Cams>().inMenu = true;
+        }
+
+        if (!wantPause)
+        {
+            Time.timeScale = 0;
+}
+        else if (wantPause)
+        {
+            Time.timeScale = 1;
         }
     }
 
     private void Update()
     {
         EscapeMenu();
+    }
+
+    public void resume()
+    {
+        escapeMenu.SetActive(false);
+        camsObject.GetComponent<Cams>().inMenu = false;
+        canvas2.SetActive(true);
+        wantPause = !wantPause;
     }
 }

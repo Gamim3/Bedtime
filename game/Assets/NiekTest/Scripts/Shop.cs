@@ -8,7 +8,6 @@ public class Shop : MonoBehaviour
 {
     public float currency;
     public GameObject shopUI;
-    public bool inMenu;
     public GameObject[] towers;
     public float[] counter;
     private bool inShopBase;
@@ -65,7 +64,7 @@ public class Shop : MonoBehaviour
     public void ExitButton()
     {
         shopUI.SetActive(false);
-        inMenu = false;
+        camsObject.GetComponent<Cams>().inMenu = false;
         toolMenu.SetActive(false);
     }
 
@@ -86,30 +85,24 @@ public class Shop : MonoBehaviour
         //    tower = null;
         //}
 
-   
-        if(camsObject.activeSelf == true)
-        {
-            camsObject.GetComponent<Cams>().inMenu = inMenu;
-        }
-            
         if (Input.GetKeyDown(KeyCode.T))
         {
             toolMenu.SetActive(true);
-            inMenu = true;
+            camsObject.GetComponent<Cams>().inMenu = true;
         }
 
         inShopBase = GameObject.Find("BaseDoor").GetComponent<ShopBase>().inShopBase;
         if(inShopBase)
         {
             shopBaseUI.SetActive(true);
-            inMenu = true;
+            camsObject.GetComponent<Cams>().inMenu = true;
             inShopBaseCheck = false;
         }
 
         if(inShopBase == false && inShopBaseCheck == false)
         {
             shopBaseUI.SetActive(false);
-            inMenu = false;
+            camsObject.GetComponent<Cams>().inMenu = false;
             inShopBaseCheck = true;
         }
     }
@@ -119,7 +112,7 @@ public class Shop : MonoBehaviour
         if (other.gameObject.tag == "player")
         {
             shopUI.SetActive(true);
-            inMenu = true;
+            camsObject.GetComponent<Cams>().inMenu = true;
         }
     }
 
@@ -128,7 +121,7 @@ public class Shop : MonoBehaviour
         if(other.gameObject.tag == "player")
         {
             shopUI.SetActive(false);
-            inMenu = false;
+            camsObject.GetComponent<Cams>().inMenu = false;
         }
     }
 

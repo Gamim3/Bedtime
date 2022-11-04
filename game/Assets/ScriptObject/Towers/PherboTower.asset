@@ -15,9 +15,8 @@ MonoBehaviour:
   range: 1
   damage: 1
   fireSpeed: 2
-  cost: 50
+  cost: 80
   size: 0.3
   health: 0
-  targetType: 0
   placeTag: placeableGround
   towerBluePrint: {fileID: 5143259205965199336, guid: d5b51aa9ef5a38844856672fe7b0aaaa, type: 3}

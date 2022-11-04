@@ -15,9 +15,8 @@ MonoBehaviour:
   range: 0
   damage: 5
   fireSpeed: 3
-  cost: 80
+  cost: 100
   size: 1
   health: 0
-  targetType: 0
   placeTag: path
   towerBluePrint: {fileID: 1148958750605831412, guid: b8eb1b521bcc8f34a831c5b7ce6a5919, type: 3}

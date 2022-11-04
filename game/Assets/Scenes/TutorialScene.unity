@@ -21600,7 +21600,7 @@ MonoBehaviour:
   gameOverScene: {fileID: 1319507973}
   Slider: {fileID: 1354733472}
   inMenuScript: {fileID: 754157506}
-  canvas: {fileID: 0}
+  canvas: {fileID: 1223409926}
 --- !u!1001 &2080506926
 PrefabInstance:
   m_ObjectHideFlags: 0

@@ -12301,7 +12301,7 @@ MonoBehaviour:
   kock: {fileID: 1387863070}
   waitforkok: 0
   minimumwaittime: 60
-  maximumwaittime: 300
+  maximumwaittime: 120
   walkIn: 0
   cought: 0
   waitTime: 0

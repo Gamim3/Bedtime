@@ -12305,6 +12305,7 @@ MonoBehaviour:
   walkIn: 0
   cought: 0
   waitTime: 0
+  seenUI: {fileID: 469514711}
 --- !u!1 &1392199554
 GameObject:
   m_ObjectHideFlags: 0

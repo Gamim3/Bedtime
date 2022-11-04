@@ -30,6 +30,8 @@ public class OuderSystem : MonoBehaviour
     public bool cought;
 
     public float waitTime;
+
+    public GameObject seenUI;
     private void Start()
     {
         RandomTime();
@@ -46,10 +48,12 @@ public class OuderSystem : MonoBehaviour
         if (Physics.Raycast(ouder.position, player.position - ouder.position, out hit, Mathf.Infinity) && hit.transform.CompareTag("player"))
         {
             candotimer = true;
+            seenUI.SetActive(true);
         }
         else
         {
             candotimer = false;
+            seenUI.SetActive(false);
         }
 
         if (candotimer)

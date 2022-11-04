@@ -36,13 +36,6 @@ public class Enemy : MonoBehaviour
         {
             doingDamage();
         }
-
-        if (enemy4BigBoom)
-        {
-            slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
-            slider.value -= 11;
-            enemy4BigBoom = false;
-        }
     }
 
     void Start()
@@ -84,7 +77,8 @@ public class Enemy : MonoBehaviour
         {
             if(stats.enemyType == 4)
             {
-                Damage(stats.health);
+                Damage(11);
+                enemy4BigBoom = true;
             }
 
             else
@@ -124,7 +118,6 @@ public class Enemy : MonoBehaviour
 
             if (stats.enemyType == 4)
             {
-                enemy4BigBoom = true;
                 enemyCounter[3] ++;
                 dead = true;
             }
@@ -161,6 +154,11 @@ public class Enemy : MonoBehaviour
     {
         if(animationEnd.Equals("dead"))
         {
+            if(enemy4BigBoom)
+            {
+                slider = GameObject.FindGameObjectWithTag("Health").GetComponent<Slider>();
+                slider.value -= 11;
+            }
             Destroy(gameObject);
         }
     }
